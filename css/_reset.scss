@@ -20,14 +20,16 @@ legend,
 input,
 textarea,
 select,
-div {
+div,
+ul,
+li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font: 14px"宋体", "Arial Narrow", HELVETICA;
+    font: 14px"Microsoft YaHei", "Arial Narrow", HELVETICA;
     background: #fff;
     -webkit-text-size-adjust: 100%;
 }
@@ -62,4 +64,13 @@ table {
 
 p {
     word-wrap: break-word
+}
+
+div {
+    display: block;
+}
+
+button {
+    outline: none;
+    border: 0;
 }
