@@ -249,6 +249,7 @@
     padding: 0 1em;
     padding-top: 2em;
     overflow: hidden;
+    padding-bottom: 3em;
     span {
         float: left;
         width: 33%;
@@ -278,5 +279,37 @@
     }
     button:first-child::before {
         background-image: url(src/button_logo.png);
+    }
+}
+
+// 学习部分
+.soft_learn_part {
+    background-color: $learn_part_bg_color;
+    padding: 1em 2em;
+}
+
+.soft_learn_title {
+    dt {
+        font-size: 1.5em;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+.soft_learn_content {
+    padding: 3em 1em;
+    overflow: hidden;
+    width: 50%;
+    margin: auto;
+    .soft_learn_img {
+        background-image: url(src/learn_pic.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+        width: 30%;
+        padding-right: 3%;
+        height: 14em;
+        padding-right: 1em;
     }
 }
