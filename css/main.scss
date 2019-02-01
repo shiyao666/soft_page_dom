@@ -308,8 +308,284 @@
         background-repeat: no-repeat;
         float: left;
         width: 30%;
-        padding-right: 3%;
         height: 14em;
-        padding-right: 1em;
+        padding-top: 3em;
+        span {
+            display: block;
+            text-align: center;
+            color: $primary-color-text;
+        }
+    }
+}
+
+// 课程方案区域
+.none {
+    display: none;
+}
+
+.soft_lesson_title {
+    width: 100%;
+    dt {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+}
+
+.soft_lesson_big_box {
+    width: 100%;
+    padding: 2em;
+    overflow: hidden;
+    .soft_lesson_left,
+    .soft_lesson_right {
+        float: left;
+    }
+    .soft_lesson_left {
+        width: 25%;
+        .soft_lesson_left_ul {
+            ul {
+                overflow: hidden;
+                li {
+                    position: relative;
+                    float: left;
+                    width: 100%;
+                    color: $primary-color;
+                    background-color: $bgc-light;
+                    padding-left: 8em;
+                    span {
+                        float: left;
+                        width: 100%;
+                        line-height: 90px;
+                    }
+                    span:first-child {
+                        font-size: 1.2em;
+                    }
+                    span:nth-of-type(2) {
+                        font-size: 1.5em;
+                    }
+                }
+                li::before {
+                    position: absolute;
+                    content: ' ';
+                    display: block;
+                    width: 4em;
+                    height: 4.5em;
+                    left: 3em;
+                    top: 3em;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+                li:first-child::before {
+                    background-image: url(src/first_d.png);
+                }
+                li:nth-of-type(2)::before {
+                    background-image: url(src/second_d.png);
+                }
+                li:last-child::before {
+                    background-image: url(src/third_d.png);
+                }
+                li.active {
+                    color: $primary-color-text;
+                    background-color: $primary-color;
+                }
+                li.active::after {
+                    display: block;
+                    position: absolute;
+                    content: ' ';
+                    width: 0;
+                    height: 0;
+                    top: calc(50% - 1em);
+                    right: 0;
+                    z-index: 1;
+                    border-right: 1em $accent-color solid;
+                    border-top: 1em solid transparent;
+                    border-bottom: 1em solid transparent;
+                }
+            }
+        }
+    }
+    .soft_lesson_right {
+        width: 75%;
+        height: 39em;
+    }
+}
+
+.soft_lesson_content {
+    height: 540px;
+    width: 100%;
+    border-top: 1px solid $lesson_border_color;
+    border-bottom: 1px solid $lesson_border_color;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.soft_lesson_content:first-child {
+    background-image: url(src/lesson_bg.png);
+}
+
+.soft_lesson_content:nth-of-type(2) {
+    background-image: url(src/big_banner.png);
+}
+
+.soft_lesson_content:last-child {
+    background-image: url(src/learn_pic.png);
+}
+
+// 开班计划区域
+.soft_open_part {
+    padding-left: 3em;
+    overflow: hidden;
+    .soft_open_title {
+        font-weight: normal;
+        width: 100%;
+        float: left;
+        dt {
+            font-size: 1.5em;
+            width: 100%;
+            text-align: center;
+            line-height: 4em;
+        }
+    }
+    .soft_open_content {
+        position: relative;
+        padding: 1em 3em;
+        margin-right: 3em;
+        width: 98%;
+        float: left;
+        border-top: 3px solid $open_border_color;
+        .soft_open_qi {
+            float: left;
+            width: 20%;
+            margin-right: 1em;
+            overflow: hidden;
+            .soft_set {
+                padding-top: 2em;
+                width: 100%;
+                overflow: hidden;
+                .soft_set_info {
+                    float: left;
+                    line-height: 2em;
+                    overflow: hidden;
+                    text-align: center;
+                    width: 100%;
+                    padding-top: 1em;
+                    span {
+                        width: 100%;
+                        line-height: 2em;
+                        float: left;
+                        text-align: center;
+                        b {
+                            color: $title-bg-color;
+                        }
+                    }
+                }
+                .soft_set_reset {
+                    float: left;
+                    width: 100%;
+                    button {
+                        display: block;
+                        width: 8em;
+                        background-color: $primary-deep-color;
+                        color: $primary-color-text;
+                        line-height: 2em;
+                        border-radius: 2px;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+        .soft_open_qi:last-child {
+            margin: 0;
+        }
+        .soft_join_btn {
+            position: relative;
+            z-index: 1;
+        }
+        dt {
+            float: left;
+            width: 100%;
+            font-size: 1.5em;
+            color: $primary-color-text;
+            background-color: $primary-color;
+            line-height: 4em;
+            text-align: center;
+        }
+        ul {
+            float: left;
+            width: 100%;
+            overflow: hidden;
+            li {
+                width: 100%;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                padding-left: 5.5em;
+                span {
+                    float: left;
+                    width: 100%;
+                }
+                span:first-child {
+                    line-height: 3em;
+                    font-size: 1.2em;
+                }
+                span:nth-of-type(2) {
+                    line-height: 2em;
+                    color: $open_font_color;
+                }
+            }
+            li::before {
+                content: ' ';
+                position: absolute;
+                display: block;
+                width: 3em;
+                height: 3em;
+                left: 2em;
+                top: 0.5em;
+                background-size: contain;
+                color: $primary-color;
+                background-repeat: no-repeat;
+            }
+            li.active::before {
+                color: $primary-text-color;
+            }
+            li:first-child::before {
+                background-image: url(src/open_f.png);
+            }
+            li:nth-of-type(2)::before {
+                background-image: url(src/open_f2.png);
+            }
+            li:nth-of-type(3)::before {
+                background-image: url(src/open_f3.png);
+            }
+            li:last-child::before {
+                background-image: url(src/open_f4.png);
+            }
+        }
+        .soft_open_qi.active {
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            dt {
+                background-color: $primary-text-color;
+            }
+        }
+    }
+    .soft_open_content::before {
+        content: ' ';
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        left: 0;
+        background-color: $open_border_color;
+        top: -2em;
+    }
+    .soft_open_content::after {
+        content: ' ';
+        width: 3px;
+        height: 37em;
+        position: absolute;
+        left: 2em;
+        background-color: $open_border_color;
+        top: -2em;
     }
 }
