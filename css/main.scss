@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'animate.css';
 @import 'color';
+@import 'font';
 .soft_max_box {}
 
 // logo和联系电话区域
@@ -433,6 +434,110 @@
     background-image: url(src/learn_pic.png);
 }
 
+// 团队6栏
+.soft_team_part {
+    padding: 2em;
+}
+
+.soft_team_title {
+    dt {
+        position: relative;
+        display: block;
+        font-size: 1.5em;
+        width: 8em;
+        height: 2em;
+        margin: auto;
+    }
+    dt::before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 2em;
+        height: 3em;
+        left: -2.5em;
+        top: -1em;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(src/team_title.png);
+    }
+}
+
+.soft_team_content {
+    overflow: hidden;
+    .soft_team_item {
+        margin-right: 2em;
+        float: left;
+        width: 25%;
+        border-radius: 4px;
+        position: relative;
+    }
+    .soft_team_middle {
+        background-color: $bgc-light;
+        color: #08345a;
+        font-size: 1.2em;
+        width: 100%;
+        height: 9em;
+        padding-top: 4em;
+        margin-top: 4em;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        span {
+            width: 100%;
+            line-height: 2em;
+            text-align: center;
+            display: block;
+        }
+    }
+    .soft_team_top {
+        position: absolute;
+        width: 100%;
+        height: 6em;
+        top: 0;
+        left: 0;
+        padding-top: 1em;
+        span {
+            display: block;
+            width: 8em;
+            height: 8em;
+            border-radius: 50%;
+            margin: auto;
+            background-image: url(src/team_logo1.png);
+            background-repeat: no-repeat;
+            border: 2px solid #fff;
+            background-size: contain;
+        }
+    }
+    .soft_team_item.active {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        .soft_team_middle {
+            height: 13em;
+            padding-top: 9em;
+            margin-top: 0em;
+            color: #fff;
+            background-color: #08345a;
+        }
+        .soft_team_top {
+            span {
+                width: 9em;
+                height: 9em;
+            }
+        }
+    }
+    .soft_team_bottom {
+        width: 100%;
+        padding-top: 4em;
+        overflow: hidden;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        span {
+            float: left;
+            width: 100%;
+            line-height: 2em;
+            text-align: center;
+        }
+    }
+}
+
 // 开班计划区域
 .soft_open_part {
     padding-left: 3em;
@@ -588,4 +693,344 @@
         background-color: $open_border_color;
         top: -2em;
     }
+}
+
+.all {
+    width: 500px;
+    height: 200px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    margin: 100px auto;
+    position: relative;
+}
+
+.soft_screen {
+    width: 840px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.soft_screen li {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+}
+
+.soft_screen ul {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 3000px;
+}
+
+.soft_about_ul {
+    li {
+        margin-right: 10px;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.soft_arr {
+    position: relative;
+    width: 100%;
+    line-height: 40px;
+}
+
+.soft_screen {
+    margin: auto;
+}
+
+.soft_arr span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -20px;
+    background: #000;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.3;
+    border: 1px solid #fff;
+}
+
+.soft_arr .soft_arr_right {
+    right: 5px;
+    left: auto;
+}
+
+.ad_max_div {
+    width: 90%;
+    margin: auto;
+    padding: 6em 2em 2em 2em;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+        padding: 2em 1em;
+    }
+}
+
+.ad_title {
+    font-size: 3em;
+    font-weight: normal;
+    display: block;
+    text-align: center;
+}
+
+.ad_title_span {
+    margin-top: 1em;
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 2em;
+    text-align: center;
+    color: #727171;
+}
+
+.ad_content_div1,
+.ad_content_div2,
+.ad_content_div3 {
+    float: left;
+    width: 30%;
+    padding: 4em 1em;
+}
+
+.ad_after_bg {
+    float: left;
+    width: 2em;
+    height: 422px;
+    position: relative;
+}
+
+.ad_after_bg::after {
+    position: absolute;
+    right: -1em;
+    bottom: 0;
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 288px;
+    background-image: url(src/after_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ad_content_div1::after,
+.ad_content_div2::after {}
+
+.ad_content_div1.active,
+.ad_content_div2.active,
+.ad_content_div3.active {
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6);
+}
+
+.ad_content_div1,
+.ad_content_div2 {
+    // border-right: 1px solid #ddd;
+    @media screen and (max-width: 768px) {
+        border: none;
+    }
+}
+
+.ad_img1,
+.ad_img2,
+.ad_img3 {
+    width: 100%;
+    height: 8em;
+    img {
+        display: block;
+        width: 6.5em;
+        margin: auto;
+    }
+}
+
+.ad_big_font1,
+.ad_big_font2,
+.ad_big_font3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.ad_suggest1,
+.ad_suggest2,
+.ad_suggest3 {
+    display: block;
+    text-align: center;
+    color: #727171;
+}
+
+// .ad_suggest1::after,
+// .ad_suggest2::after,
+// .ad_suggest3::after {
+//     content: ' ';
+//     display: block;
+//     width: 2em;
+//     height: 0.2em;
+//     background-color: #FC766A;
+//     margin: auto;
+//     margin-top: 1em;
+// }
+.ad_ul1,
+.ad_ul2,
+.ad_ul3 {
+    margin-top: 1em;
+    overflow: hidden;
+    width: 100%;
+    li {
+        float: left;
+        width: 33%;
+        text-align: center;
+        line-height: 4em;
+        b {
+            font-size: 1.5em;
+            @media screen and (max-width: 768px) {
+                font-size: 1.2em;
+            }
+        }
+        span {
+            float: left;
+            width: 100%;
+            line-height: 1.5em;
+        }
+        span:nth-of-type(2) {
+            font-size: 1.5em;
+            color: #727171;
+            @media screen and (max-width: 768px) {
+                font-size: 1.2em;
+            }
+        }
+    }
+    li:first-child,
+    li:nth-of-type(2) {
+        border-right: 1px solid #ddd;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .ad_content_div1,
+    .ad_content_div2,
+    .ad_content_div3 {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 2em;
+    }
+    .ad_img1,
+    .ad_img2,
+    .ad_img3 {
+        float: left;
+        width: 7em;
+        margin-right: 1em;
+    }
+    .ad_img1 img,
+    .ad_img2 img,
+    .ad_img3 img {
+        margin-left: 1em;
+    }
+    .ad_content_div1>dd,
+    .ad_content_div2>dd,
+    .ad_content_div3>dd,
+    .ad_content_div1>span,
+    .ad_content_div2>span,
+    .ad_content_div3>span {
+        float: left;
+        width: calc(100% - 8em);
+    }
+    .ad_big_font1,
+    .ad_big_font2,
+    .ad_big_font3 {
+        text-align: left;
+    }
+    .ad_suggest1,
+    .ad_suggest2,
+    .ad_suggest3 {
+        text-align: left;
+    }
+    .ad_ul1,
+    .ad_ul2,
+    .ad_ul3 {
+        padding-left: 0;
+        float: left;
+    }
+    .ad_suggest1::after,
+    .ad_suggest2::after,
+    .ad_suggest3::after {
+        margin-left: 0;
+    }
+}
+
+.ad_ul_div {
+    padding-top: 5em;
+    overflow: hidden;
+}
+
+// 底部轮播图盒子
+.soft_test_part {
+    padding-top: 5em;
+}
+
+// 底部轮播区域
+.carousel-inner {
+    width: 100%;
+    .item {
+        width: 100%;
+        height: 36em;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// 有序li状态
+.carousel-indicators .active {
+    margin: 8px 6px;
+}
+
+.carousel-indicators li {
+    width: 16px;
+    margin: 6px;
+    height: 16px;
+    border: 4px solid $carousel_point_bgcolor;
+}
+
+.carousel-indicators li.active {
+    border: none;
+    background-color: #000;
+}
+
+// 左右按钮 
+.carousel-control {
+    height: 6em;
+    margin-top: 10em;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background-image: none;
+}
+
+.carousel-control.left::before,
+.carousel-control.right::before {
+    font-size: 6em;
+    font-family: 'Glyphicons Halflings';
+    color: #232323;
+    display: block;
+}
+
+.carousel-control.left::before {
+    content: '\e257';
+}
+
+.carousel-control.right::before {
+    content: '\e258';
 }
