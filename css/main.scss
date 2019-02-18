@@ -1120,7 +1120,10 @@
     color: #ffffff;
     dt {
         float: left;
+        font-weight: normal;
+        font-size: 1.2em;
         width: 100%;
+        line-height: 3em;
     }
     ul li {
         a {
@@ -1146,7 +1149,7 @@
             line-height: 2em;
         }
     }
-    ul:nth-of-type(1){
+    ul:nth-of-type(1) {
         width: 40%;
     }
     .soft_left_bottom {
@@ -1163,6 +1166,31 @@
                 padding: 0;
                 padding-right: 1em;
             }
+        }
+    }
+}
+
+.soft_bottom_right {
+    overflow: hidden;
+    ul {
+        float: left;
+        width: 100%;
+        li {
+            float: left;
+            padding: 0 1em;
+        }
+    }
+    .soft_bottom_s1,
+    .soft_bottom_s2 {
+        li:first-child {
+            padding: 0;
+            padding-right: 1em;
+        }
+    }
+    dd {
+        a {
+            color: #ffffff;
+            line-height: 2em;
         }
     }
 }

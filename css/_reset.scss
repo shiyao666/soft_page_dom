@@ -41,7 +41,13 @@ a {
 
 a:hover {
     color: #cd0200;
-    text-decoration: underline
+    text-decoration: none;
+}
+
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
 }
 
 em {

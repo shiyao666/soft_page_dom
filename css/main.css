@@ -38,7 +38,12 @@ a {
 
 a:hover {
   color: #cd0200;
-  text-decoration: underline; }
+  text-decoration: none; }
+
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none; }
 
 em {
   font-style: normal; }
@@ -1794,7 +1799,10 @@ button {
   background-color: #08345a; }
   .soft_bottom_part dt {
     float: left;
-    width: 100%; }
+    font-weight: normal;
+    font-size: 1.2em;
+    width: 100%;
+    line-height: 3em; }
   .soft_bottom_part ul li a {
     color: #ffffff; }
   .soft_bottom_part ul li a:hover {
@@ -1825,5 +1833,21 @@ button {
       .soft_bottom_left .soft_left_bottom ul li:first-child {
         padding: 0;
         padding-right: 1em; }
+
+.soft_bottom_right {
+  overflow: hidden; }
+  .soft_bottom_right ul {
+    float: left;
+    width: 100%; }
+    .soft_bottom_right ul li {
+      float: left;
+      padding: 0 1em; }
+  .soft_bottom_right .soft_bottom_s1 li:first-child,
+  .soft_bottom_right .soft_bottom_s2 li:first-child {
+    padding: 0;
+    padding-right: 1em; }
+  .soft_bottom_right dd a {
+    color: #ffffff;
+    line-height: 2em; }
 
 /*# sourceMappingURL=main.css.map */
