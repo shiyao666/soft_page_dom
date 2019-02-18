@@ -7,7 +7,18 @@ $(document).ready(function () {
     });
     $("#open_four .soft_open_qi").click(function () {
         $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+    });
+    $("#soft_act1 li").click(function () {
+        $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+        $("#soft_act2 li").removeClass("active animated pulse");
+
+    });
+    $("#soft_act2 li").click(function () {
+        $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+        $("#soft_act1 li").removeClass("active animated pulse");
+
     })
+
     $("#open_four button").click(function () {
         var index = $(this).index();
         console.log(index);
@@ -31,10 +42,16 @@ $(document).ready(function () {
 })
 // 六个栏目
 $(document).ready(function () {
-
+    $("#soft_top_tab li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+    })
     $("#soft_team_area>div").click(function () {
         $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
     });
+    $("#soft_act_area span").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+    }
+    )
 })
 // 轮播图
 // 获取页面对应元素
