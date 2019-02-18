@@ -1789,9 +1789,41 @@ button {
     background-color: #03203A; }
 
 .soft_bottom_part {
+  padding: 2em 1em;
   color: #ffffff;
   background-color: #08345a; }
-  .soft_bottom_part ul li {
+  .soft_bottom_part dt {
+    float: left;
+    width: 100%; }
+  .soft_bottom_part ul li a {
     color: #ffffff; }
+  .soft_bottom_part ul li a:hover {
+    text-decoration: none; }
+
+.soft_bottom_left {
+  overflow: hidden;
+  border-right: 1px solid #fff; }
+  .soft_bottom_left ul {
+    width: 30%;
+    float: left;
+    overflow: hidden; }
+    .soft_bottom_left ul li {
+      float: left;
+      width: 100%;
+      line-height: 2em; }
+  .soft_bottom_left ul:nth-of-type(1) {
+    width: 40%; }
+  .soft_bottom_left .soft_left_bottom {
+    overflow: hidden;
+    width: 100%;
+    float: left; }
+    .soft_bottom_left .soft_left_bottom ul {
+      width: 100%; }
+      .soft_bottom_left .soft_left_bottom ul li {
+        width: auto;
+        padding: 0 1em; }
+      .soft_bottom_left .soft_left_bottom ul li:first-child {
+        padding: 0;
+        padding-right: 1em; }
 
 /*# sourceMappingURL=main.css.map */

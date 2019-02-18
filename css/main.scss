@@ -1116,9 +1116,53 @@
 }
 
 .soft_bottom_part {
+    padding: 2em 1em;
     color: #ffffff;
+    dt {
+        float: left;
+        width: 100%;
+    }
     ul li {
-        color: #ffffff;
+        a {
+            color: #ffffff;
+        }
+        a:hover {
+            text-decoration: none;
+        }
     }
     background-color: $open_border_color;
+}
+
+.soft_bottom_left {
+    overflow: hidden;
+    border-right: 1px solid #fff;
+    ul {
+        width: 30%;
+        float: left;
+        overflow: hidden;
+        li {
+            float: left;
+            width: 100%;
+            line-height: 2em;
+        }
+    }
+    ul:nth-of-type(1){
+        width: 40%;
+    }
+    .soft_left_bottom {
+        overflow: hidden;
+        width: 100%;
+        float: left;
+        ul {
+            width: 100%;
+            li {
+                width: auto;
+                padding: 0 1em;
+            }
+            li:first-child {
+                padding: 0;
+                padding-right: 1em;
+            }
+        }
+    }
 }
