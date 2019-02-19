@@ -4,6 +4,16 @@
 @import 'font';
 .soft_max_box {}
 
+// 顶部nav
+.soft_nav_ul {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.soft_top_tab {
+    top: 65px;
+}
+
 // logo和联系电话区域
 .soft_title {
     padding: 1em 2em 1em 6em;
@@ -35,6 +45,8 @@
     background-color: $primary-color;
     color: $primary-color-text;
     padding: 0 7%;
+    position: fixed;
+    z-index: 2;
     @media screen and (max-width: 768px) {
         padding: 0;
     }
@@ -62,6 +74,7 @@
 .soft_banner {
     display: block;
     width: 100%;
+    margin-top: 41px;
     .soft_banner_img {
         width: 100%;
         img {
@@ -322,6 +335,10 @@
 }
 
 // 课程方案区域
+.soft_lesson_part {
+    padding: 2em 0;
+}
+
 .none {
     display: none;
 }
@@ -349,7 +366,7 @@
                     span {
                         float: left;
                         width: 100%;
-                        line-height: 90px;
+                        line-height: 70px;
                     }
                     span:first-child {
                         font-size: 1.2em;
@@ -362,8 +379,8 @@
                     position: absolute;
                     content: ' ';
                     display: block;
-                    width: 4em;
-                    height: 4.5em;
+                    width: 3em;
+                    height: 3.5em;
                     left: 3em;
                     top: 3em;
                     background-size: contain;
@@ -400,12 +417,12 @@
     }
     .soft_lesson_right {
         width: 75%;
-        height: 39em;
+        height: 32em;
     }
 }
 
 .soft_lesson_content {
-    height: 540px;
+    height: 420px;
     width: 100%;
     border-top: 1px solid $lesson_border_color;
     border-bottom: 1px solid $lesson_border_color;
@@ -587,53 +604,46 @@
         width: 98%;
         float: left;
         border-top: 3px solid $open_border_color;
-        .soft_open_qi {
-            float: left;
-            width: 23%;
-            margin-right: 1em;
+    }
+    .soft_open_qi {
+        float: left;
+        width: 23%;
+        margin-right: 1em;
+        overflow: hidden;
+        .soft_set {
+            padding-top: 2em;
+            width: 100%;
             overflow: hidden;
-            .soft_set {
-                padding-top: 2em;
-                width: 100%;
+            .soft_set_info {
+                float: left;
+                line-height: 2em;
                 overflow: hidden;
-                .soft_set_info {
-                    float: left;
+                text-align: center;
+                width: 100%;
+                padding-top: 1em;
+                span {
+                    width: 100%;
                     line-height: 2em;
-                    overflow: hidden;
-                    text-align: center;
-                    width: 100%;
-                    padding-top: 1em;
-                    span {
-                        width: 100%;
-                        line-height: 2em;
-                        float: left;
-                        text-align: center;
-                        b {
-                            color: $title-bg-color;
-                        }
-                    }
-                }
-                .soft_set_reset {
                     float: left;
-                    width: 100%;
-                    button {
-                        display: block;
-                        width: 8em;
-                        background-color: $primary-deep-color;
-                        color: $primary-color-text;
-                        line-height: 2em;
-                        border-radius: 2px;
-                        margin: auto;
+                    text-align: center;
+                    b {
+                        color: $title-bg-color;
                     }
                 }
             }
-        }
-        .soft_open_qi:last-child {
-            margin: 0;
-        }
-        .soft_join_btn {
-            position: relative;
-            z-index: 1;
+            .soft_set_reset {
+                float: left;
+                width: 100%;
+                button {
+                    display: block;
+                    width: 8em;
+                    background-color: $primary-deep-color;
+                    color: $primary-color-text;
+                    line-height: 2em;
+                    border-radius: 2px;
+                    margin: auto;
+                }
+            }
         }
         dt {
             float: left;
@@ -671,10 +681,10 @@
                 content: ' ';
                 position: absolute;
                 display: block;
-                width: 3em;
-                height: 3em;
+                width: 2em;
+                height: 2em;
                 left: 2em;
-                top: 0.5em;
+                top: 1em;
                 background-size: contain;
                 color: $primary-color;
                 background-repeat: no-repeat;
@@ -683,22 +693,43 @@
                 color: $primary-text-color;
             }
             li:first-child::before {
-                background-image: url(src/open_f.png);
+                background-image: url(src/open_icon1.png);
             }
             li:nth-of-type(2)::before {
-                background-image: url(src/open_f2.png);
+                background-image: url(src/open_icon2.png);
             }
             li:nth-of-type(3)::before {
-                background-image: url(src/open_f3.png);
+                background-image: url(src/open_icon3.png);
             }
             li:last-child::before {
-                background-image: url(src/open_f4.png);
+                background-image: url(src/open_icon4.png);
             }
         }
-        .soft_open_qi.active {
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-            dt {
-                background-color: $primary-text-color;
+    }
+    .soft_open_qi:last-child {
+        margin: 0;
+    }
+    .soft_join_btn {
+        position: relative;
+        z-index: 1;
+    }
+    .soft_open_qi.active {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        dt {
+            background-color: $primary-text-color;
+        }
+        ul {
+            li:first-child::before {
+                background-image: url(src/open_icon5.png);
+            }
+            li:nth-of-type(2)::before {
+                background-image: url(src/open_icon6.png);
+            }
+            li:nth-of-type(3)::before {
+                background-image: url(src/open_icon7.png);
+            }
+            li:last-child::before {
+                background-image: url(src/open_icon8.png);
             }
         }
     }
@@ -827,7 +858,7 @@
 .ad_content_div3 {
     float: left;
     width: 30%;
-    padding: 4em 1em;
+    padding: 4em 0;
 }
 
 .ad_after_bg {
@@ -930,11 +961,8 @@
             line-height: 1.5em;
         }
         span:nth-of-type(2) {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #727171;
-            @media screen and (max-width: 768px) {
-                font-size: 1.2em;
-            }
         }
     }
     li:first-child,

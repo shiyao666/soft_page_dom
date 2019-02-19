@@ -875,6 +875,13 @@ button {
 .glyphicon-menu-up:before {
   content: "\e260"; }
 
+.soft_nav_ul {
+  max-width: 1170px;
+  margin: auto; }
+
+.soft_top_tab {
+  top: 65px; }
+
 .soft_title {
   padding: 1em 2em 1em 6em;
   overflow: hidden; }
@@ -899,7 +906,9 @@ button {
   line-height: 2.5em;
   background-color: #821C21;
   color: #FFFFFF;
-  padding: 0 7%; }
+  padding: 0 7%;
+  position: fixed;
+  z-index: 2; }
   @media screen and (max-width: 768px) {
     .soft_top_tab {
       padding: 0; } }
@@ -921,7 +930,8 @@ button {
 
 .soft_banner {
   display: block;
-  width: 100%; }
+  width: 100%;
+  margin-top: 41px; }
   .soft_banner .soft_banner_img {
     width: 100%; }
     .soft_banner .soft_banner_img img {
@@ -1136,6 +1146,9 @@ button {
       text-align: center;
       color: #FFFFFF; }
 
+.soft_lesson_part {
+  padding: 2em 0; }
+
 .none {
   display: none; }
 
@@ -1160,7 +1173,7 @@ button {
         .soft_lesson_big_box .soft_lesson_left .soft_lesson_left_ul ul li span {
           float: left;
           width: 100%;
-          line-height: 90px; }
+          line-height: 70px; }
         .soft_lesson_big_box .soft_lesson_left .soft_lesson_left_ul ul li span:first-child {
           font-size: 1.2em; }
         .soft_lesson_big_box .soft_lesson_left .soft_lesson_left_ul ul li span:nth-of-type(2) {
@@ -1169,8 +1182,8 @@ button {
         position: absolute;
         content: ' ';
         display: block;
-        width: 4em;
-        height: 4.5em;
+        width: 3em;
+        height: 3.5em;
         left: 3em;
         top: 3em;
         background-size: contain;
@@ -1198,10 +1211,10 @@ button {
         border-bottom: 1em solid transparent; }
   .soft_lesson_big_box .soft_lesson_right {
     width: 75%;
-    height: 39em; }
+    height: 32em; }
 
 .soft_lesson_content {
-  height: 540px;
+  height: 420px;
   width: 100%;
   border-top: 1px solid #969696;
   border-bottom: 1px solid #969696;
@@ -1348,46 +1361,41 @@ button {
     width: 98%;
     float: left;
     border-top: 3px solid #08345a; }
-    .soft_open_part .soft_open_content .soft_open_qi {
-      float: left;
-      width: 23%;
-      margin-right: 1em;
+  .soft_open_part .soft_open_qi {
+    float: left;
+    width: 23%;
+    margin-right: 1em;
+    overflow: hidden; }
+    .soft_open_part .soft_open_qi .soft_set {
+      padding-top: 2em;
+      width: 100%;
       overflow: hidden; }
-      .soft_open_part .soft_open_content .soft_open_qi .soft_set {
-        padding-top: 2em;
+      .soft_open_part .soft_open_qi .soft_set .soft_set_info {
+        float: left;
+        line-height: 2em;
+        overflow: hidden;
+        text-align: center;
         width: 100%;
-        overflow: hidden; }
-        .soft_open_part .soft_open_content .soft_open_qi .soft_set .soft_set_info {
-          float: left;
-          line-height: 2em;
-          overflow: hidden;
-          text-align: center;
+        padding-top: 1em; }
+        .soft_open_part .soft_open_qi .soft_set .soft_set_info span {
           width: 100%;
-          padding-top: 1em; }
-          .soft_open_part .soft_open_content .soft_open_qi .soft_set .soft_set_info span {
-            width: 100%;
-            line-height: 2em;
-            float: left;
-            text-align: center; }
-            .soft_open_part .soft_open_content .soft_open_qi .soft_set .soft_set_info span b {
-              color: #c30000; }
-        .soft_open_part .soft_open_content .soft_open_qi .soft_set .soft_set_reset {
+          line-height: 2em;
           float: left;
-          width: 100%; }
-          .soft_open_part .soft_open_content .soft_open_qi .soft_set .soft_set_reset button {
-            display: block;
-            width: 8em;
-            background-color: #03203A;
-            color: #FFFFFF;
-            line-height: 2em;
-            border-radius: 2px;
-            margin: auto; }
-    .soft_open_part .soft_open_content .soft_open_qi:last-child {
-      margin: 0; }
-    .soft_open_part .soft_open_content .soft_join_btn {
-      position: relative;
-      z-index: 1; }
-    .soft_open_part .soft_open_content dt {
+          text-align: center; }
+          .soft_open_part .soft_open_qi .soft_set .soft_set_info span b {
+            color: #c30000; }
+      .soft_open_part .soft_open_qi .soft_set .soft_set_reset {
+        float: left;
+        width: 100%; }
+        .soft_open_part .soft_open_qi .soft_set .soft_set_reset button {
+          display: block;
+          width: 8em;
+          background-color: #03203A;
+          color: #FFFFFF;
+          line-height: 2em;
+          border-radius: 2px;
+          margin: auto; }
+    .soft_open_part .soft_open_qi dt {
       float: left;
       width: 100%;
       font-size: 1.5em;
@@ -1395,50 +1403,63 @@ button {
       background-color: #821C21;
       line-height: 4em;
       text-align: center; }
-    .soft_open_part .soft_open_content ul {
+    .soft_open_part .soft_open_qi ul {
       float: left;
       width: 100%;
       overflow: hidden; }
-      .soft_open_part .soft_open_content ul li {
+      .soft_open_part .soft_open_qi ul li {
         width: 100%;
         float: left;
         overflow: hidden;
         position: relative;
         padding-left: 5.5em; }
-        .soft_open_part .soft_open_content ul li span {
+        .soft_open_part .soft_open_qi ul li span {
           float: left;
           width: 100%; }
-        .soft_open_part .soft_open_content ul li span:first-child {
+        .soft_open_part .soft_open_qi ul li span:first-child {
           line-height: 3em;
           font-size: 1.2em; }
-        .soft_open_part .soft_open_content ul li span:nth-of-type(2) {
+        .soft_open_part .soft_open_qi ul li span:nth-of-type(2) {
           line-height: 2em;
           color: #646464; }
-      .soft_open_part .soft_open_content ul li::before {
+      .soft_open_part .soft_open_qi ul li::before {
         content: ' ';
         position: absolute;
         display: block;
-        width: 3em;
-        height: 3em;
+        width: 2em;
+        height: 2em;
         left: 2em;
-        top: 0.5em;
+        top: 1em;
         background-size: contain;
         color: #821C21;
         background-repeat: no-repeat; }
-      .soft_open_part .soft_open_content ul li.active::before {
+      .soft_open_part .soft_open_qi ul li.active::before {
         color: #5C89CC; }
-      .soft_open_part .soft_open_content ul li:first-child::before {
-        background-image: url(src/open_f.png); }
-      .soft_open_part .soft_open_content ul li:nth-of-type(2)::before {
-        background-image: url(src/open_f2.png); }
-      .soft_open_part .soft_open_content ul li:nth-of-type(3)::before {
-        background-image: url(src/open_f3.png); }
-      .soft_open_part .soft_open_content ul li:last-child::before {
-        background-image: url(src/open_f4.png); }
-    .soft_open_part .soft_open_content .soft_open_qi.active {
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
-      .soft_open_part .soft_open_content .soft_open_qi.active dt {
-        background-color: #5C89CC; }
+      .soft_open_part .soft_open_qi ul li:first-child::before {
+        background-image: url(src/open_icon1.png); }
+      .soft_open_part .soft_open_qi ul li:nth-of-type(2)::before {
+        background-image: url(src/open_icon2.png); }
+      .soft_open_part .soft_open_qi ul li:nth-of-type(3)::before {
+        background-image: url(src/open_icon3.png); }
+      .soft_open_part .soft_open_qi ul li:last-child::before {
+        background-image: url(src/open_icon4.png); }
+  .soft_open_part .soft_open_qi:last-child {
+    margin: 0; }
+  .soft_open_part .soft_join_btn {
+    position: relative;
+    z-index: 1; }
+  .soft_open_part .soft_open_qi.active {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
+    .soft_open_part .soft_open_qi.active dt {
+      background-color: #5C89CC; }
+    .soft_open_part .soft_open_qi.active ul li:first-child::before {
+      background-image: url(src/open_icon5.png); }
+    .soft_open_part .soft_open_qi.active ul li:nth-of-type(2)::before {
+      background-image: url(src/open_icon6.png); }
+    .soft_open_part .soft_open_qi.active ul li:nth-of-type(3)::before {
+      background-image: url(src/open_icon7.png); }
+    .soft_open_part .soft_open_qi.active ul li:last-child::before {
+      background-image: url(src/open_icon8.png); }
   .soft_open_part .soft_open_content::before {
     content: ' ';
     width: 1em;
@@ -1546,7 +1567,7 @@ button {
 .ad_content_div3 {
   float: left;
   width: 30%;
-  padding: 4em 1em; }
+  padding: 4em 0; }
 
 .ad_after_bg {
   float: left;
@@ -1634,13 +1655,8 @@ button {
     .ad_ul1 li span:nth-of-type(2),
     .ad_ul2 li span:nth-of-type(2),
     .ad_ul3 li span:nth-of-type(2) {
-      font-size: 1.5em;
+      font-size: 1.2em;
       color: #727171; }
-      @media screen and (max-width: 768px) {
-        .ad_ul1 li span:nth-of-type(2),
-        .ad_ul2 li span:nth-of-type(2),
-        .ad_ul3 li span:nth-of-type(2) {
-          font-size: 1.2em; } }
   .ad_ul1 li:first-child,
   .ad_ul1 li:nth-of-type(2),
   .ad_ul2 li:first-child,

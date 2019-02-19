@@ -1,4 +1,63 @@
 $(document).ready(function () {
+
+
+    //需求1：给ul中的li和ol中的li指定对应的颜色；
+    var ol = $("#soft_top_tab")[0];
+    console.log(ol);
+    var olLiArr = ol.children;
+    var floor = $(".soft_floor");
+    console.log(olLiArr);
+    console.log(floor);
+
+    var timer = null, leader = 0, target = 0;
+
+    //for循环上色
+    for (var i = 0; i < floor.length; i++) {
+        olLiArr[i].index = i;
+        olLiArr[i].addEventListener("click", function () {
+            target = floor[this.index].offsetTop;
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var step = (target - leader) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                leader += step;
+                window.scrollTo(0, leader);
+                if (Math.abs(target - leader) <= Math.abs(step)) {
+                    window.scrollTo(0, target);
+                    clearInterval(timer);
+                }
+            }, 30);
+        });
+    }
+
+    //leader的赋值要依靠页面滚动事件，检测被卷去的顶部；
+    window.onscorll = function () {
+        leader = scroll().top;
+    }
+
+    function scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop,
+            left: window.pageXOffset || document.documentElement.scrollLeft
+        };
+    }
+    // 顶部nav 
+    $(window).scroll(function () {
+        console.log($(window).scrollTop());
+        if ($(window).scrollTop() == 0) {
+            $(".soft_top_tab").css("top", "65px");
+            $(".soft_banner").css("top", "0px");
+
+        } else {
+            $(".soft_top_tab").css("top", "0px");
+        }
+
+
+    });
+
+
+})
+$(document).ready(function () {
     $("#tabs ul li").click(function () {
         console.log('nice');
         $(this).addClass("active").siblings().removeClass("active");
