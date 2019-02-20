@@ -15,7 +15,7 @@ $(document).ready(function () {
     for (var i = 0; i < floor.length; i++) {
         olLiArr[i].index = i;
         olLiArr[i].addEventListener("click", function () {
-            target = floor[this.index].offsetTop;
+            target = floor[this.index].offsetTop - 50;
             clearInterval(timer);
             timer = setInterval(function () {
                 var step = (target - leader) / 10;
@@ -109,6 +109,10 @@ $(document).ready(function () {
     });
     $("#soft_act_area span").click(function () {
         $(this).addClass("active").siblings().removeClass("active");
+        var index = $(this).index();
+        console.log(index);
+        console.log($(".soft_act_tab").eq(index));
+        $(".soft_act_tab").eq(index).addClass("move-in active").siblings().removeClass("move-in active");
     }
     )
 })

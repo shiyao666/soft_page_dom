@@ -926,7 +926,8 @@ button {
         width: 50%;
         box-shadow: 0 0 3px #000; } }
   .soft_tab_ul li.active {
-    border-top-color: #FFA5AD; }
+    border-top-color: #a2a2a2;
+    background-color: #ffffff19; }
 
 .soft_banner {
   display: block;
@@ -992,17 +993,47 @@ button {
     background-color: #c30000; }
 
 .soft_act_content {
-  float: right; }
+  float: right;
+  width: 100%;
+  height: 516px;
+  position: relative; }
 
-.soft_act_content1 {
+.soft_act_content3 {
   background-color: #ffffff;
   box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18); }
+
+.soft_act_content2,
+.soft_act_content3 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 7% 0% 2% 0%; }
+
+.soft_act_content1,
+.soft_act_content2,
+.soft_act_content3 {
+  position: absolute;
+  display: none;
+  transition: 0.3s opacity ease-in-out; }
+
+.soft_act_content1.move-in,
+.soft_act_content2.move-in,
+.soft_act_content3.move-in {
+  display: block;
+  transition: 0.3s opacity ease-in-out;
+  opacity: 0; }
+
+.soft_act_content1.active,
+.soft_act_content2.active,
+.soft_act_content3.active {
+  display: block;
+  transition: 0.3s opacity ease-in-out;
+  opacity: 1; }
 
 .soft_act_part1 {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  padding: 7% 0% 5% 10%; }
+  overflow: hidden; }
   .soft_act_part1 li {
     float: left;
     width: 70%;
@@ -1075,6 +1106,134 @@ button {
     background-size: contain; }
   .soft_act_bottom button:first-child::before {
     background-image: url(src/button_logo.png); }
+
+.soft_act_content1 {
+  overflow: hidden;
+  padding-top: 7%; }
+  .soft_act_content1 ul {
+    float: left;
+    width: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    border-right: 1px dotted #a2a2a2;
+    padding-top: 2em; }
+    .soft_act_content1 ul li {
+      float: left;
+      width: 100%;
+      padding-left: 10%;
+      padding-bottom: 2em; }
+      .soft_act_content1 ul li span {
+        float: left;
+        width: 100%;
+        line-height: 2em; }
+      .soft_act_content1 ul li span:first-child {
+        color: #b9b9b9; }
+      .soft_act_content1 ul li span:nth-of-type(2) {
+        font-size: 1.2em; }
+  .soft_act_content1 ul:last-child {
+    border: 0; }
+
+.soft_test_info {
+  width: 100%; }
+  .soft_test_info .soft_info_title {
+    width: 100%;
+    padding-bottom: 2em; }
+    .soft_test_info .soft_info_title span {
+      display: block;
+      border-radius: 2px;
+      width: 10em;
+      line-height: 2em;
+      font-size: 1.2em;
+      text-align: center;
+      margin: auto;
+      color: #FFFFFF;
+      background-color: #c30000; }
+
+.soft_info_content {
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid #ffb79d;
+  padding: 1em 0 0 0; }
+  .soft_info_content .soft_info_stitle dt {
+    display: block;
+    width: 4em;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    border-bottom: 2px solid #00c8fa;
+    margin-bottom: 0.5em; }
+
+.soft_info_bigcontent {
+  position: relative; }
+
+.soft_info_bigcontent::before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: ' ';
+  display: block;
+  left: calc(50% - 1em);
+  top: -2.9em;
+  border-top: 2em solid transparent;
+  border-bottom: 1em solid #ffb79d;
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent; }
+
+.soft_info_bigcontent::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: ' ';
+  display: block;
+  left: calc(50% - 1em);
+  top: -2.8em;
+  border-top: 2em solid transparent;
+  border-bottom: 1em solid #fff;
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent; }
+
+.soft_info_left,
+.soft_info_right {
+  padding: 0; }
+
+.soft_info_part1,
+.soft_info_part2 {
+  border-bottom: 1px solid #ffb79d; }
+
+.soft_info_part1,
+.soft_info_part3 {
+  border-right: 1px solid #ffb79d; }
+
+.soft_info_part1,
+.soft_info_part2,
+.soft_info_part3,
+.soft_info_part4 {
+  padding: 1em; }
+
+.soft_info_part1,
+.soft_info_part2 {
+  padding-top: 0; }
+
+.soft_info_part3,
+.soft_info_part4 {
+  padding-bottom: 0; }
+
+.soft_info_detail span {
+  color: #c2c2c2;
+  line-height: 2em; }
+
+.soft_info_half span {
+  line-height: 2em;
+  padding: 0 0.5em; }
+.soft_info_half span:first-child {
+  padding: 0;
+  color: #000; }
+
+.soft_info_right .soft_info_detail .soft_info_half span {
+  display: block;
+  width: 100%;
+  height: 2em;
+  color: #c2c2c2; }
 
 .soft_learn_part {
   background-color: #FCFCFC;
@@ -1341,6 +1500,156 @@ button {
       width: 100%;
       line-height: 2em;
       text-align: center; }
+
+.soft_trade_part {
+  padding-top: 2em; }
+  .soft_trade_part .soft_trade_top {
+    padding-top: 4em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+    background-color: #821C21;
+    position: relative;
+    z-index: 1; }
+  .soft_trade_part .soft_trade_hdiv {
+    color: #FFFFFF; }
+    .soft_trade_part .soft_trade_hdiv dt {
+      position: relative;
+      display: block;
+      font-size: 2em;
+      width: 8em;
+      text-align: center;
+      height: 2em;
+      margin: auto; }
+    .soft_trade_part .soft_trade_hdiv dt::before {
+      position: absolute;
+      display: block;
+      content: ' ';
+      width: 1.3em;
+      height: 1.3em;
+      left: 0.2em;
+      top: -0.1em;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(src/team_title.png); }
+    .soft_trade_part .soft_trade_hdiv span {
+      display: block;
+      line-height: 2em;
+      text-align: center;
+      margin: auto; }
+  .soft_trade_part .soft_trade_tab {
+    width: 100%;
+    padding: 4em 10% 2em 10%; }
+    .soft_trade_part .soft_trade_tab ul {
+      width: 100%;
+      overflow: hidden;
+      padding: 0 10%; }
+      .soft_trade_part .soft_trade_tab ul li:first-child {
+        margin-left: 5%; }
+      .soft_trade_part .soft_trade_tab ul li {
+        float: left;
+        width: 18%;
+        line-height: 2em;
+        font-size: 1.2em;
+        margin-right: 5%;
+        border-radius: 2px;
+        color: #FFFFFF;
+        background-color: #ffffff19;
+        text-align: center; }
+      .soft_trade_part .soft_trade_tab ul li:last-child {
+        margin: 0; }
+  .soft_trade_part .soft_trade_content {
+    width: 100%;
+    background-color: #821C21;
+    z-index: 0;
+    position: relative; }
+    .soft_trade_part .soft_trade_content .soft_trade_logo {
+      padding: 0 10% 2em 10%; }
+      .soft_trade_part .soft_trade_content .soft_trade_logo ul {
+        width: 100%;
+        overflow: hidden;
+        padding: 0 10%;
+        margin-top: -2.5em; }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:first-child {
+          margin-left: 5%; }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li {
+          float: left;
+          width: 18%;
+          line-height: 2em;
+          font-size: 1.2em;
+          margin-right: 5%;
+          border-radius: 2px;
+          color: #FFFFFF;
+          text-align: center; }
+          .soft_trade_part .soft_trade_content .soft_trade_logo ul li span {
+            position: relative;
+            display: block;
+            margin: auto;
+            width: 5em;
+            height: 5em;
+            border-radius: 50%;
+            background-color: #FFFFFF; }
+          .soft_trade_part .soft_trade_content .soft_trade_logo ul li span::before {
+            content: ' ';
+            width: 1.5em;
+            height: 1.5em;
+            left: calc(50% - 0.7em);
+            top: 50%;
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: block; }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(1) span::before {
+          background-image: url(src/trade_icon1.png); }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(2) span::before {
+          background-image: url(src/trade_icon2.png); }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(3) span::before {
+          background-image: url(src/trade_icon3.png); }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(4) span::before {
+          background-image: url(src/trade_icon4.png); }
+        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:last-child {
+          margin: 0; }
+    .soft_trade_part .soft_trade_content .soft_trade_bg {
+      width: 100%;
+      height: 200px;
+      background-color: #821C21;
+      padding: 0 15% 2em 15%; }
+      .soft_trade_part .soft_trade_content .soft_trade_bg ul {
+        width: 100%;
+        height: 5em;
+        padding: 0 10%; }
+      .soft_trade_part .soft_trade_content .soft_trade_bg ul:first-child {
+        overflow: hidden; }
+        .soft_trade_part .soft_trade_content .soft_trade_bg ul:first-child li {
+          float: left;
+          width: 30%;
+          line-height: 5em;
+          padding-left: 10%; }
+          .soft_trade_part .soft_trade_content .soft_trade_bg ul:first-child li span {
+            margin: auto;
+            display: block;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            background-color: #FFFFFF; }
+      .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) {
+        overflow: hidden; }
+        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li {
+          float: left;
+          width: 25%;
+          line-height: 5em; }
+          .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li span {
+            display: block;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            background-color: #FFFFFF; }
+        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(2) {
+          padding-left: 7%; }
+        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(3) {
+          padding-left: 11%; }
+        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(4) {
+          overflow: hidden; }
+          .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(4) span {
+            float: right; }
 
 .soft_open_part {
   padding-left: 3em;
