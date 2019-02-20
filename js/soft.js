@@ -112,7 +112,11 @@ $(document).ready(function () {
         var index = $(this).index();
         console.log(index);
         console.log($(".soft_act_tab").eq(index));
-        $(".soft_act_tab").eq(index).addClass("move-in active").siblings().removeClass("move-in active");
+
+        $(".soft_act_tab").eq(index).addClass("move-in").siblings().removeClass("move-in");
+        setTimeout(function () {
+            $(".soft_act_tab").eq(index).addClass("active").siblings().removeClass("active"), 300
+        })
     }
     )
 })
