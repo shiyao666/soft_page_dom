@@ -92,7 +92,6 @@
     z-index: 1;
     height: initial;
     .soft_act_title {
-        width: 100%;
         padding: 0 4%;
         height: 4em;
         span {
@@ -116,15 +115,15 @@
         }
         span.active::after {
             position: absolute;
-            width: 0;
-            height: 0;
-            display: block;
-            bottom: -0.2em;
-            left: calc(50% - 0.25em);
+            left: calc(50% - 1em);
+            bottom: -0.5em;
+            width: 2em;
+            height: 1em;
             content: ' ';
-            border-left: 0.5em solid transparent;
-            border-right: 0.5em solid transparent;
-            border-bottom: 0.8em solid $accent-color;
+            display: block;
+            background: url(src/arrow_top.png);
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     }
 }
@@ -250,8 +249,6 @@
 
 .soft_act_bottom {
     width: 100%;
-    padding: 0 1em;
-    padding-top: 2em;
     overflow: hidden;
     padding-bottom: 3em;
     span {
@@ -274,13 +271,28 @@
     button::before {
         content: ' ';
         position: absolute;
-        left: 0.5em;
-        top: 0.2em;
+        left: 1.2em;
+        top: 0.3em;
         display: block;
-        width: 1.8em;
-        height: 1.8em;
+        width: 2em;
+        height: 1.5em;
         background-repeat: no-repeat;
         background-size: contain;
+    }
+    span:first-child {
+        button::before {
+            background-image: url(src/feiyong.png);
+        }
+    }
+    span:nth-of-type(2) {
+        button::before {
+            background-image: url(src/passnum.png);
+        }
+    }
+    span:nth-of-type(3) {
+        button::before {
+            background-image: url(src/enlist.png);
+        }
     }
     button:first-child::before {
         background-image: url(src/button_logo.png);
@@ -293,15 +305,13 @@
     ul {
         float: left;
         width: 30%;
-        padding-left: 5%;
-        padding-right: 5%;
         overflow: hidden;
         border-right: 1px dotted $active_border_color;
         padding-top: 2em;
         li {
             float: left;
             width: 100%;
-            padding-left: 10%;
+            padding-left: 20%;
             padding-bottom: 2em;
             span {
                 float: left;
@@ -475,22 +485,22 @@
     width: 0;
     height: 0;
     top: 0;
-    left: 0;
-    border-left: 60em solid $test_bgcolor;
+    left: 10em;
+    border-left: 40em solid transparent;
     border-bottom: 12em solid transparent;
-    border-right: 12em solid transparent;
-    border-top: 12em solid transparent;
+    border-right: 40em solid transparent;
+    border-top: 22em solid #b40912;
 }
 
 .soft_learn_part::after {
     width: 0;
     height: 0;
-    right: 0;
-    top: 4em;
-    border-right: 22em solid $test_bgcolor;
-    border-bottom: 8em solid transparent;
-    border-left: 8em solid transparent;
-    border-top: 8em solid transparent;
+    left: 10em;
+    top: 10em;
+    border-left: 40em solid transparent;
+    border-bottom: 22em solid #b40912;
+    border-right: 40em solid transparent;
+    border-top: 12em solid transparent;
 }
 
 .soft_learn_title {
@@ -499,8 +509,9 @@
         display: block;
         margin: auto;
         text-align: center;
-        width: 40%;
+        width: 15em;
         position: relative;
+        font-weight: normal;
     }
     dt::before {
         position: absolute;
@@ -508,8 +519,8 @@
         content: ' ';
         width: 1.3em;
         height: 1.3em;
-        left: -0.5em;
-        top: -0.1em;
+        left: -0.6em;
+        top: 0em;
         background-repeat: no-repeat;
         background-size: contain;
         background-image: url(src/team_title.png);
@@ -519,20 +530,52 @@
 .soft_learn_content {
     padding: 3em 1em;
     overflow: hidden;
-    width: 50%;
+    width: 100%;
     margin: auto;
+    padding-bottom: 14em;
     .soft_learn_img {
-        background-image: url(src/learn_pic.png);
         background-size: contain;
         background-repeat: no-repeat;
         float: left;
-        width: 30%;
-        height: 14em;
-        padding-top: 3em;
+        width: 100%;
+        height: 25em;
+        padding-top: 6em;
+        padding-right: 10%;
         span {
             display: block;
             text-align: center;
+            width: 100%;
             color: $primary-color-text;
+        }
+    }
+    .soft_learn_part1 {
+        background-image: url(src/difficult_bg1.png);
+    }
+    .soft_learn_part2 {
+        background-image: url(src/difficult_bg2.png);
+    }
+    .soft_learn_part3 {
+        background-image: url(src/difficult_bg3.png);
+    }
+    .soft_learn_logo {
+        width: 100%;
+        img {
+            display: block;
+            margin: auto;
+            width: 4em;
+            height: 4em;
+        }
+    }
+    .soft_learn_text {
+        padding-top: 4em;
+        overflow: hidden;
+        span {
+            float: left;
+            width: 100%;
+            line-height: 2em;
+        }
+        span:nth-of-type(2) {
+            font-size: 1.5em;
         }
     }
 }
@@ -553,9 +596,9 @@
     .soft_lesson_left,
     .soft_lesson_right {
         float: left;
+        padding: 0;
     }
     .soft_lesson_left {
-        width: 25%;
         .soft_lesson_left_ul {
             ul {
                 overflow: hidden;
@@ -569,7 +612,7 @@
                     span {
                         float: left;
                         width: 100%;
-                        line-height: 70px;
+                        line-height: 62px;
                     }
                     span:first-child {
                         font-size: 1.2em;
@@ -590,59 +633,93 @@
                     background-repeat: no-repeat;
                 }
                 li:first-child::before {
-                    background-image: url(src/first_d.png);
+                    background-image: url(src/lesson1_before.png);
                 }
                 li:nth-of-type(2)::before {
-                    background-image: url(src/second_d.png);
+                    background-image: url(src/lesson2_before.png);
                 }
                 li:last-child::before {
-                    background-image: url(src/third_d.png);
+                    background-image: url(src/lesson3_before.png);
                 }
                 li.active {
                     color: $primary-color-text;
                     background-color: $primary-color;
                 }
+                li:first-child.active::before {
+                    background-image: url(src/lesson_act_before1.png);
+                }
+                li:nth-of-type(2).active::before {
+                    background-image: url(src/lesson_act_before2.png);
+                }
+                li:last-child.active::before {
+                    background-image: url(src/lesson_act_before3.png);
+                }
                 li.active::after {
                     display: block;
                     position: absolute;
                     content: ' ';
-                    width: 0;
-                    height: 0;
-                    top: calc(50% - 1em);
-                    right: 0;
+                    width: 1em;
+                    height: 2em;
                     z-index: 1;
-                    border-right: 1em $accent-color solid;
-                    border-top: 1em solid transparent;
-                    border-bottom: 1em solid transparent;
+                    background: url(src/arrow_left.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    right: 0;
+                    top: calc(50% - 1em);
                 }
             }
         }
     }
-    .soft_lesson_right {
-        width: 75%;
-        height: 32em;
-    }
 }
 
 .soft_lesson_content {
-    height: 420px;
+    height: 372px;
     width: 100%;
+    background-position-y: 0.7em;
     border-top: 1px solid $lesson_border_color;
     border-bottom: 1px solid $lesson_border_color;
-    background-size: contain;
+}
+
+.soft_lesson_top {
+    width: 100%;
+    height: 182px;
+    padding: 3em 5%;
+    overflow: hidden;
+    span {
+        float: left;
+        font-size: 1.2em;
+        line-height: 2em;
+        text-align: center;
+    }
+    span:first-child {
+        width: 100%;
+    }
+    span:nth-of-type(2) {
+        width: 50%;
+    }
+    span:nth-of-type(3) {
+        width: 50%;
+    }
+}
+
+.soft_lesson_bg {
+    width: 100%;
+    height: 190px;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 40%;
 }
 
-.soft_lesson_content:first-child {
-    background-image: url(src/lesson_bg.png);
+.soft_lesson_bgimg1 {
+    background-image: url(src/splan1.png);
 }
 
-.soft_lesson_content:nth-of-type(2) {
-    background-image: url(src/big_banner.png);
+.soft_lesson_bgimg2 {
+    background-image: url(src/splan2.png);
 }
 
-.soft_lesson_content:last-child {
-    background-image: url(src/learn_pic.png);
+.soft_lesson_bgimg3 {
+    background-image: url(src/splan3.png);
 }
 
 // 团队6栏
@@ -719,7 +796,7 @@
         color: #08345a;
         font-size: 1.2em;
         width: 100%;
-        height: 12em;
+        height: 9em;
         padding-top: 4em;
         margin-top: 4em;
         border-top-left-radius: 4px;
@@ -753,7 +830,7 @@
     }
     .soft_team_item.active {
         .soft_team_middle {
-            height: 16em;
+            height: 13em;
             padding-top: 10em;
             margin-top: 0;
             color: #fff;
@@ -986,10 +1063,24 @@
         width: 100%;
         float: left;
         dt {
-            font-size: 1.5em;
-            width: 100%;
+            font-size: 2em;
+            width: 9em;
             text-align: center;
+            margin: auto;
             line-height: 4em;
+            position: relative;
+        }
+        dt::before {
+            position: absolute;
+            display: block;
+            content: ' ';
+            width: 1.3em;
+            height: 1.3em;
+            left: -0.5em;
+            top: 1.1em;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(src/team_title.png);
         }
     }
     .soft_open_content {
@@ -1002,9 +1093,8 @@
     }
     .soft_open_qi {
         float: left;
-        width: 23%;
-        margin-right: 1em;
         overflow: hidden;
+        width: 100%;
         .soft_set {
             padding-top: 2em;
             width: 100%;
@@ -1046,7 +1136,7 @@
             font-size: 1.5em;
             color: $primary-color-text;
             background-color: $primary-color;
-            line-height: 4em;
+            line-height: 2.5em;
             text-align: center;
         }
         ul {
@@ -1148,80 +1238,130 @@
     }
 }
 
-.all {
-    width: 500px;
-    height: 200px;
-    padding: 7px;
-    border: 1px solid #ccc;
-    margin: 100px auto;
-    position: relative;
+// 关于我们区域
+.soft_about_us {
+    padding-top: 4em;
+    width: 100%;
 }
 
-.soft_screen {
-    width: 840px;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.soft_screen li {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    float: left;
-}
-
-.soft_screen ul {
-    position: absolute;
-    left: 0;
-    top: 0px;
-    width: 3000px;
-}
-
-.soft_about_ul {
-    li {
-        margin-right: 10px;
-        img {
-            display: block;
+.soft_about_title {
+    width: 100%;
+    dt {
+        display: block;
+        width: 4em;
+        font-size: 2em;
+        line-height: 2em;
+        position: relative;
+        margin: auto;
+    }
+    dt::before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        width: 1.3em;
+        height: 1.3em;
+        left: -1.7em;
+        top: 0.2em;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(src/team_title.png);
+    }
+    .soft_about_brief {
+        width: 100%;
+        overflow: hidden;
+        span {
+            float: left;
             width: 100%;
-            height: 100%;
+            text-align: center;
+            line-height: 1.5em;
         }
     }
 }
 
-.soft_arr {
-    position: relative;
+.soft_about_content {
     width: 100%;
-    line-height: 40px;
+    padding-top: 10em;
+    ul {
+        width: 100%;
+        position: relative;
+        li {
+            float: left;
+            margin-right: 2em;
+            position: relative;
+            z-index: 1;
+            span {
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 1.5em;
+                margin: auto;
+            }
+        }
+        li:nth-of-type(1),
+        li:nth-of-type(3),
+        li:nth-of-type(5) {
+            margin-top: 8em;
+        }
+        .soft_about_info {
+            box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+            border-radius: 10px;
+            width: 14em;
+            height: 14em;
+            padding-top: calc(7em - 1.5em);
+            position: relative;
+            background-color: #fff;
+            z-index: 1;
+        }
+        li::before,
+        li::after {
+            position: absolute;
+            content: ' ';
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: -1;
+        }
+        li:first-child::before {
+            width: 9em;
+            height: 12em;
+            top: 7.5em;
+            left: 2em;
+            background-image: url(src/about_us1.png);
+        }
+        li:nth-of-type(2)::before {
+            width: 7em;
+            height: 8em;
+            right: -3em;
+            top: -3em;
+            background-image: url(src/about_us3.png);
+        }
+        li:nth-of-type(2)::after {
+            width: 3em;
+            z-index: 1;
+            height: 3em;
+            top: -1.5em;
+            right: 1em;
+            background-image: url(src/about_us2.png);
+        }
+        li:nth-of-type(4)::before {
+            width: 7em;
+            height: 7em;
+            bottom: -3.5em;
+            left: calc(50% - 3.5em);
+            background-image: url(src/about_us4.png);
+        }
+        li:nth-of-type(5)::before {
+            z-index: 2;
+            width: 4em;
+            height: 4em;
+            top: -2em;
+            right: 1em;
+            background-image: url(src/about_us5.png);
+        }
+    }
 }
 
-.soft_screen {
-    margin: auto;
-}
-
-.soft_arr span {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    margin-top: -20px;
-    background: #000;
-    cursor: pointer;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-    color: #fff;
-    opacity: 0.3;
-    border: 1px solid #fff;
-}
-
-.soft_arr .soft_arr_right {
-    right: 5px;
-    left: auto;
-}
-
+// 优势区域
 .ad_max_div {
     width: 90%;
     margin: auto;
@@ -1451,7 +1591,7 @@
 } // 左右按钮 
 .carousel-control {
     height: 6em;
-    margin-top: 10em;
+    margin-top: 14em;
 }
 
 .carousel-control.left,
@@ -1461,7 +1601,7 @@
 
 .carousel-control.left::before,
 .carousel-control.right::before {
-    font-size: 6em;
+    font-size: 2em;
     font-family: 'Glyphicons Halflings';
     color: #232323;
     display: block;
@@ -1526,6 +1666,11 @@
     }
 }
 
+.soft_banner_div {
+    width: 100%;
+    background-color: $open_border_color;
+}
+
 .soft_bottom_part {
     padding: 2em 1em;
     color: #ffffff;
@@ -1544,7 +1689,6 @@
             text-decoration: none;
         }
     }
-    background-color: $open_border_color;
 }
 
 .soft_bottom_left {
