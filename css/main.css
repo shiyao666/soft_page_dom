@@ -875,11 +875,18 @@ button {
 .glyphicon-menu-up:before {
   content: "\e260"; }
 
+.soft_largest_box {
+  width: 100%; }
+
+.row {
+  margin: 0; }
+
 .soft_nav_ul {
   max-width: 1170px;
   margin: auto; }
 
 .soft_top_tab {
+  width: 100%;
   top: 65px; }
 
 .soft_title {
@@ -890,8 +897,10 @@ button {
       padding: 0 0.5em; } }
   .soft_title .soft_left {
     float: left;
-    font-weight: bold; }
+    font-weight: bold;
+    width: 20%; }
   .soft_title .soft_right {
+    width: 15em;
     float: right; }
   .soft_title span {
     float: left;
@@ -908,10 +917,35 @@ button {
   color: #FFFFFF;
   padding: 0 7%;
   position: fixed;
-  z-index: 2; }
+  z-index: 2;
+  transition: 0.36s all ease-in-out; }
   @media screen and (max-width: 768px) {
     .soft_top_tab {
       padding: 0; } }
+
+.soft_top_tab.default {
+  height: 41px;
+  top: 0; }
+  .soft_top_tab.default ul {
+    display: block; }
+    .soft_top_tab.default ul li {
+      border-width: 3px; }
+
+.soft_top_tab.hide1 {
+  height: 0px;
+  top: 0; }
+  .soft_top_tab.hide1 ul {
+    display: none; }
+    .soft_top_tab.hide1 ul li {
+      border-width: 0px; }
+
+.soft_top_tab.active {
+  height: 41px;
+  top: 0; }
+  .soft_top_tab.active ul {
+    display: block; }
+    .soft_top_tab.active ul li {
+      border-width: 3px; }
 
 .soft_tab_ul {
   overflow: hidden; }
@@ -932,9 +966,46 @@ button {
 .soft_banner {
   display: block;
   width: 100%;
-  margin-top: 41px; }
+  margin-top: 41px;
+  padding-top: 300px;
+  padding-bottom: 300px;
+  background: url(src/max_bg.png);
+  background-size: contain;
+  background-position: center 0;
+  background-repeat: no-repeat; }
   .soft_banner .soft_banner_img {
-    width: 100%; }
+    width: 100%;
+    padding-top: 10em; }
+    .soft_banner .soft_banner_img dt {
+      width: 10em;
+      font-weight: normal;
+      font-size: 1.5em;
+      display: block;
+      margin: auto;
+      text-align: center;
+      color: #fff;
+      border: 1px solid #fff;
+      letter-spacing: 2px; }
+    .soft_banner .soft_banner_img h3 {
+      padding-top: 1em;
+      font-size: 3em;
+      color: #fff;
+      text-align: center; }
+    .soft_banner .soft_banner_img ul {
+      width: 100%;
+      padding: 4em 15%;
+      overflow: hidden; }
+      .soft_banner .soft_banner_img ul li {
+        float: left;
+        padding-bottom: 2em;
+        width: 33%; }
+        .soft_banner .soft_banner_img ul li span {
+          display: block;
+          text-align: center;
+          width: 8em;
+          line-height: 2em;
+          color: #fff;
+          background-color: #0000ff19; }
     .soft_banner .soft_banner_img img {
       width: 100%; }
 
@@ -961,9 +1032,14 @@ button {
         .soft_act_new .soft_act_title span {
           font-size: 1.2em;
           line-height: 3em; } }
+    .soft_act_new .soft_act_title span:first-child {
+      border-right: 1px solid #fff; }
+    .soft_act_new .soft_act_title span:nth-child(3) {
+      border-left: 1px solid #fff; }
     .soft_act_new .soft_act_title span.active {
       background-color: #821C21;
-      color: #FFFFFF; }
+      color: #FFFFFF;
+      border-color: #821C21; }
     .soft_act_new .soft_act_title span.active::after {
       position: absolute;
       left: calc(50% - 1em);
@@ -1236,9 +1312,11 @@ button {
   height: 2em;
   color: #c2c2c2; }
 
+.soft_largest_box4 {
+  background-color: #b40912; }
+
 .soft_learn_part {
-  background-color: #FCFCFC;
-  padding: 1em 2em;
+  padding: 0 2em;
   position: relative;
   z-index: 1; }
 
@@ -1257,7 +1335,7 @@ button {
   border-left: 40em solid transparent;
   border-bottom: 12em solid transparent;
   border-right: 40em solid transparent;
-  border-top: 22em solid #b40912; }
+  border-top: 22em solid #fff; }
 
 .soft_learn_part::after {
   width: 0;
@@ -1265,7 +1343,7 @@ button {
   left: 10em;
   top: 10em;
   border-left: 40em solid transparent;
-  border-bottom: 22em solid #b40912;
+  border-bottom: 22em solid #fff;
   border-right: 40em solid transparent;
   border-top: 12em solid transparent; }
 
@@ -1290,7 +1368,7 @@ button {
   background-image: url(src/team_title.png); }
 
 .soft_learn_content {
-  padding: 3em 1em;
+  padding: 2em 1em;
   overflow: hidden;
   width: 100%;
   margin: auto;
@@ -1332,7 +1410,7 @@ button {
       font-size: 1.5em; }
 
 .soft_lesson_part {
-  padding: 2em 0; }
+  padding: 3em 0; }
 
 .none {
   display: none; }
@@ -1451,8 +1529,10 @@ button {
   width: 8em;
   text-align: center;
   height: 2em;
-  margin: auto; }
-.soft_team_title dt::before,
+  margin: auto;
+  margin-top: -1em;
+  background-color: #fff; }
+
 .soft_lesson_title dt::before {
   position: absolute;
   display: block;
@@ -1465,10 +1545,68 @@ button {
   background-size: contain;
   background-image: url(src/team_title.png); }
 
+.soft_team_title {
+  margin: auto;
+  width: 50%;
+  height: 3em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative; }
+  .soft_team_title span {
+    position: relative; }
+  .soft_team_title span::before {
+    position: absolute;
+    display: block;
+    content: ' ';
+    width: 0;
+    height: 0; }
+  .soft_team_title span:first-child {
+    float: left;
+    border-top: 21px solid transparent;
+    border-left: 21px solid transparent;
+    border-right: 21px solid #ccc;
+    border-bottom: 21px solid transparent;
+    margin-left: -41px;
+    margin-top: -1px; }
+  .soft_team_title span:nth-of-type(2) {
+    float: right;
+    margin-right: -42px;
+    margin-top: -29px;
+    border-top: 21px solid transparent;
+    border-left: 21px solid #ccc;
+    border-right: 21px solid transparent;
+    border-bottom: 21px solid transparent; }
+  .soft_team_title span:first-child::before {
+    border-top: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid #fff;
+    border-bottom: 20px solid transparent;
+    top: -20px;
+    left: -18px; }
+  .soft_team_title span:nth-of-type(2)::before {
+    border-top: 20px solid transparent;
+    border-left: 20px solid #fff;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    top: -20px;
+    right: -18px; }
+
+.soft_team_title::after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 6em;
+  height: 3em;
+  background-image: url(src/teacher.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: calc(50% - 3.5em); }
+
 .soft_team_content {
   overflow: hidden;
   position: relative;
-  height: 1000px; }
+  height: 1000px;
+  width: 100%; }
   .soft_team_content .soft_team_item {
     margin-right: 2em;
     float: left;
@@ -1501,7 +1639,7 @@ button {
     font-size: 1.2em;
     width: 100%;
     height: 9em;
-    padding-top: 4em;
+    padding-top: 6em;
     margin-top: 4em;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px; }
@@ -1552,155 +1690,85 @@ button {
       line-height: 2em;
       text-align: center; }
 
-.soft_trade_part {
-  padding-top: 2em; }
-  .soft_trade_part .soft_trade_top {
-    padding-top: 4em;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
-    background-color: #821C21;
+.soft_largest_box8 {
+  background-color: #347dbb; }
+  .soft_largest_box8 .row {
+    padding-top: 225px;
+    padding-bottom: 225px;
+    background: url(src/chanp_1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 50%; }
+
+.soft_trade_top {
+  padding-top: 4em;
+  position: relative;
+  z-index: 1; }
+
+.soft_trade_hdiv {
+  color: #000; }
+  .soft_trade_hdiv dt {
     position: relative;
-    z-index: 1; }
-  .soft_trade_part .soft_trade_hdiv {
-    color: #FFFFFF; }
-    .soft_trade_part .soft_trade_hdiv dt {
-      position: relative;
-      display: block;
-      font-size: 2em;
-      width: 8em;
-      text-align: center;
-      height: 2em;
-      margin: auto; }
-    .soft_trade_part .soft_trade_hdiv dt::before {
-      position: absolute;
-      display: block;
-      content: ' ';
-      width: 1.3em;
-      height: 1.3em;
-      left: 0.2em;
-      top: -0.1em;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-image: url(src/team_title.png); }
-    .soft_trade_part .soft_trade_hdiv span {
-      display: block;
-      line-height: 2em;
-      text-align: center;
-      margin: auto; }
-  .soft_trade_part .soft_trade_tab {
+    display: block;
+    font-size: 2em;
+    width: 8em;
+    text-align: center;
+    height: 2em;
+    margin: auto; }
+  .soft_trade_hdiv dt::before {
+    position: absolute;
+    display: block;
+    content: ' ';
+    width: 1.3em;
+    height: 1.3em;
+    left: 0.2em;
+    top: -0.1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(src/team_title.png); }
+  .soft_trade_hdiv span {
+    display: block;
+    line-height: 2em;
+    text-align: center;
+    margin: auto; }
+
+.soft_server {
+  padding-top: 4em; }
+
+.soft_srver_row1 {
+  padding-top: 6em; }
+
+.soft_server_bg {
+  width: 100%;
+  box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+  padding: 1em; }
+  .soft_server_bg img {
+    display: block;
     width: 100%;
-    padding: 4em 10% 2em 10%; }
-    .soft_trade_part .soft_trade_tab ul {
-      width: 100%;
-      overflow: hidden;
-      padding: 0 10%; }
-      .soft_trade_part .soft_trade_tab ul li:first-child {
-        margin-left: 5%; }
-      .soft_trade_part .soft_trade_tab ul li {
-        float: left;
-        width: 18%;
-        line-height: 2em;
-        font-size: 1.2em;
-        margin-right: 5%;
-        border-radius: 2px;
-        color: #FFFFFF;
-        background-color: #ffffff19;
-        text-align: center; }
-      .soft_trade_part .soft_trade_tab ul li:last-child {
-        margin: 0; }
-  .soft_trade_part .soft_trade_content {
+    height: 100%; }
+
+.soft_server_logo {
+  padding-top: 4em; }
+  .soft_server_logo img {
+    display: block;
+    width: 6em;
+    height: 6em;
+    margin: auto; }
+
+.soft_server_text {
+  padding-top: 2em;
+  width: 100%; }
+  .soft_server_text dt {
+    font-weight: normal;
+    font-size: 1.2em;
+    display: block;
     width: 100%;
-    background-color: #821C21;
-    z-index: 0;
-    position: relative; }
-    .soft_trade_part .soft_trade_content .soft_trade_logo {
-      padding: 0 10% 2em 10%; }
-      .soft_trade_part .soft_trade_content .soft_trade_logo ul {
-        width: 100%;
-        overflow: hidden;
-        padding: 0 10%;
-        margin-top: -2.5em; }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:first-child {
-          margin-left: 5%; }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li {
-          float: left;
-          width: 18%;
-          line-height: 2em;
-          font-size: 1.2em;
-          margin-right: 5%;
-          border-radius: 2px;
-          color: #FFFFFF;
-          text-align: center; }
-          .soft_trade_part .soft_trade_content .soft_trade_logo ul li span {
-            position: relative;
-            display: block;
-            margin: auto;
-            width: 5em;
-            height: 5em;
-            border-radius: 50%;
-            background-color: #FFFFFF; }
-          .soft_trade_part .soft_trade_content .soft_trade_logo ul li span::before {
-            content: ' ';
-            width: 1.5em;
-            height: 1.5em;
-            left: calc(50% - 0.7em);
-            top: 50%;
-            position: absolute;
-            background-size: contain;
-            background-repeat: no-repeat;
-            display: block; }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(1) span::before {
-          background-image: url(src/trade_icon1.png); }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(2) span::before {
-          background-image: url(src/trade_icon2.png); }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(3) span::before {
-          background-image: url(src/trade_icon3.png); }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:nth-of-type(4) span::before {
-          background-image: url(src/trade_icon4.png); }
-        .soft_trade_part .soft_trade_content .soft_trade_logo ul li:last-child {
-          margin: 0; }
-    .soft_trade_part .soft_trade_content .soft_trade_bg {
-      width: 100%;
-      height: 200px;
-      background-color: #821C21;
-      padding: 0 15% 2em 15%; }
-      .soft_trade_part .soft_trade_content .soft_trade_bg ul {
-        width: 100%;
-        height: 5em;
-        padding: 0 10%; }
-      .soft_trade_part .soft_trade_content .soft_trade_bg ul:first-child {
-        overflow: hidden; }
-        .soft_trade_part .soft_trade_content .soft_trade_bg ul:first-child li {
-          float: left;
-          width: 30%;
-          line-height: 5em;
-          padding-left: 10%; }
-          .soft_trade_part .soft_trade_content .soft_trade_bg ul:first-child li span {
-            margin: auto;
-            display: block;
-            width: 3em;
-            height: 3em;
-            border-radius: 50%;
-            background-color: #FFFFFF; }
-      .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) {
-        overflow: hidden; }
-        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li {
-          float: left;
-          width: 25%;
-          line-height: 5em; }
-          .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li span {
-            display: block;
-            width: 3em;
-            height: 3em;
-            border-radius: 50%;
-            background-color: #FFFFFF; }
-        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(2) {
-          padding-left: 7%; }
-        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(3) {
-          padding-left: 11%; }
-        .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(4) {
-          overflow: hidden; }
-          .soft_trade_part .soft_trade_content .soft_trade_bg ul:nth-of-type(2) li:nth-of-type(4) span {
-            float: right; }
+    line-height: 2em;
+    text-align: center; }
+  .soft_server_text span {
+    text-align: center;
+    width: 100%;
+    display: block; }
 
 .soft_open_part {
   padding-left: 3em;
@@ -1736,8 +1804,13 @@ button {
     border-top: 3px solid #08345a; }
   .soft_open_part .soft_open_qi {
     float: left;
-    overflow: hidden;
-    width: 100%; }
+    margin-right: 2%;
+    padding: 0;
+    width: 23%;
+    overflow: hidden; }
+    @media screen and (max-width: 768px) {
+      .soft_open_part .soft_open_qi {
+        width: 100%; } }
     .soft_open_part .soft_open_qi .soft_set {
       padding-top: 2em;
       width: 100%;
@@ -1890,7 +1963,7 @@ button {
     position: relative; }
     .soft_about_content ul li {
       float: left;
-      margin-right: 2em;
+      margin-right: 1em;
       position: relative;
       z-index: 1; }
       .soft_about_content ul li span {
@@ -1980,18 +2053,18 @@ button {
 .ad_content_div2,
 .ad_content_div3 {
   float: left;
-  width: 30%;
+  width: 100%;
   padding: 4em 0; }
 
 .ad_after_bg {
   float: left;
-  width: 2em;
+  width: 0;
   height: 422px;
   position: relative; }
 
 .ad_after_bg::after {
   position: absolute;
-  right: -1em;
+  right: -2em;
   bottom: 0;
   content: ' ';
   display: block;
@@ -2001,6 +2074,9 @@ button {
   background-repeat: no-repeat;
   background-size: contain; }
 
+@media screen and (max-width: 768px) {
+  .ad_after_bg {
+    display: none; } }
 .ad_content_div1.active,
 .ad_content_div2.active,
 .ad_content_div3.active {
@@ -2144,6 +2220,55 @@ button {
       width: 100%;
       height: 100%; }
 
+.carousel-inner .item_banner_left ul {
+  overflow: hidden;
+  width: 100%; }
+  .carousel-inner .item_banner_left ul li {
+    float: left;
+    width: 100%;
+    color: #646464;
+    text-align: center; }
+    .carousel-inner .item_banner_left ul li dt {
+      text-align: center;
+      font-size: 2em;
+      font-weight: normal; }
+    .carousel-inner .item_banner_left ul li span {
+      color: #821C21; }
+  .carousel-inner .item_banner_left ul li:first-child {
+    padding-bottom: 1.5em; }
+  .carousel-inner .item_banner_left ul li:nth-of-type(2) {
+    font-size: 2em; }
+  .carousel-inner .item_banner_left ul li:nth-of-type(4) {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 2em;
+    color: #821C21; }
+  .carousel-inner .item_banner_left ul li:last-child {
+    font-size: 2em; }
+
+.item_banner_left {
+  position: relative;
+  border-right: 1px solid #03203A; }
+
+.item_banner_left::before {
+  position: absolute;
+  content: ' ';
+  width: 1em;
+  height: 1em;
+  right: -0.5em;
+  top: calc(50% - 0.5em);
+  background-color: #fff; }
+
+.item_banner_left::after {
+  position: absolute;
+  content: ' ';
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  right: -0.35em;
+  top: calc(50% - 0.3em);
+  background-color: #03203A; }
+
 .carousel-indicators .active {
   margin: 8px 6px; }
 
@@ -2180,8 +2305,7 @@ button {
 
 .soft_test_part {
   position: relative;
-  background-color: #b40912;
-  padding: 2em 6em 0 6em; }
+  background-color: #b40912; }
 
 .soft_test_part::after {
   background-color: #b40912;
@@ -2196,24 +2320,31 @@ button {
 
 .soft_test_content {
   margin: auto;
-  width: 80%;
+  width: 100%;
   overflow: hidden;
-  line-height: 4em; }
+  height: 5em; }
 
 .soft_test_left {
   float: left;
-  width: 20%; }
+  width: 20%;
+  padding-top: 0.5em; }
+  .soft_test_left img {
+    display: block;
+    width: 4em;
+    height: 4em;
+    margin: auto; }
 
 .soft_test_right {
   width: 80%;
   float: left;
   line-height: 3em;
   overflow: hidden;
-  padding: 0 2em; }
+  padding-top: 1em; }
   .soft_test_right h3 {
     float: left;
     color: #FFFFFF;
-    padding: 0 1.5em; }
+    padding: 0 1.5em;
+    line-height: 1.5em; }
   .soft_test_right span {
     float: left;
     color: #FFFFFF;
