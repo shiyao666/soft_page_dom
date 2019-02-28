@@ -7,7 +7,44 @@
 
 .soft_largest_box {
     width: 100%;
+    background: #fff;
 }
+
+.soft_alert_box {
+    width: 0;
+    height: 0;
+
+
+}
+
+.soft_alert_box.active {
+    position: fixed;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.soft_alert_content {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    display: none;
+    background-color: #f5f5f5;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.soft_alert_content.active {
+    display: block;
+    opacity: 1;
+}
+
 
 .row {
     margin: 0;
@@ -21,7 +58,7 @@
 
 .soft_top_tab {
     width: 100%;
-    top: 65px;
+    top: 0;
 }
 
 // logo和联系电话区域
@@ -61,7 +98,6 @@
     line-height: 2.5em;
     background-color: $primary-color;
     color: $primary-color-text;
-    padding: 0 7%;
     position: fixed;
     z-index: 2;
 
@@ -73,14 +109,14 @@
 }
 
 .soft_top_tab.default {
-    height: 41px;
+    height: 104px;
     top: 0;
 
     ul {
         display: block;
 
         li {
-            border-width: 3px;
+            border-color: $primary-color;
         }
     }
 }
@@ -93,20 +129,21 @@
         display: none;
 
         li {
-            border-width: 0px;
+            border-color: $primary-color;
         }
     }
 }
 
 .soft_top_tab.active {
-    height: 41px;
+    height: 104px;
     top: 0;
 
     ul {
         display: block;
 
-        li {
-            border-width: 3px;
+        li.acitve {
+            border-color: $active_border-color;
+
         }
     }
 }
@@ -121,10 +158,6 @@
         height: 2.9em;
         border-top: 3px solid $primary-color;
 
-        @media screen and (max-width: 768px) {
-            width: 50%;
-            box-shadow: 0 0 3px #000;
-        }
     }
 
     li.active {
@@ -137,17 +170,22 @@
 .soft_banner {
     display: block;
     width: 100%;
-    margin-top: 41px;
-    padding-top: 300px;
-    padding-bottom: 300px;
+    margin-top: 104px;
+    height: 570px;
     background: url(src/max_bg.png);
-    background-size: contain;
+    background-size: 1920px 550px;
     background-position: center 0;
     background-repeat: no-repeat;
+    padding: 100px 0;
 
     .soft_banner_img {
         width: 100%;
-        padding-top: 10em;
+
+        img {
+            display: block;
+            width: 60%;
+            margin: auto;
+        }
 
         dt {
             width: 10em;
@@ -157,7 +195,6 @@
             margin: auto;
             text-align: center;
             color: #fff;
-            border: 1px solid #fff;
             letter-spacing: 2px;
         }
 
@@ -170,7 +207,6 @@
 
         ul {
             width: 100%;
-            padding: 4em 15%;
             overflow: hidden;
 
             li {
@@ -181,17 +217,16 @@
                 span {
                     display: block;
                     text-align: center;
-                    width: 8em;
+                    width: 10em;
                     line-height: 2em;
                     color: #fff;
-                    background-color: #0000ff19;
+                    margin: auto;
+                    border: 1px solid #11cdd9;
+                    background-color: #11cdd919;
                 }
             }
         }
 
-        img {
-            width: 100%;
-        }
     }
 }
 
@@ -213,9 +248,9 @@
             width: 33%;
             font-size: 1.5em;
             color: #821C21cc;
-            background-color: #eeeeee55;
+            background-color: rgba(238, 238, 238, 0.85);
             text-align: center;
-            line-height: 4em;
+            line-height: 3em;
             margin-top: -2em; // box-shadow: 0 0 2px #000;  
 
             @media screen and (max-width: 768px) {
@@ -247,7 +282,7 @@
             content: ' ';
             display: block;
             background: url(src/arrow_top.png);
-            background-size: contain;
+            background-size: 46px 44px;
             background-repeat: no-repeat;
         }
 
@@ -281,6 +316,11 @@
     width: 100%;
     height: 516px;
     position: relative;
+}
+
+.soft_act_content1 {
+    box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
+    padding-bottom: 2em;
 }
 
 .soft_act_content3 {
@@ -389,6 +429,7 @@
 .soft_act_bottom {
     width: 100%;
     overflow: hidden;
+    padding-top: 2em;
     padding-bottom: 3em;
 
     span {
@@ -397,6 +438,11 @@
         padding-left: 10%;
         text-align: left;
         line-height: 2em;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 1em;
+        }
     }
 
     button {
@@ -623,13 +669,21 @@
 
 // 学习部分
 .soft_largest_box4 {
+    background-image: url(src/bg_01.png);
     background-color: #b40912;
+    background-size: 1920px 550px;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
 }
 
 .soft_learn_part {
     padding: 0 2em;
     position: relative;
     z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
 }
 
 .soft_learn_part::before,
@@ -640,37 +694,20 @@
     z-index: -1;
 }
 
-.soft_learn_part::before {
-    width: 0;
-    height: 0;
-    top: 0;
-    left: 10em;
-    border-left: 40em solid transparent;
-    border-bottom: 12em solid transparent;
-    border-right: 40em solid transparent;
-    border-top: 22em solid #fff;
-}
-
-.soft_learn_part::after {
-    width: 0;
-    height: 0;
-    left: 10em;
-    top: 10em;
-    border-left: 40em solid transparent;
-    border-bottom: 22em solid #fff;
-    border-right: 40em solid transparent;
-    border-top: 12em solid transparent;
-}
-
 .soft_learn_title {
     dt {
         font-size: 2em;
         display: block;
         margin: auto;
         text-align: center;
-        width: 15em;
         position: relative;
         font-weight: normal;
+    }
+
+    @media screen and (min-width:768px) {
+        dt {
+            width: 15em;
+        }
     }
 
     dt::before {
@@ -692,22 +729,29 @@
     overflow: hidden;
     width: 100%;
     margin: auto;
-    padding-bottom: 14em;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
 
     .soft_learn_img {
-        background-size: contain;
+        background-size: 408px 470px;
         background-repeat: no-repeat;
         float: left;
         width: 100%;
         height: 25em;
         padding-top: 6em;
-        padding-right: 10%;
 
         span {
             display: block;
             text-align: center;
             width: 100%;
             color: $primary-color-text;
+        }
+
+        @media screen and (max-width:768px) {
+
+            margin-bottom: 2em;
         }
     }
 
@@ -1148,19 +1192,15 @@
 // 行业内训区域
 .soft_largest_box8 {
     background-color: #347dbb;
+    background-color: #347dbb;
+    background-image: url(src/chanp_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
 
     .row {
-
         padding-top: 225px;
         padding-bottom: 225px;
-        background: url(src/chanp_1.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-y: 50%;
-
-
-
-
     }
 
 }
@@ -1309,6 +1349,7 @@
         padding: 0;
         width: 23%;
         overflow: hidden;
+        height: 464px;
 
         @media screen and (max-width: 768px) {
             width: 100%;
@@ -1848,9 +1889,7 @@
 }
 
 // 底部轮播图盒子
-.soft_bottom_carousel {
-    padding-top: 5em;
-}
+.soft_bottom_carousel {}
 
 // 底部轮播区域
 .carousel-inner {
@@ -1858,7 +1897,7 @@
 
     .item {
         width: 100%;
-        height: 36em;
+        height: 45em;
 
         img {
             width: 100%;
@@ -1867,7 +1906,7 @@
     }
 }
 
-.carousel-inner .item_banner_left {
+.soft_bottom_leftdiv {
     ul {
         overflow: hidden;
         width: 100%;
@@ -1897,6 +1936,10 @@
             font-size: 2em;
         }
 
+        li img {
+            width: 100%;
+        }
+
         li:nth-of-type(4) {
             font-size: 1.5em;
             font-weight: bold;
@@ -1910,12 +1953,16 @@
     }
 }
 
-.item_banner_left {
+.soft_lb_div {
+    position: relative;
+}
+
+.soft_bottom_leftdiv {
     position: relative;
     border-right: 1px solid $primary-deep-color;
 }
 
-.item_banner_left::before {
+.soft_bottom_leftdiv::before {
     position: absolute;
     content: ' ';
     width: 1em;
@@ -1925,7 +1972,7 @@
     background-color: #fff;
 }
 
-.item_banner_left::after {
+.soft_bottom_leftdiv::after {
     position: absolute;
     content: ' ';
     width: 0.6em;
@@ -1936,14 +1983,20 @@
     background-color: $primary-deep-color;
 }
 
-// 有序li状态
+.carousel-inner // 有序li状态
+
 .carousel-indicators .active {
-    margin: 8px 6px;
+    margin: 8px 10px;
+}
+
+.carousel-indicators {
+    width: 100%;
+    left: 0;
 }
 
 .carousel-indicators li {
     width: 16px;
-    margin: 6px;
+    margin: -2px 6px;
     height: 16px;
     border: 4px solid $carousel_point_bgcolor;
 }
@@ -1957,6 +2010,8 @@
 .carousel-control {
     height: 6em;
     margin-top: 14em;
+    position: absolute;
+    z-index: 10;
 }
 
 .carousel-control.left,
@@ -2000,7 +2055,7 @@
 
 .soft_test_content {
     margin: auto;
-    width: 100%;
+    width: 60%;
     overflow: hidden;
     height: 5em;
 }
@@ -2008,12 +2063,13 @@
 .soft_test_left {
     float: left;
     width: 20%;
-    padding-top: 0.5em;
+    overflow: hidden;
+
     img {
         display: block;
         width: 4em;
-        height: 4em;
-        margin: auto;
+        float: right;
+        margin-top: 0.5em;
     }
 }
 
@@ -2027,7 +2083,7 @@
     h3 {
         float: left;
         color: $primary-color-text;
-        padding: 0 1.5em;
+        padding: 0 1em;
         line-height: 1.5em;
     }
 
@@ -2038,6 +2094,7 @@
         border-radius: 4px;
         padding-left: 3em;
         line-height: 2em;
+        margin-top: 0.5em;
         background-color: $primary-deep-color;
     }
 }
