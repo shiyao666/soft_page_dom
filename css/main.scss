@@ -8,6 +8,7 @@
 .soft_largest_box {
     width: 100%;
     background: #fff;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6);
 }
 
 .soft_alert_box {
@@ -26,7 +27,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 9999;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -153,7 +154,7 @@
 
     li {
         float: left;
-        width: 14%;
+        width: 15%;
         text-align: center;
         height: 2.9em;
         border-top: 3px solid $primary-color;
@@ -957,7 +958,7 @@
 
 // 团队6栏
 .soft_team_part {
-    padding-top: 4em;
+    padding-top: 7em;
 }
 
 // 课程方案与师资团队共同title样式
@@ -1065,7 +1066,7 @@
 .soft_team_content {
     overflow: hidden;
     position: relative;
-    height: 1000px;
+    height: 900px;
     width: 100%;
 
     .soft_team_item {
@@ -1206,13 +1207,14 @@
 }
 
 .soft_trade_top {
-    padding-top: 4em;
     position: relative;
     z-index: 1;
 }
 
 .soft_trade_hdiv {
     color: #000;
+    padding-top: 6em;
+    padding-bottom: 2em;
 
     dt {
         position: relative;
@@ -1220,7 +1222,7 @@
         font-size: 2em;
         width: 8em;
         text-align: center;
-        height: 2em;
+        height: 1.5em;
         margin: auto;
     }
 
@@ -1533,6 +1535,7 @@
 
 .soft_about_title {
     width: 100%;
+    padding-top: 4em;
 
     dt {
         display: block;
@@ -2087,7 +2090,7 @@
         line-height: 1.5em;
     }
 
-    span {
+    a {
         float: left;
         color: $primary-color-text;
         width: 8em;
@@ -2195,4 +2198,9 @@
             line-height: 2em;
         }
     }
+}
+
+.soft_alert_submit {
+    width: 100%;
+    height: 100%;
 }

@@ -82,7 +82,7 @@ $(document).ready(function () {
             type: 'post',
             dataType: 'json',
             async: 'ture',
-            url: 'http://192.168.4.69:666/activity/enroll/commit',
+            url: 'http://192.168.60.175:666/activity/enroll/commit',
             data: {
                 number: $("#soft_phonenum").val(),
                 act_token: 'wD8VlzHoUt'
@@ -101,7 +101,7 @@ $(document).ready(function () {
             type: 'post',
             dataType: 'json',
             async: 'ture',
-            url: 'http://192.168.4.69:666/activity/enroll/send_data',
+            url: 'http://192.168.60.175:666/activity/enroll/send_data',
             data: {
                 number: $("#soft_phonenum").val(),
                 code: $("#soft_code").val(),
@@ -126,7 +126,7 @@ $(document).ready(function () {
         type: "post",
         dataType: "json",
         async: true,
-        url: 'http://192.168.4.69:666/activity/enroll/page',
+        url: 'http://192.168.60.175:666/activity/enroll/page',
         data: {
             "act_token": "afuxnsd524d"
         },
@@ -177,6 +177,10 @@ $(document).ready(function () {
             $(".soft_act_tab").eq(index).addClass("active").siblings().removeClass("active"), 300
         })
         clearTimeout();
+    })
+    // 模拟测试
+    $("#soft_test_btn").click(function () {
+        window.location.href = "www.baidu.com";
     })
 })
 // 鼠标滚轮
