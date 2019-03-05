@@ -251,3 +251,65 @@ $(document).ready(function () {
         };
     }
 })
+/** 
+* @author xuesong
+* @time  2019-03-05 
+*/
+function getDocumentTop() {
+    var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+    if (document.body) {
+       bodyScrollTop = document.body.scrollTop;
+    }
+    if (document.documentElement) {
+       documentScrollTop = document.documentElement.scrollTop;
+    }
+    scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;    return scrollTop;
+    }
+/** 
+* @author xuesong
+* @time  2019-03-05 
+*/
+    //可视窗口高度
+    function getWindowHeight() {
+    
+    var windowHeight = 0;    if (document.compatMode == "CSS1Compat") {
+       windowHeight = document.documentElement.clientHeight;
+    } else {
+       windowHeight = document.body.clientHeight;
+    }
+    return windowHeight;
+    
+    }
+/** 
+* @author xuesong
+* @time  2019-03-05 
+*/ 
+    //滚动条滚动高度
+    function getScrollHeight() {
+    var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+    if (document.body) {
+       bodyScrollHeight = document.body.scrollHeight;
+    }
+    if (document.documentElement) {
+       documentScrollHeight = document.documentElement.scrollHeight;
+    }
+    scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;    
+    return scrollHeight;
+    }
+    window.onscroll = function () {
+    //监听事件内容
+    if(getScrollHeight() == getWindowHeight() + getDocumentTop()){
+        //当滚动条到底时,这里是触发内容
+        if(!localStorage.user_token){
+            var password = Date.parse(new Date()).toString()+Math.ceil(Math.random()*10000).toString();
+            //加密成md5
+            var passwd = $.md5(password);
+            localStorage.setItem("user_token",passwd)
+        }
+        //get请求,用于统计页面访问数
+        $.get("http://192.168.60.175:666/activity/enroll/browse&user_token="+localStorage.user_token+"&act_token=afuxnsd524d",function(data,status){
+            // alert("数据：" + data + "\n状态：" + status);
+        });
+        }
+    }
+    
