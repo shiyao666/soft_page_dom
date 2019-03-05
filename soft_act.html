@@ -13,6 +13,7 @@
     <script src="js/transition.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/modal.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -318,7 +319,7 @@
     </div>
     <div class="soft_largest_box6">
         <div class="container"></div>
-        <div class="row">
+        <div class="row soft_open_row">
             <div class="soft_open_part soft_floor">
                 <div class="soft_open_title">
                     <dt>2019开班计划</dt>
@@ -339,15 +340,15 @@
                         <dd> </dd>
                         <div class="soft_set">
                             <div class="soft_set_reset">
-                                <button class="soft_join_btn" id="submit1">报名</button>
-                            </div>
-                            <div class="soft_set_info">
-                                <span>剩余名额：<b>30</b>人
-                                </span>
+                                <button type="button" class="btn btn-primary soft_join_btn" data-toggle="modal"
+                                    data-target="#exampleModal" data-whatever="@mdo"> 报名</button>
+                                <div class="soft_set_info">
+                                    <span>剩余名额：<b>30</b>人
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="soft_open_qi col-md-3 col-sm-3 .col-lg-3 ">
                         <dt>第二期</dt>
                         <ul>
@@ -361,66 +362,67 @@
                         <dd> </dd>
                         <dd> </dd>
                         <div class="soft_set">
-                            <div class="soft_set_reset">
-                                <button class="soft_join_btn" id="submit2">报名</button>
+                            <div class="soft_set_reset"> <button type="button" class="btn btn-primary soft_join_btn"
+                                    data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> 报名</button>
+
+                                <div class="soft_set_info">
+                                    <span>剩余名额：<b>30</b>人
+                                    </span>
+                                </div>
                             </div>
-                            <div class="soft_set_info">
-                                <span>剩余名额：<b>30</b>人
-                                </span>
+                        </div>
+
+                        <div class="soft_open_qi col-md-3 col-sm-3 .col-lg-3 ">
+                            <dt>第三期</dt>
+                            <ul>
+                                <li class="soft_content1"><span>北京周末班 </span><span>3月9日-5月19日 </span></li>
+                                <li class="soft_content2"><span>知识精讲 </span><span>3月9、10、16、17日 </span></li>
+                                <li class="soft_content3"><span>模拟考试与讲解</span><span>5月4、11、18日 </span></li>
+                                <li class="soft_content4"><span>冲刺时间 </span><span>5月19日 </span></li>
+                            </ul>
+                            <dd> </dd>
+                            <dd> </dd>
+                            <dd> </dd>
+                            <dd> </dd>
+                            <div class="soft_set">
+                                <div class="soft_set_reset"> <button type="button" class="btn btn-primary soft_join_btn"
+                                        data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> 报名</button>
+                                    <div class="soft_set_info">
+                                        <span>剩余名额：<b>30</b>人
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="soft_open_qi col-md-3 col-sm-3 .col-lg-3 ">
+                                <dt>第四期</dt>
+                                <ul>
+                                    <li class="soft_content1"><span>北京周末班 </span><span>3月9日-5月19日 </span></li>
+                                    <li class="soft_content2"><span>知识精讲 </span><span>3月9、10、16、17日 </span></li>
+                                    <li class="soft_content3"><span>模拟考试与讲解</span><span>5月4、11、18日 </span></li>
+                                    <li class="soft_content4"><span>冲刺时间 </span><span>5月19日 </span></li>
+                                </ul>
+                                <dd> </dd>
+                                <dd> </dd>
+                                <dd> </dd>
+                                <dd> </dd>
+                                <div class="soft_set">
+                                    <div class="soft_set_reset"> <button type="button" class="btn btn-primary soft_join_btn"
+                                            data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> 报名</button>
+                                    </div>
+                                    <div class="soft_set_info">
+                                        <span>剩余名额：<b>30</b>人
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="soft_open_qi col-md-3 col-sm-3 .col-lg-3 ">
-                        <dt>第三期</dt>
-                        <ul>
-                            <li class="soft_content1"><span>北京周末班 </span><span>3月9日-5月19日 </span></li>
-                            <li class="soft_content2"><span>知识精讲 </span><span>3月9、10、16、17日 </span></li>
-                            <li class="soft_content3"><span>模拟考试与讲解</span><span>5月4、11、18日 </span></li>
-                            <li class="soft_content4"><span>冲刺时间 </span><span>5月19日 </span></li>
-                        </ul>
-                        <dd> </dd>
-                        <dd> </dd>
-                        <dd> </dd>
-                        <dd> </dd>
-                        <div class="soft_set">
-                            <div class="soft_set_reset">
-                                <button class="soft_join_btn" id="submit3">报名</button>
-                            </div>
-                            <div class="soft_set_info">
-                                <span>剩余名额：<b>30</b>人
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="soft_open_qi col-md-3 col-sm-3 .col-lg-3 ">
-                        <dt>第四期</dt>
-                        <ul>
-                            <li class="soft_content1"><span>北京周末班 </span><span>3月9日-5月19日 </span></li>
-                            <li class="soft_content2"><span>知识精讲 </span><span>3月9、10、16、17日 </span></li>
-                            <li class="soft_content3"><span>模拟考试与讲解</span><span>5月4、11、18日 </span></li>
-                            <li class="soft_content4"><span>冲刺时间 </span><span>5月19日 </span></li>
-                        </ul>
-                        <dd> </dd>
-                        <dd> </dd>
-                        <dd> </dd>
-                        <dd> </dd>
-                        <div class="soft_set">
-                            <div class="soft_set_reset">
-                                <button class="soft_join_btn" id="submit4">报名</button>
-                            </div>
-                            <div class="soft_set_info">
-                                <span>剩余名额：<b>30</b>人
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="soft_largest_box7">
@@ -998,22 +1000,48 @@
     <div class="soft_online_part">
         <div class="soft_online_content"><span>在线咨询</span></div>
     </div>
-    <div class="soft_alert_box">
-        <div class="soft_alert_content">
-            <div class="soft_alert_submit">
-                <label for="name"></label>
-                <input type="text" name="name" placeholder="姓名" id="soft_name" />
-                <label for="num"></label>
-                <input type="text" name="phonenum" placeholder="手机号" id="soft_phonenum" />
-                <input type="text" name="company" placeholder="公司" id="soft_company" />
-                <input type="text" name="code" placeholder="验证码" id="soft_code">
-                <a href="javascript:void(0)" id="soft_send_code">发送验证码</a>
-                <button id="soft_sumbit_btn">报名</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open
+        modal for @mdo</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">报名信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">姓名:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-phonenum" class="control-label">手机号:</label>
+                            <input type="text" class="form-control" id="recipient-phonenum">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">公司:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <a href="javascript:void(0)" id="soft_send_code">点击获取验证码</a>
+                            <label for="message-code" class="control-label">验证码:</label>
+                            <input type="text" class="form-control" id="message-code">
+                        </div>
+
+                        <a href="javascript:void(0)" id="soft_sumbit_btn">报名</a>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>

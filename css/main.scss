@@ -2,7 +2,6 @@
 @import 'animate.css';
 @import 'color';
 @import 'font';
-
 .soft_max_box {}
 
 .soft_largest_box {
@@ -10,42 +9,6 @@
     background: #fff;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6);
 }
-
-.soft_alert_box {
-    width: 0;
-    height: 0;
-
-
-}
-
-.soft_alert_box.active {
-    position: fixed;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.soft_alert_content {
-    position: relative;
-    width: 400px;
-    height: 300px;
-    display: none;
-    background-color: #f5f5f5;
-    margin: auto;
-    border-radius: 10px;
-}
-
-.soft_alert_content.active {
-    display: block;
-    opacity: 1;
-}
-
 
 .row {
     margin: 0;
@@ -66,27 +29,22 @@
 .soft_title {
     padding: 1em 2em 1em 6em;
     overflow: hidden;
-
     @media screen and (max-width: 768px) {
         padding: 0 0.5em;
     }
-
     .soft_left {
         float: left;
         font-weight: bold;
         width: 20%;
     }
-
     .soft_right {
         width: 15em;
         float: right;
     }
-
     span {
         float: left;
         font-size: 2em;
         color: $primary-color;
-
         @media screen and (max-width: 768px) {
             font-size: 1.5em;
         }
@@ -101,21 +59,17 @@
     color: $primary-color-text;
     position: fixed;
     z-index: 2;
-
     @media screen and (max-width: 768px) {
         padding: 0;
     }
-
     transition: 0.36s all ease-in-out;
 }
 
 .soft_top_tab.default {
     height: 104px;
     top: 0;
-
     ul {
         display: block;
-
         li {
             border-color: $primary-color;
         }
@@ -125,10 +79,8 @@
 .soft_top_tab.hide1 {
     height: 0px;
     top: 0;
-
     ul {
         display: none;
-
         li {
             border-color: $primary-color;
         }
@@ -138,29 +90,23 @@
 .soft_top_tab.active {
     height: 104px;
     top: 0;
-
     ul {
         display: block;
-
         li.acitve {
             border-color: $active_border-color;
-
         }
     }
 }
 
 .soft_tab_ul {
     overflow: hidden;
-
     li {
         float: left;
         width: 15%;
         text-align: center;
         height: 2.9em;
         border-top: 3px solid $primary-color;
-
     }
-
     li.active {
         border-top-color: $active_border-color;
         background-color: #ffffff19;
@@ -178,16 +124,13 @@
     background-position: center 0;
     background-repeat: no-repeat;
     padding: 100px 0;
-
     .soft_banner_img {
         width: 100%;
-
         img {
             display: block;
             width: 60%;
             margin: auto;
         }
-
         dt {
             width: 10em;
             font-weight: normal;
@@ -198,23 +141,19 @@
             color: #fff;
             letter-spacing: 2px;
         }
-
         h3 {
             padding-top: 1em;
             font-size: 3em;
             color: #fff;
             text-align: center;
         }
-
         ul {
             width: 100%;
             overflow: hidden;
-
             li {
                 float: left;
                 padding-bottom: 2em;
                 width: 33%;
-
                 span {
                     display: block;
                     text-align: center;
@@ -227,7 +166,6 @@
                 }
             }
         }
-
     }
 }
 
@@ -238,11 +176,9 @@
     position: relative;
     z-index: 1;
     height: initial;
-
     .soft_act_title {
         padding: 0 4%;
         height: 4em;
-
         span {
             position: relative;
             float: left;
@@ -253,27 +189,22 @@
             text-align: center;
             line-height: 3em;
             margin-top: -2em; // box-shadow: 0 0 2px #000;  
-
             @media screen and (max-width: 768px) {
                 font-size: 1.2em;
                 line-height: 3em;
             }
         }
-
         span:first-child {
             border-right: 1px solid #fff;
         }
-
         span:nth-child(3) {
             border-left: 1px solid #fff;
         }
-
         span.active {
             background-color: $primary-color;
             color: $primary-color-text;
             border-color: $primary-color;
         }
-
         span.active::after {
             position: absolute;
             left: calc(50% - 1em);
@@ -286,7 +217,6 @@
             background-size: 46px 44px;
             background-repeat: no-repeat;
         }
-
     }
 }
 
@@ -294,7 +224,6 @@
 // title
 .soft_content_title {
     width: 100%;
-
     span {
         display: block;
         width: 10em;
@@ -307,7 +236,6 @@
         border-radius: 2px;
         background-color: $title-bg-color;
     }
-
     padding-bottom: 1.5em;
 }
 
@@ -365,7 +293,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-
     li {
         float: left;
         width: 70%;
@@ -376,49 +303,39 @@
         color: #ffffff;
         line-height: 105px;
     }
-
     ul {
         float: left;
         padding-left: 5%;
         width: 50%;
     }
-
     .soft_act1_ul1 {
         overflow: hidden;
-
         li:first-child {
             background-color: #1945ef;
             margin-bottom: 30px;
         }
-
         li:nth-of-type(2) {
             background-color: #fe6021;
             margin-bottom: 40px;
         }
-
         li:nth-of-type(3) {
             background-color: #906aff;
         }
     }
-
     .soft_act1_ul2 {
         overflow: hidden;
-
         li:first-child {
             background-color: #3ec7f7;
             margin-bottom: 30px;
         }
-
         li:nth-of-type(2) {
             background-color: #fbbc3f;
             margin-bottom: 40px;
         }
-
         li:nth-of-type(3) {
             background-color: #fe6021;
         }
     }
-
     li.active {
         width: 407px;
         height: 119px;
@@ -432,20 +349,17 @@
     overflow: hidden;
     padding-top: 2em;
     padding-bottom: 3em;
-
     span {
         float: left;
         width: 33%;
         padding-left: 10%;
         text-align: left;
         line-height: 2em;
-
         @media screen and (max-width: 768px) {
             width: 100%;
             margin-bottom: 1em;
         }
     }
-
     button {
         background-color: $third-color;
         color: $primary-color-text;
@@ -456,7 +370,6 @@
         padding-left: 2em;
         position: relative;
     }
-
     button::before {
         content: ' ';
         position: absolute;
@@ -468,25 +381,21 @@
         background-repeat: no-repeat;
         background-size: contain;
     }
-
     span:first-child {
         button::before {
             background-image: url(src/feiyong.png);
         }
     }
-
     span:nth-of-type(2) {
         button::before {
             background-image: url(src/passnum.png);
         }
     }
-
     span:nth-of-type(3) {
         button::before {
             background-image: url(src/enlist.png);
         }
     }
-
     button:first-child::before {
         background-image: url(src/button_logo.png);
     }
@@ -495,36 +404,30 @@
 .soft_act_content1 {
     overflow: hidden;
     padding-top: 7%;
-
     ul {
         float: left;
         width: 30%;
         overflow: hidden;
         border-right: 1px dotted $active_border_color;
         padding-top: 2em;
-
         li {
             float: left;
             width: 100%;
             padding-left: 20%;
             padding-bottom: 2em;
-
             span {
                 float: left;
                 width: 100%;
                 line-height: 2em;
             }
-
             span:first-child {
                 color: $active_font_color;
             }
-
             span:nth-of-type(2) {
                 font-size: 1.2em;
             }
         }
     }
-
     ul:last-child {
         border: 0;
     }
@@ -535,11 +438,9 @@
 
 .soft_test_info {
     width: 100%;
-
     .soft_info_title {
         width: 100%;
         padding-bottom: 2em;
-
         span {
             display: block;
             border-radius: 2px;
@@ -559,7 +460,6 @@
     width: 100%;
     border: 1px solid $info_border_color;
     padding: 1em 0 0 0;
-
     .soft_info_stitle {
         dt {
             display: block;
@@ -648,7 +548,6 @@
         line-height: 2em;
         padding: 0 0.5em;
     }
-
     span:first-child {
         padding: 0;
         color: #000;
@@ -681,7 +580,6 @@
     padding: 0 2em;
     position: relative;
     z-index: 1;
-
     @media screen and (max-width: 768px) {
         padding: 0;
     }
@@ -704,13 +602,11 @@
         position: relative;
         font-weight: normal;
     }
-
     @media screen and (min-width:768px) {
         dt {
             width: 15em;
         }
     }
-
     dt::before {
         position: absolute;
         display: block;
@@ -730,11 +626,9 @@
     overflow: hidden;
     width: 100%;
     margin: auto;
-
     @media screen and (max-width: 768px) {
         padding: 0;
     }
-
     .soft_learn_img {
         background-size: 408px 470px;
         background-repeat: no-repeat;
@@ -742,35 +636,27 @@
         width: 100%;
         height: 25em;
         padding-top: 6em;
-
         span {
             display: block;
             text-align: center;
             width: 100%;
             color: $primary-color-text;
         }
-
         @media screen and (max-width:768px) {
-
             margin-bottom: 2em;
         }
     }
-
     .soft_learn_part1 {
         background-image: url(src/difficult_bg1.png);
     }
-
     .soft_learn_part2 {
         background-image: url(src/difficult_bg2.png);
     }
-
     .soft_learn_part3 {
         background-image: url(src/difficult_bg3.png);
     }
-
     .soft_learn_logo {
         width: 100%;
-
         img {
             display: block;
             margin: auto;
@@ -778,17 +664,14 @@
             height: 4em;
         }
     }
-
     .soft_learn_text {
         padding-top: 4em;
         overflow: hidden;
-
         span {
             float: left;
             width: 100%;
             line-height: 2em;
         }
-
         span:nth-of-type(2) {
             font-size: 1.5em;
         }
@@ -808,18 +691,15 @@
     width: 100%;
     padding: 2em;
     overflow: hidden;
-
     .soft_lesson_left,
     .soft_lesson_right {
         float: left;
         padding: 0;
     }
-
     .soft_lesson_left {
         .soft_lesson_left_ul {
             ul {
                 overflow: hidden;
-
                 li {
                     position: relative;
                     float: left;
@@ -827,22 +707,18 @@
                     color: $primary-color;
                     background-color: $bgc-light;
                     padding-left: 8em;
-
                     span {
                         float: left;
                         width: 100%;
                         line-height: 62px;
                     }
-
                     span:first-child {
                         font-size: 1.2em;
                     }
-
                     span:nth-of-type(2) {
                         font-size: 1.5em;
                     }
                 }
-
                 li::before {
                     position: absolute;
                     content: ' ';
@@ -854,36 +730,28 @@
                     background-size: contain;
                     background-repeat: no-repeat;
                 }
-
                 li:first-child::before {
                     background-image: url(src/lesson1_before.png);
                 }
-
                 li:nth-of-type(2)::before {
                     background-image: url(src/lesson2_before.png);
                 }
-
                 li:last-child::before {
                     background-image: url(src/lesson3_before.png);
                 }
-
                 li.active {
                     color: $primary-color-text;
                     background-color: $primary-color;
                 }
-
                 li:first-child.active::before {
                     background-image: url(src/lesson_act_before1.png);
                 }
-
                 li:nth-of-type(2).active::before {
                     background-image: url(src/lesson_act_before2.png);
                 }
-
                 li:last-child.active::before {
                     background-image: url(src/lesson_act_before3.png);
                 }
-
                 li.active::after {
                     display: block;
                     position: absolute;
@@ -915,22 +783,18 @@
     height: 182px;
     padding: 3em 5%;
     overflow: hidden;
-
     span {
         float: left;
         font-size: 1.2em;
         line-height: 2em;
         text-align: center;
     }
-
     span:first-child {
         width: 100%;
     }
-
     span:nth-of-type(2) {
         width: 50%;
     }
-
     span:nth-of-type(3) {
         width: 50%;
     }
@@ -999,11 +863,9 @@
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     position: relative;
-
     span {
         position: relative;
     }
-
     span::before {
         position: absolute;
         display: block;
@@ -1011,7 +873,6 @@
         width: 0;
         height: 0;
     }
-
     span:first-child {
         float: left;
         border-top: 21px solid transparent;
@@ -1021,7 +882,6 @@
         margin-left: -41px;
         margin-top: -1px;
     }
-
     span:nth-of-type(2) {
         float: right;
         margin-right: -42px;
@@ -1031,7 +891,6 @@
         border-right: 21px solid transparent;
         border-bottom: 21px solid transparent;
     }
-
     span:first-child::before {
         border-top: 20px solid transparent;
         border-left: 20px solid transparent;
@@ -1040,7 +899,6 @@
         top: -20px;
         left: -18px;
     }
-
     span:nth-of-type(2)::before {
         border-top: 20px solid transparent;
         border-left: 20px solid #fff;
@@ -1068,7 +926,6 @@
     position: relative;
     height: 900px;
     width: 100%;
-
     .soft_team_item {
         margin-right: 2em;
         float: left;
@@ -1076,41 +933,33 @@
         border-radius: 4px;
         position: relative;
     }
-
     .soft_team_item {
         position: absolute;
     }
-
     .soft_team_item:first-child {
         left: 2%;
         top: 0;
     }
-
     .soft_team_item:nth-of-type(2) {
         left: 35%;
         top: 0;
     }
-
     .soft_team_item:nth-of-type(3) {
         left: 68%;
         top: 0;
     }
-
     .soft_team_item:nth-of-type(4) {
         left: 2%;
         top: 30em;
     }
-
     .soft_team_item:nth-of-type(5) {
         left: 35%;
         top: 30em;
     }
-
     .soft_team_item:nth-of-type(6) {
         left: 68%;
         top: 30em;
     }
-
     .soft_team_middle {
         background-color: $bgc-light;
         color: #08345a;
@@ -1121,7 +970,6 @@
         margin-top: 4em;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
-
         span {
             width: 100%;
             line-height: 2em;
@@ -1129,7 +977,6 @@
             display: block;
         }
     }
-
     .soft_team_top {
         position: relative;
         width: 100%;
@@ -1137,7 +984,6 @@
         top: 0;
         left: 0;
         padding-top: 1em;
-
         span {
             display: block;
             width: 8em;
@@ -1151,7 +997,6 @@
             margin-top: 2em;
         }
     }
-
     .soft_team_item.active {
         .soft_team_middle {
             height: 13em;
@@ -1161,26 +1006,22 @@
             background-color: #08345a;
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
         }
-
         .soft_team_top {
             span {
                 width: 9em;
                 height: 9em;
             }
         }
-
         .soft_team_bottom {
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
         }
     }
-
     .soft_team_bottom {
         width: 100%;
         padding-top: 4em;
         overflow: hidden;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
-
         span {
             float: left;
             width: 100%;
@@ -1198,12 +1039,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: 50%;
-
     .row {
         padding-top: 225px;
         padding-bottom: 225px;
     }
-
 }
 
 .soft_trade_top {
@@ -1215,7 +1054,6 @@
     color: #000;
     padding-top: 6em;
     padding-bottom: 2em;
-
     dt {
         position: relative;
         display: block;
@@ -1225,7 +1063,6 @@
         height: 1.5em;
         margin: auto;
     }
-
     dt::before {
         position: absolute;
         display: block;
@@ -1238,7 +1075,6 @@
         background-size: contain;
         background-image: url(src/team_title.png);
     }
-
     span {
         display: block;
         line-height: 2em;
@@ -1246,8 +1082,6 @@
         margin: auto;
     }
 }
-
-
 
 // 制定服务区域
 .soft_server {
@@ -1262,7 +1096,6 @@
     width: 100%;
     box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
     padding: 1em;
-
     img {
         display: block;
         width: 100%;
@@ -1270,11 +1103,8 @@
     }
 }
 
-
-
 .soft_server_logo {
     padding-top: 4em;
-
     img {
         display: block;
         width: 6em;
@@ -1286,7 +1116,6 @@
 .soft_server_text {
     padding-top: 2em;
     width: 100%;
-
     dt {
         font-weight: normal;
         font-size: 1.2em;
@@ -1295,7 +1124,6 @@
         line-height: 2em;
         text-align: center;
     }
-
     span {
         text-align: center;
         width: 100%;
@@ -1304,15 +1132,18 @@
 }
 
 // 开班计划区域
+.soft_open_row {
+    padding-top: 4em;
+}
+
 .soft_open_part {
     padding-left: 3em;
+    padding-top: 5em;
     overflow: hidden;
-
     .soft_open_title {
         font-weight: normal;
         width: 100%;
         float: left;
-
         dt {
             font-size: 2em;
             width: 9em;
@@ -1321,7 +1152,6 @@
             line-height: 4em;
             position: relative;
         }
-
         dt::before {
             position: absolute;
             display: block;
@@ -1335,7 +1165,6 @@
             background-image: url(src/team_title.png);
         }
     }
-
     .soft_open_content {
         position: relative;
         padding: 1em 3em;
@@ -1344,7 +1173,6 @@
         float: left;
         border-top: 3px solid $open_border_color;
     }
-
     .soft_open_qi {
         float: left;
         margin-right: 2%;
@@ -1352,52 +1180,9 @@
         width: 23%;
         overflow: hidden;
         height: 464px;
-
         @media screen and (max-width: 768px) {
             width: 100%;
         }
-
-        .soft_set {
-            padding-top: 2em;
-            width: 100%;
-            overflow: hidden;
-
-            .soft_set_info {
-                float: left;
-                line-height: 2em;
-                overflow: hidden;
-                text-align: center;
-                width: 100%;
-                padding-top: 1em;
-
-                span {
-                    width: 100%;
-                    line-height: 2em;
-                    float: left;
-                    text-align: center;
-
-                    b {
-                        color: $title-bg-color;
-                    }
-                }
-            }
-
-            .soft_set_reset {
-                float: left;
-                width: 100%;
-
-                button {
-                    display: block;
-                    width: 8em;
-                    background-color: $primary-deep-color;
-                    color: $primary-color-text;
-                    line-height: 2em;
-                    border-radius: 2px;
-                    margin: auto;
-                }
-            }
-        }
-
         dt {
             float: left;
             width: 100%;
@@ -1407,35 +1192,29 @@
             line-height: 2.5em;
             text-align: center;
         }
-
         ul {
             float: left;
             width: 100%;
             overflow: hidden;
-
             li {
                 width: 100%;
                 float: left;
                 overflow: hidden;
                 position: relative;
                 padding-left: 5.5em;
-
                 span {
                     float: left;
                     width: 100%;
                 }
-
                 span:first-child {
                     line-height: 3em;
                     font-size: 1.2em;
                 }
-
                 span:nth-of-type(2) {
                     line-height: 2em;
                     color: $open_font_color;
                 }
             }
-
             li::before {
                 content: ' ';
                 position: absolute;
@@ -1448,64 +1227,84 @@
                 color: $primary-color;
                 background-repeat: no-repeat;
             }
-
             li.active::before {
                 color: $primary-text-color;
             }
-
             li:first-child::before {
                 background-image: url(src/open_icon1.png);
             }
-
             li:nth-of-type(2)::before {
                 background-image: url(src/open_icon2.png);
             }
-
             li:nth-of-type(3)::before {
                 background-image: url(src/open_icon3.png);
             }
-
             li:last-child::before {
                 background-image: url(src/open_icon4.png);
             }
         }
     }
-
+    .soft_set {
+        padding-top: 2em;
+        width: 100%;
+        overflow: hidden;
+        .soft_set_info {
+            float: left;
+            line-height: 2em;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            padding-top: 1em;
+            span {
+                width: 100%;
+                line-height: 2em;
+                float: left;
+                text-align: center;
+                b {
+                    color: $title-bg-color;
+                }
+            }
+        }
+        .soft_set_reset {
+            float: left;
+            width: 100%;
+            button {
+                display: block;
+                width: 8em;
+                background-color: $primary-deep-color;
+                color: $primary-color-text;
+                border-radius: 2px;
+                margin: auto;
+            }
+        }
+    }
     .soft_open_qi:last-child {
         margin: 0;
     }
-
     .soft_join_btn {
         position: relative;
         z-index: 1;
     }
-
     .soft_open_qi.active {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-
         dt {
             background-color: $primary-text-color;
         }
-
         ul {
             li:first-child::before {
                 background-image: url(src/open_icon5.png);
             }
-
             li:nth-of-type(2)::before {
                 background-image: url(src/open_icon6.png);
             }
-
             li:nth-of-type(3)::before {
                 background-image: url(src/open_icon7.png);
             }
-
             li:last-child::before {
                 background-image: url(src/open_icon8.png);
             }
         }
     }
-
     .soft_open_content::before {
         content: ' ';
         width: 1em;
@@ -1515,7 +1314,6 @@
         background-color: $open_border_color;
         top: -2em;
     }
-
     .soft_open_content::after {
         content: ' ';
         width: 3px;
@@ -1536,7 +1334,6 @@
 .soft_about_title {
     width: 100%;
     padding-top: 4em;
-
     dt {
         display: block;
         width: 4em;
@@ -1545,7 +1342,6 @@
         position: relative;
         margin: auto;
     }
-
     dt::before {
         position: absolute;
         display: block;
@@ -1558,11 +1354,9 @@
         background-size: contain;
         background-image: url(src/team_title.png);
     }
-
     .soft_about_brief {
         width: 100%;
         overflow: hidden;
-
         span {
             float: left;
             width: 100%;
@@ -1575,17 +1369,14 @@
 .soft_about_content {
     width: 100%;
     padding-top: 10em;
-
     ul {
         width: 100%;
         position: relative;
-
         li {
             float: left;
             margin-right: 1em;
             position: relative;
             z-index: 1;
-
             span {
                 display: block;
                 width: 100%;
@@ -1594,13 +1385,11 @@
                 margin: auto;
             }
         }
-
         li:nth-of-type(1),
         li:nth-of-type(3),
         li:nth-of-type(5) {
             margin-top: 8em;
         }
-
         .soft_about_info {
             box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
             border-radius: 10px;
@@ -1611,7 +1400,6 @@
             background-color: #fff;
             z-index: 1;
         }
-
         li::before,
         li::after {
             position: absolute;
@@ -1621,7 +1409,6 @@
             background-size: contain;
             z-index: -1;
         }
-
         li:first-child::before {
             width: 9em;
             height: 12em;
@@ -1629,7 +1416,6 @@
             left: 2em;
             background-image: url(src/about_us1.png);
         }
-
         li:nth-of-type(2)::before {
             width: 7em;
             height: 8em;
@@ -1637,7 +1423,6 @@
             top: -3em;
             background-image: url(src/about_us3.png);
         }
-
         li:nth-of-type(2)::after {
             width: 3em;
             z-index: 1;
@@ -1646,7 +1431,6 @@
             right: 1em;
             background-image: url(src/about_us2.png);
         }
-
         li:nth-of-type(4)::before {
             width: 7em;
             height: 7em;
@@ -1654,7 +1438,6 @@
             left: calc(50% - 3.5em);
             background-image: url(src/about_us4.png);
         }
-
         li:nth-of-type(5)::before {
             z-index: 2;
             width: 4em;
@@ -1672,7 +1455,6 @@
     margin: auto;
     padding: 6em 2em 2em 2em;
     overflow: hidden;
-
     @media screen and (max-width: 768px) {
         padding: 2em 1em;
     }
@@ -1739,7 +1521,6 @@
 
 .ad_content_div1,
 .ad_content_div2 {
-
     // border-right: 1px solid #ddd;
     @media screen and (max-width: 768px) {
         border: none;
@@ -1751,7 +1532,6 @@
 .ad_img3 {
     width: 100%;
     height: 8em;
-
     img {
         display: block;
         width: 6.5em;
@@ -1793,33 +1573,27 @@
     margin-top: 1em;
     overflow: hidden;
     width: 100%;
-
     li {
         float: left;
         width: 33%;
         text-align: center;
         line-height: 4em;
-
         b {
             font-size: 1.5em;
-
             @media screen and (max-width: 768px) {
                 font-size: 1.2em;
             }
         }
-
         span {
             float: left;
             width: 100%;
             line-height: 1.5em;
         }
-
         span:nth-of-type(2) {
             font-size: 1.2em;
             color: #727171;
         }
     }
-
     li:first-child,
     li:nth-of-type(2) {
         border-right: 1px solid #ddd;
@@ -1827,7 +1601,6 @@
 }
 
 @media screen and (max-width:768px) {
-
     .ad_content_div1,
     .ad_content_div2,
     .ad_content_div3 {
@@ -1835,7 +1608,6 @@
         overflow: hidden;
         margin-bottom: 2em;
     }
-
     .ad_img1,
     .ad_img2,
     .ad_img3 {
@@ -1843,13 +1615,11 @@
         width: 7em;
         margin-right: 1em;
     }
-
     .ad_img1 img,
     .ad_img2 img,
     .ad_img3 img {
         margin-left: 1em;
     }
-
     .ad_content_div1>dd,
     .ad_content_div2>dd,
     .ad_content_div3>dd,
@@ -1859,26 +1629,22 @@
         float: left;
         width: calc(100% - 8em);
     }
-
     .ad_big_font1,
     .ad_big_font2,
     .ad_big_font3 {
         text-align: left;
     }
-
     .ad_suggest1,
     .ad_suggest2,
     .ad_suggest3 {
         text-align: left;
     }
-
     .ad_ul1,
     .ad_ul2,
     .ad_ul3 {
         padding-left: 0;
         float: left;
     }
-
     .ad_suggest1::after,
     .ad_suggest2::after,
     .ad_suggest3::after {
@@ -1897,11 +1663,9 @@
 // 底部轮播区域
 .carousel-inner {
     width: 100%;
-
     .item {
         width: 100%;
         height: 45em;
-
         img {
             width: 100%;
             height: 100%;
@@ -1913,43 +1677,35 @@
     ul {
         overflow: hidden;
         width: 100%;
-
         li {
             float: left;
             width: 100%;
             color: $open_font_color;
             text-align: center;
-
             dt {
                 text-align: center;
                 font-size: 2em;
                 font-weight: normal;
             }
-
             span {
                 color: $primary-color;
             }
         }
-
         li:first-child {
             padding-bottom: 1.5em;
         }
-
         li:nth-of-type(2) {
             font-size: 2em;
         }
-
         li img {
             width: 100%;
         }
-
         li:nth-of-type(4) {
             font-size: 1.5em;
             font-weight: bold;
             line-height: 2em;
             color: $primary-color;
         }
-
         li:last-child {
             font-size: 2em;
         }
@@ -1987,7 +1743,6 @@
 }
 
 .carousel-inner // 有序li状态
-
 .carousel-indicators .active {
     margin: 8px 10px;
 }
@@ -2067,7 +1822,6 @@
     float: left;
     width: 20%;
     overflow: hidden;
-
     img {
         display: block;
         width: 4em;
@@ -2082,14 +1836,12 @@
     line-height: 3em;
     overflow: hidden;
     padding-top: 1em;
-
     h3 {
         float: left;
         color: $primary-color-text;
         padding: 0 1em;
         line-height: 1.5em;
     }
-
     a {
         float: left;
         color: $primary-color-text;
@@ -2110,7 +1862,6 @@
 .soft_bottom_part {
     padding: 2em 1em;
     color: #ffffff;
-
     dt {
         float: left;
         font-weight: normal;
@@ -2118,12 +1869,10 @@
         width: 100%;
         line-height: 3em;
     }
-
     ul li {
         a {
             color: #ffffff;
         }
-
         a:hover {
             text-decoration: none;
         }
@@ -2133,36 +1882,29 @@
 .soft_bottom_left {
     overflow: hidden;
     border-right: 1px solid #fff;
-
     ul {
         width: 30%;
         float: left;
         overflow: hidden;
-
         li {
             float: left;
             width: 100%;
             line-height: 2em;
         }
     }
-
     ul:nth-of-type(1) {
         width: 40%;
     }
-
     .soft_left_bottom {
         overflow: hidden;
         width: 100%;
         float: left;
-
         ul {
             width: 100%;
-
             li {
                 width: auto;
                 padding: 0 1em;
             }
-
             li:first-child {
                 padding: 0;
                 padding-right: 1em;
@@ -2173,17 +1915,14 @@
 
 .soft_bottom_right {
     overflow: hidden;
-
     ul {
         float: left;
         width: 100%;
-
         li {
             float: left;
             padding: 0 1em;
         }
     }
-
     .soft_bottom_s1,
     .soft_bottom_s2 {
         li:first-child {
@@ -2191,7 +1930,6 @@
             padding-right: 1em;
         }
     }
-
     dd {
         a {
             color: #ffffff;

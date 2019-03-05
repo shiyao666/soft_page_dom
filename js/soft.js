@@ -1,3 +1,27 @@
+// // 获取url以及数据的 array
+var address_data = new Array(["a", 2, "s"])
+// 获取token转化为cookie
+
+function setCookie(c_name, value, expiredays) {
+    var exdate = new Date()
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = c_name + "=" + escape(value) +
+        ((expiredays == null) ? "" : "; expires=" + exdate.toGMTString())
+}
+
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=")
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1
+            c_end = document.cookie.indexOf(";", c_start)
+            if (c_end == -1) c_end = document.cookie.length
+            return unescape(document.cookie.substring(c_start, c_end))
+        }
+    }
+    return ""
+}
 $(document).ready(function () {
 
 
@@ -35,48 +59,33 @@ $(document).ready(function () {
         $("#soft_act1 li").removeClass("active animated pulse");
 
     })
+})
+var act_num = null;
+// 点击黑色幕布隐藏弹出框
+// $(function () {
+//     $("#open_four button").click(function (e) {
+//         e.stopPropagation(); //阻止事件向上冒泡
+//         $(".soft_alert_box").stop().addClass("active");
+//         $(".soft_alert_content").stop().addClass("active");
+//         $(document).one("click", function () { //对document绑定一个影藏Div方法
 
-    $("#open_four button").click(function () {
-        var index = $(this).index();
-
-        $.ajax({
-            type: "post",
-            dataType: "json",
-            url: 'https://api.csst.com.cn/index.php?m=survey&c=code&a=index',
-            data: {
-
-            },
-            success: function () {
-                for (let index = 0; index < $(".soft_open_qi ").length; index++) {
-                    const element = array[index];
-
-                }
-            },
-            fail: function () {
-                return false;
-            }
-
-
-        })
+//             $(".soft_alert_box").stop().removeClass("active");
+//             $(".soft_alert_content").stop().removeClass("active");
+//         });
+//         $(".soft_alert_content ").click(function (e) {
+//             e.stopPropagation();
+//         });
+//     });
+// });
+// 
+$(document).ready(function () {
+    $("#open_four .soft_join_btn").click(function () {
+        console.log('sd');
+        var index = $(this).parent().parent().parent().index();
+        console.log(index);
+        act_num = index;
+        console.log(act_num);
     })
-    // 点击黑色幕布隐藏弹出框
-    $(function () {
-        $("#open_four button").click(function (e) {
-            e.stopPropagation(); //阻止事件向上冒泡
-            $(".soft_alert_box").stop().addClass("active");
-            $(".soft_alert_content").stop().addClass("active");
-            $(document).one("click", function () { //对document绑定一个影藏Div方法
-
-                $(".soft_alert_box").stop().removeClass("active");
-                $(".soft_alert_content").stop().removeClass("active");
-            });
-            $(".soft_alert_content ").click(function (e) {
-                e.stopPropagation();
-            });
-        });
-    });
-    // 
-
     $("#soft_send_code").click(function () {
         $.ajax({
             type: 'post',
@@ -84,7 +93,7 @@ $(document).ready(function () {
             async: 'ture',
             url: 'http://192.168.60.175:666/activity/enroll/commit',
             data: {
-                number: $("#soft_phonenum").val(),
+                number: $("#recipient-phonenum").val(),
                 act_token: 'wD8VlzHoUt'
             },
             success: function () {
@@ -103,13 +112,13 @@ $(document).ready(function () {
             async: 'ture',
             url: 'http://192.168.60.175:666/activity/enroll/send_data',
             data: {
-                number: $("#soft_phonenum").val(),
-                code: $("#soft_code").val(),
-                name: $("#soft_name").val(),
-                company_name: $("#soft_company").val(),
-                act_token: 'wD8VlzHoUt'
+                number: $("#recipient-phonenum").val(),
+                code: $("#message-code").val(),
+                name: $("#recipient-name").val(),
+                company_name: $("#message-text").val(),
+                act_token: getCookie("page_token" + act_num + "")
             },
-            success: function () {
+            success: function (event2) {
 
 
             },
@@ -119,40 +128,42 @@ $(document).ready(function () {
         })
     })
 
+})
 
+$.ajax({
 
-    $.ajax({
-
-        type: "post",
-        dataType: "json",
-        async: true,
-        url: 'http://192.168.60.175:666/activity/enroll/page',
-        data: {
-            "act_token": "afuxnsd524d"
-        },
-        success: function (event1) {
-            console.log(event1.data.length)
-            for (var i = 0; i < event1.data.length; i++) {
-                console.log(event1.data[i].activity_content);
-                console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
-                $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
-                $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
-                $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
-                $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(1)").text(event1.data[i].activity_content.content2);
-                $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(0)").text(event1.data[i].activity_content.title3);
-                $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(1)").text(event1.data[i].activity_content.content3);
-                $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(0)").text(event1.data[i].activity_content.title4);
-                $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
-            }
-
-        },
-        error: function () {
-            return false;
+    type: "post",
+    dataType: "json",
+    async: true,
+    url: 'http://192.168.60.175:666/activity/enroll/page',
+    data: {
+        "act_token": "afuxnsd524d"
+    },
+    success: function (event1) {
+        console.log(event1.data.length)
+        for (var i = 0; i < event1.data.length; i++) {
+            console.log(event1.data[i].activity_content);
+            console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
+            setCookie("page_token", event1)
+            $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
+            $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
+            $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
+            $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(1)").text(event1.data[i].activity_content.content2);
+            $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(0)").text(event1.data[i].activity_content.title3);
+            $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(1)").text(event1.data[i].activity_content.content3);
+            $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(0)").text(event1.data[i].activity_content.title4);
+            $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
+            $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
+            setCookie("page_token" + [i] + "", Array(event1.data[i].page_token));
         }
 
-    })
+    },
+    error: function () {
+        return false;
+    }
 
 })
+
 $(document).ready(function () {
 
     $("#soft_test_act .soft_ad_content").hover(function () {
