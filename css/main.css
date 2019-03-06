@@ -1809,13 +1809,15 @@ button {
     .soft_open_part .soft_open_qi ul {
       float: left;
       width: 100%;
-      overflow: hidden; }
+      overflow: hidden;
+      padding-top: 2em; }
       .soft_open_part .soft_open_qi ul li {
         width: 100%;
         float: left;
         overflow: hidden;
         position: relative;
-        padding-left: 5.5em; }
+        padding-left: 5.5em;
+        height: 7em; }
         .soft_open_part .soft_open_qi ul li span {
           float: left;
           width: 100%; }
@@ -2209,11 +2211,13 @@ button {
     font-size: 2em; }
 
 .soft_lb_div {
-  position: relative; }
+  position: relative;
+  padding-bottom: 2em; }
 
 .soft_bottom_leftdiv {
   position: relative;
-  border-right: 1px solid #03203A; }
+  border-right: 1px solid #03203A;
+  height: 630px; }
 
 .soft_bottom_leftdiv::before {
   position: absolute;

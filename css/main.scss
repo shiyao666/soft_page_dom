@@ -1337,6 +1337,7 @@
             float: left;
             width: 100%;
             overflow: hidden;
+            padding-top: 2em;
 
             li {
                 width: 100%;
@@ -1344,6 +1345,7 @@
                 overflow: hidden;
                 position: relative;
                 padding-left: 5.5em;
+                height: 7em;
 
                 span {
                     float: left;
@@ -1900,11 +1902,13 @@
 
 .soft_lb_div {
     position: relative;
+    padding-bottom: 2em;
 }
 
 .soft_bottom_leftdiv {
     position: relative;
     border-right: 1px solid $primary-deep-color;
+    height: 630px;
 }
 
 .soft_bottom_leftdiv::before {
