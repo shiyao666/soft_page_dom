@@ -1014,8 +1014,8 @@ button {
   z-index: 1;
   height: initial; }
   .soft_act_new .soft_act_title {
-    padding: 0 4%;
-    height: 4em; }
+    padding-bottom: 4em;
+    height: 12em; }
     .soft_act_new .soft_act_title span {
       position: relative;
       float: left;
@@ -1024,8 +1024,7 @@ button {
       color: #821C21cc;
       background-color: rgba(238, 238, 238, 0.85);
       text-align: center;
-      line-height: 3em;
-      margin-top: -2em; }
+      line-height: 3em; }
       @media screen and (max-width: 768px) {
         .soft_act_new .soft_act_title span {
           font-size: 1.2em;
@@ -1069,22 +1068,21 @@ button {
   float: right;
   width: 100%;
   height: 516px;
-  position: relative; }
+  position: relative;
+  box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18); }
 
 .soft_act_content1 {
-  box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
   padding-bottom: 2em; }
 
 .soft_act_content3 {
-  background-color: #ffffff;
-  box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18); }
+  background-color: #ffffff; }
 
 .soft_act_content2,
 .soft_act_content3 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  padding: 7% 0% 2% 0%; }
+  padding: 5% 0% 2% 0%; }
 
 .soft_act_content1,
 .soft_act_content2,
@@ -1110,7 +1108,8 @@ button {
 .soft_act_part1 {
   width: 100%;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-left: 10%; }
   .soft_act_part1 li {
     float: left;
     width: 70%;
@@ -1121,9 +1120,7 @@ button {
     color: #ffffff;
     line-height: 105px; }
   .soft_act_part1 ul {
-    float: left;
-    padding-left: 5%;
-    width: 50%; }
+    float: left; }
   .soft_act_part1 .soft_act1_ul1 {
     overflow: hidden; }
     .soft_act_part1 .soft_act1_ul1 li:first-child {
@@ -1195,10 +1192,9 @@ button {
 
 .soft_act_content1 {
   overflow: hidden;
-  padding-top: 7%; }
+  padding-top: 5%; }
   .soft_act_content1 ul {
     float: left;
-    width: 30%;
     overflow: hidden;
     border-right: 1px dotted #a2a2a2;
     padding-top: 2em; }
@@ -1217,22 +1213,6 @@ button {
         font-size: 1.2em; }
   .soft_act_content1 ul:last-child {
     border: 0; }
-
-.soft_test_info {
-  width: 100%; }
-  .soft_test_info .soft_info_title {
-    width: 100%;
-    padding-bottom: 2em; }
-    .soft_test_info .soft_info_title span {
-      display: block;
-      border-radius: 2px;
-      width: 10em;
-      line-height: 2em;
-      font-size: 1.2em;
-      text-align: center;
-      margin: auto;
-      color: #FFFFFF;
-      background-color: #c30000; }
 
 .soft_info_content {
   overflow: hidden;
@@ -1276,9 +1256,19 @@ button {
   border-left: 1em solid transparent;
   border-right: 1em solid transparent; }
 
+.soft_info_content {
+  overflow: hidden; }
+
 .soft_info_left,
 .soft_info_right {
+  float: left;
   padding: 0; }
+
+.soft_info_left {
+  width: 60%; }
+
+.soft_info_right {
+  width: 40%; }
 
 .soft_info_part1,
 .soft_info_part2 {
@@ -1348,20 +1338,42 @@ button {
   text-align: center;
   position: relative;
   font-weight: normal; }
-@media screen and (min-width: 768px) {
-  .soft_learn_title dt {
-    width: 15em; } }
-.soft_learn_title dt::before {
-  position: absolute;
-  display: block;
-  content: ' ';
-  width: 1.3em;
-  height: 1.3em;
-  left: -0.6em;
-  top: 0em;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url(src/team_title.png); }
+
+.soft_two_big {
+  height: 4em; }
+
+.soft_title_notes {
+  width: 100%;
+  padding: 2em 0; }
+  .soft_title_notes span {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-align: center; }
+
+.soft_two_title .soft_two_content {
+  width: 100%; }
+  .soft_two_title .soft_two_content dt {
+    display: block;
+    font-size: 1.5em;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    width: 5em; }
+  .soft_two_title .soft_two_content dt:before {
+    content: ' ';
+    display: block;
+    width: 2em;
+    position: absolute;
+    height: 2em;
+    left: -2em;
+    top: -0.7em;
+    background-image: url(src/team_title.png);
+    background-repeat: no-repeat;
+    background-size: contain; }
+.soft_two_title .soft_two_content2 dt {
+  width: 9em; }
 
 .soft_learn_content {
   padding: 2em 1em;
@@ -1533,6 +1545,10 @@ button {
   margin-top: -1em;
   background-color: #fff; }
 
+@media screen and (min-width: 768px) {
+  .soft_team_title dt {
+    width: 6em; } }
+
 .soft_lesson_title dt::before {
   position: absolute;
   display: block;
@@ -1601,6 +1617,18 @@ button {
   background-repeat: no-repeat;
   background-size: contain;
   left: calc(50% - 3.5em); }
+
+@media screen and (min-width: 768px) {
+  .soft_project_title dt {
+    width: 14em; } }
+
+@media screen and (min-width: 768px) {
+  .soft_class_way dt {
+    width: 6em; } }
+
+.soft_titile_box {
+  padding-top: 2em;
+  padding-bottom: 1em; }
 
 .soft_team_content {
   overflow: hidden;
@@ -1705,37 +1733,12 @@ button {
   position: relative;
   z-index: 1; }
 
-.soft_trade_hdiv {
-  color: #000;
-  padding-top: 6em;
-  padding-bottom: 2em; }
-  .soft_trade_hdiv dt {
-    position: relative;
-    display: block;
-    font-size: 2em;
-    width: 8em;
-    text-align: center;
-    height: 1.5em;
-    margin: auto; }
-  .soft_trade_hdiv dt::before {
-    position: absolute;
-    display: block;
-    content: ' ';
-    width: 1.3em;
-    height: 1.3em;
-    left: 0.2em;
-    top: -0.1em;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url(src/team_title.png); }
-  .soft_trade_hdiv span {
-    display: block;
-    line-height: 2em;
-    text-align: center;
-    margin: auto; }
-
 .soft_server {
   padding-top: 4em; }
+
+@media screen and (min-width: 768px) {
+  .soft_serve_title dt {
+    width: 10em; } }
 
 .soft_srver_row1 {
   padding-top: 6em; }
@@ -1772,35 +1775,13 @@ button {
     width: 100%;
     display: block; }
 
-.soft_open_row {
-  padding-top: 4em; }
-
 .soft_open_part {
   padding-left: 3em;
   padding-top: 5em;
   overflow: hidden; }
-  .soft_open_part .soft_open_title {
-    font-weight: normal;
-    width: 100%;
-    float: left; }
+  @media screen and (min-width: 768px) {
     .soft_open_part .soft_open_title dt {
-      font-size: 2em;
-      width: 9em;
-      text-align: center;
-      margin: auto;
-      line-height: 4em;
-      position: relative; }
-    .soft_open_part .soft_open_title dt::before {
-      position: absolute;
-      display: block;
-      content: ' ';
-      width: 1.3em;
-      height: 1.3em;
-      left: -0.5em;
-      top: 1.1em;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-image: url(src/team_title.png); }
+      width: 8em; } }
   .soft_open_part .soft_open_content {
     position: relative;
     padding: 1em 3em;
@@ -1813,8 +1794,7 @@ button {
     margin-right: 2%;
     padding: 0;
     width: 23%;
-    overflow: hidden;
-    height: 464px; }
+    overflow: hidden; }
     @media screen and (max-width: 768px) {
       .soft_open_part .soft_open_qi {
         width: 100%; } }
@@ -1935,32 +1915,6 @@ button {
 .soft_about_title {
   width: 100%;
   padding-top: 4em; }
-  .soft_about_title dt {
-    display: block;
-    width: 4em;
-    font-size: 2em;
-    line-height: 2em;
-    position: relative;
-    margin: auto; }
-  .soft_about_title dt::before {
-    position: absolute;
-    display: block;
-    content: ' ';
-    width: 1.3em;
-    height: 1.3em;
-    left: -1.7em;
-    top: 0.2em;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url(src/team_title.png); }
-  .soft_about_title .soft_about_brief {
-    width: 100%;
-    overflow: hidden; }
-    .soft_about_title .soft_about_brief span {
-      float: left;
-      width: 100%;
-      text-align: center;
-      line-height: 1.5em; }
 
 .soft_about_content {
   width: 100%;
@@ -2033,6 +1987,18 @@ button {
       right: 1em;
       background-image: url(src/about_us5.png); }
 
+.soft_call_largest {
+  padding-top: 8em;
+  width: 100%; }
+  .soft_call_largest .soft_call_btn {
+    font-size: 1.2em;
+    width: 8em;
+    border-radius: 4px;
+    line-height: 2em;
+    color: #08345a;
+    border: 1px solid #68839a;
+    margin-left: calc(50% - 4em); }
+
 .ad_max_div {
   width: 90%;
   margin: auto;
@@ -2042,19 +2008,9 @@ button {
     .ad_max_div {
       padding: 2em 1em; } }
 
-.ad_title {
-  font-size: 3em;
-  font-weight: normal;
-  display: block;
-  text-align: center; }
-
-.ad_title_span {
-  margin-top: 1em;
-  font-size: 1.5em;
-  display: block;
-  margin-bottom: 2em;
-  text-align: center;
-  color: #727171; }
+@media screen and (min-width: 768px) {
+  .soft_ad_title dt {
+    width: 7em; } }
 
 .ad_content_div1,
 .ad_content_div2,
@@ -2282,10 +2238,6 @@ button {
 .carousel-indicators .active {
   margin: 8px 10px; }
 
-.carousel-indicators {
-  width: 100%;
-  left: 0; }
-
 .carousel-indicators li {
   width: 16px;
   margin: -2px 6px;
@@ -2361,13 +2313,12 @@ button {
     color: #FFFFFF;
     padding: 0 1em;
     line-height: 1.5em; }
-  .soft_test_right a {
+  .soft_test_right button {
     float: left;
     color: #FFFFFF;
     width: 8em;
     border-radius: 4px;
     padding-left: 3em;
-    line-height: 2em;
     margin-top: 0.5em;
     background-color: #03203A; }
 
@@ -2434,5 +2385,15 @@ button {
 .soft_alert_submit {
   width: 100%;
   height: 100%; }
+
+.soft_none {
+  display: none; }
+
+.soft_indent {
+  text-indent: 2em;
+  line-height: 2em; }
+
+.btn-primary {
+  border-color: transparent; }
 
 /*# sourceMappingURL=main.css.map */
