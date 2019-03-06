@@ -192,6 +192,12 @@ $(document).ready(function () {
     })
     // 模拟测试
 })
+$(document).ready(function () {
+$(".question_btn").click(function(){
+    console.log("dianji")
+    $(this).parent().next().removeClass("soft_none")
+})
+})
 // 鼠标滚轮
 $(document).ready(function () {
 
