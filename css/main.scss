@@ -401,7 +401,7 @@
     }
 
     button {
-        background-color: $third-color;
+        background-color: #347dbb;
         color: $primary-color-text;
         line-height: 2em;
         width: 10em;
@@ -869,12 +869,12 @@
                     display: block;
                     position: absolute;
                     content: ' ';
-                    width: 1em;
+                    width: 2em;
                     height: 2em;
                     z-index: 1;
                     background: url(src/arrow_left.png);
                     background-repeat: no-repeat;
-                    background-size: contain;
+                    background-size: cover;
                     right: 0;
                     top: calc(50% - 1em);
                 }
@@ -894,7 +894,7 @@
 .soft_lesson_top {
     width: 100%;
     height: 182px;
-    padding: 3em 5%;
+    padding: 0em 5%;
     overflow: hidden;
 
     span {
@@ -902,18 +902,38 @@
         font-size: 1.2em;
         line-height: 2em;
         text-align: center;
+        position: relative;
+        font-weight: bold;
+    }
+
+    span::before {
+        content: ' ';
+        display: block;
+        width: 4em;
+        height: 4em;
+        position: absolute;
+        left: calc(50% - 2em);
+        top: 1em;
+        background-image: url(src/yun.png);
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
     span:first-child {
         width: 100%;
+        color: #08345a;
+        margin-top: 2em;
+        margin-bottom: 3em;
     }
 
     span:nth-of-type(2) {
         width: 50%;
+        color: #08345a;
     }
 
     span:nth-of-type(3) {
         width: 50%;
+        color: #821c21;
     }
 }
 
@@ -1247,7 +1267,6 @@
 // 行业内训区域
 .soft_largest_box8 {
     background-color: #347dbb;
-    background-color: #347dbb;
     background-image: url(src/chanp_1.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -1299,8 +1318,7 @@
 
     img {
         display: block;
-        width: 6em;
-        height: 6em;
+        width: 12em;
         margin: auto;
     }
 }
@@ -1311,7 +1329,7 @@
 
     dt {
         font-weight: normal;
-        font-size: 1.2em;
+        font-size: 1.5em;
         display: block;
         width: 100%;
         line-height: 2em;
@@ -1321,6 +1339,7 @@
     span {
         text-align: center;
         width: 100%;
+        font-size: 1.2em;
         display: block;
     }
 }
@@ -1468,11 +1487,16 @@
             button {
                 display: block;
                 width: 8em;
-                background-color: $primary-deep-color;
-                color: $primary-color-text;
+                background-color: #347dbb;
+                color: #fff;
                 border-radius: 2px;
                 margin: auto;
             }
+
+            button:hover {
+                border-color: #347dbb;
+            }
+
         }
     }
 
@@ -1489,7 +1513,7 @@
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 
         dt {
-            background-color: $primary-text-color;
+            background-color: #347dbb;
         }
 
         ul {
@@ -1643,18 +1667,28 @@
     width: 100%;
 
     .soft_call_btn {
+        display: block;
         font-size: 1.2em;
         width: 8em;
+        text-align: center;
         border-radius: 4px;
         line-height: 2em;
         color: #FFFFFF;
-        border: 1px solid #03203A;
+        border: 1px solid #347dbb;
         margin-left: calc(50% - 4em);
-        background-color: #03203A;
+        background-color: #347dbb;
+    }
+
+    a:hover {
+        text-decoration: none;
     }
 }
 
 
+// 获取验证码框框
+.soft_get_code {
+    cursor: pointer;
+}
 
 
 // 优势区域
@@ -1989,7 +2023,7 @@
     height: 6em;
     margin-top: 14em;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
 }
 
 .carousel-control.left,
@@ -2001,7 +2035,7 @@
 .carousel-control.right::before {
     font-size: 2em;
     font-family: 'Glyphicons Halflings';
-    color: #232323;
+    color: #fff;
     display: block;
 }
 
@@ -2066,13 +2100,23 @@
     }
 
     button {
+        position: relative;
         float: left;
         color: $primary-color-text;
         width: 8em;
         border-radius: 4px;
         padding-left: 3em;
         margin-top: 0.5em;
-        background-color: $primary-deep-color;
+        background-color: #347dbb;
+    }
+
+    button::before {
+        font-family: 'Glyphicons Halflings';
+        content: ' \e065';
+        position: absolute;
+        font-size: 1.5em;
+        left: 0.6em;
+        top: 0;
     }
 }
 

@@ -1160,7 +1160,7 @@ button {
         width: 100%;
         margin-bottom: 1em; } }
   .soft_act_bottom button {
-    background-color: #08345A;
+    background-color: #347dbb;
     color: #FFFFFF;
     line-height: 2em;
     width: 10em;
@@ -1478,12 +1478,12 @@ button {
       display: block;
       position: absolute;
       content: ' ';
-      width: 1em;
+      width: 2em;
       height: 2em;
       z-index: 1;
       background: url(src/arrow_left.png);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       right: 0;
       top: calc(50% - 1em); }
 
@@ -1497,19 +1497,37 @@ button {
 .soft_lesson_top {
   width: 100%;
   height: 182px;
-  padding: 3em 5%;
+  padding: 0em 5%;
   overflow: hidden; }
   .soft_lesson_top span {
     float: left;
     font-size: 1.2em;
     line-height: 2em;
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    font-weight: bold; }
+  .soft_lesson_top span::before {
+    content: ' ';
+    display: block;
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    left: calc(50% - 2em);
+    top: 1em;
+    background-image: url(src/yun.png);
+    background-repeat: no-repeat;
+    background-size: contain; }
   .soft_lesson_top span:first-child {
-    width: 100%; }
+    width: 100%;
+    color: #08345a;
+    margin-top: 2em;
+    margin-bottom: 3em; }
   .soft_lesson_top span:nth-of-type(2) {
-    width: 50%; }
+    width: 50%;
+    color: #08345a; }
   .soft_lesson_top span:nth-of-type(3) {
-    width: 50%; }
+    width: 50%;
+    color: #821c21; }
 
 .soft_lesson_bg {
   width: 100%;
@@ -1727,7 +1745,6 @@ button {
 
 .soft_largest_box8 {
   background-color: #347dbb;
-  background-color: #347dbb;
   background-image: url(src/chanp_1.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1764,8 +1781,7 @@ button {
   padding-top: 4em; }
   .soft_server_logo img {
     display: block;
-    width: 6em;
-    height: 6em;
+    width: 12em;
     margin: auto; }
 
 .soft_server_text {
@@ -1773,7 +1789,7 @@ button {
   width: 100%; }
   .soft_server_text dt {
     font-weight: normal;
-    font-size: 1.2em;
+    font-size: 1.5em;
     display: block;
     width: 100%;
     line-height: 2em;
@@ -1781,6 +1797,7 @@ button {
   .soft_server_text span {
     text-align: center;
     width: 100%;
+    font-size: 1.2em;
     display: block; }
 
 .soft_open_part {
@@ -1880,10 +1897,12 @@ button {
       .soft_open_part .soft_set .soft_set_reset button {
         display: block;
         width: 8em;
-        background-color: #03203A;
-        color: #FFFFFF;
+        background-color: #347dbb;
+        color: #fff;
         border-radius: 2px;
         margin: auto; }
+      .soft_open_part .soft_set .soft_set_reset button:hover {
+        border-color: #347dbb; }
   .soft_open_part .soft_open_qi:last-child {
     margin: 0; }
   .soft_open_part .soft_join_btn {
@@ -1892,7 +1911,7 @@ button {
   .soft_open_part .soft_open_qi.active {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
     .soft_open_part .soft_open_qi.active dt {
-      background-color: #5C89CC; }
+      background-color: #347dbb; }
     .soft_open_part .soft_open_qi.active ul li:first-child::before {
       background-image: url(src/open_icon5.png); }
     .soft_open_part .soft_open_qi.active ul li:nth-of-type(2)::before {
@@ -2001,14 +2020,21 @@ button {
   padding-top: 8em;
   width: 100%; }
   .soft_call_largest .soft_call_btn {
+    display: block;
     font-size: 1.2em;
     width: 8em;
+    text-align: center;
     border-radius: 4px;
     line-height: 2em;
     color: #FFFFFF;
-    border: 1px solid #03203A;
+    border: 1px solid #347dbb;
     margin-left: calc(50% - 4em);
-    background-color: #03203A; }
+    background-color: #347dbb; }
+  .soft_call_largest a:hover {
+    text-decoration: none; }
+
+.soft_get_code {
+  cursor: pointer; }
 
 .ad_max_div {
   width: 90%;
@@ -2260,7 +2286,7 @@ button {
   height: 6em;
   margin-top: 14em;
   position: absolute;
-  z-index: 10; }
+  z-index: 1; }
 
 .carousel-control.left,
 .carousel-control.right {
@@ -2270,7 +2296,7 @@ button {
 .carousel-control.right::before {
   font-size: 2em;
   font-family: 'Glyphicons Halflings';
-  color: #232323;
+  color: #fff;
   display: block; }
 
 .carousel-control.left::before {
@@ -2322,13 +2348,21 @@ button {
     padding: 0 1em;
     line-height: 1.5em; }
   .soft_test_right button {
+    position: relative;
     float: left;
     color: #FFFFFF;
     width: 8em;
     border-radius: 4px;
     padding-left: 3em;
     margin-top: 0.5em;
-    background-color: #03203A; }
+    background-color: #347dbb; }
+  .soft_test_right button::before {
+    font-family: 'Glyphicons Halflings';
+    content: ' \e065';
+    position: absolute;
+    font-size: 1.5em;
+    left: 0.6em;
+    top: 0; }
 
 .soft_banner_div {
   width: 100%;

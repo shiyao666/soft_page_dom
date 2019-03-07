@@ -78,6 +78,8 @@ var act_num = null;
 //     });
 // });
 // 
+
+
 $(document).ready(function () {
     $("#open_four .soft_join_btn").click(function () {
         console.log('sd');
@@ -86,7 +88,14 @@ $(document).ready(function () {
         act_num = index;
         console.log(act_num);
     })
-    $("#soft_send_code").click(function () {
+    // 获取验证码
+
+
+
+
+
+    $("#soft_send_code").click(function click_two() {
+
         $.ajax({
             type: 'post',
             dataType: 'json',
@@ -96,8 +105,28 @@ $(document).ready(function () {
                 number: $("#recipient-phonenum").val(),
                 act_token: getCookie("page_token" + act_num + "")
             },
-            success: function () {
+            success: function (even_code) {
+                if (even_code.code == 5005) {
+                    var time1 = 60;
+                    $(".soft_get_code").removeClass;
+                    $(".soft_get_code").html("(" + time1 + "秒)");
+                    $("#soft_send_code").unbind();
+                    setTime = setInterval(
+                        function () {
+                            if (time1 > 0) {
+                                time1--;
+                                $(".soft_get_code").html("(" + time1 + "秒)");
+                                $(".soft_get_code").unbind("click", click_two);
+                            } else {
+                                $(".soft_get_code").bind("click", click_two);
+                                $(".soft_get_code").text("重新获取");
+                                clearInterval(setTime);
+                            }
+                        }, 1000);
 
+                } else {
+                    alert(even_code.msg);
+                }
 
             },
             error: function () {
@@ -119,7 +148,7 @@ $(document).ready(function () {
                 act_token: getCookie("page_token" + act_num + "")
             },
             success: function (event2) {
-
+                alert(event2.msg);
 
             },
             error: function () {
