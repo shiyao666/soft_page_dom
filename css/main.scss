@@ -274,7 +274,7 @@
 .soft_act_content {
     float: right;
     width: 100%;
-    height: 516px;
+    height: 580px;
     position: relative;
     box-shadow: 0px 1px 29px 0px rgba(136, 56, 244, 0.18);
 }
@@ -332,8 +332,9 @@
         font-size: 2em;
         text-align: center;
         opacity: 0.8;
-        color: #ffffff;
         line-height: 105px;
+        padding-left: 3em;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
     }
 
     ul {
@@ -342,38 +343,34 @@
 
     .soft_act1_ul1 {
         overflow: hidden;
+        padding-top: 2em;
+        padding-bottom: 1em;
 
         li:first-child {
-            background-color: #1945ef;
             margin-bottom: 30px;
         }
 
         li:nth-of-type(2) {
-            background-color: #fe6021;
             margin-bottom: 40px;
         }
 
-        li:nth-of-type(3) {
-            background-color: #906aff;
-        }
+        li:nth-of-type(3) {}
     }
 
     .soft_act1_ul2 {
         overflow: hidden;
+        padding-top: 2em;
+        padding-bottom: 1em;
 
         li:first-child {
-            background-color: #3ec7f7;
             margin-bottom: 30px;
         }
 
         li:nth-of-type(2) {
-            background-color: #fbbc3f;
             margin-bottom: 40px;
         }
 
-        li:nth-of-type(3) {
-            background-color: #fe6021;
-        }
+        li:nth-of-type(3) {}
     }
 
     li.active {
@@ -1085,127 +1082,167 @@
     position: relative;
     height: 900px;
     width: 100%;
+}
 
-    .soft_team_item {
-        margin-right: 2em;
-        float: left;
-        width: 30%;
-        border-radius: 4px;
-        position: relative;
-    }
+.soft_team_item {
+    margin-right: 2em;
+    float: left;
+    width: 30%;
+    border-radius: 4px;
+    position: relative;
+}
 
-    .soft_team_item {
-        position: absolute;
-    }
+.soft_team_item {
+    position: absolute;
+}
 
-    .soft_team_item:first-child {
-        left: 2%;
-        top: 0;
-    }
 
-    .soft_team_item:nth-of-type(2) {
-        left: 35%;
-        top: 0;
-    }
 
-    .soft_team_item:nth-of-type(3) {
-        left: 68%;
-        top: 0;
-    }
+.soft_team_middle {
+    background-color: $bgc-light;
+    color: #08345a;
+    font-size: 1.2em;
+    width: 100%;
+    height: 9em;
+    padding-top: 6em;
+    margin-top: 4em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 
-    .soft_team_item:nth-of-type(4) {
-        left: 2%;
-        top: 30em;
-    }
-
-    .soft_team_item:nth-of-type(5) {
-        left: 35%;
-        top: 30em;
-    }
-
-    .soft_team_item:nth-of-type(6) {
-        left: 68%;
-        top: 30em;
-    }
-
-    .soft_team_middle {
-        background-color: $bgc-light;
-        color: #08345a;
-        font-size: 1.2em;
+    span {
         width: 100%;
-        height: 9em;
-        padding-top: 6em;
-        margin-top: 4em;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
+        line-height: 2em;
+        text-align: center;
+        display: block;
+    }
+}
 
+.soft_team_top {
+    position: relative;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    padding-top: 1em;
+
+    span {
+        display: block;
+        width: 8em;
+        height: 8em;
+        border-radius: 50%;
+        margin: auto;
+        background-repeat: no-repeat;
+        border: 2px solid #fff;
+        background-size: cover;
+        margin-top: 2em;
+    }
+}
+
+.soft_team_item:first-child {
+    left: 2%;
+    top: 0;
+
+    .soft_team_top {
         span {
-            width: 100%;
-            line-height: 2em;
-            text-align: center;
-            display: block;
+            background-image: url(src/liupeichun.jpg);
         }
+    }
+}
+
+.soft_team_item:nth-of-type(2) {
+    left: 35%;
+    top: 0;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/liufang.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(3) {
+    left: 68%;
+    top: 0;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/songdan.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(4) {
+    left: 2%;
+    top: 30em;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/wangqifu.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(5) {
+    left: 35%;
+    top: 30em;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/wangli.jpg);
+        }
+    }
+}
+
+.soft_team_item:nth-of-type(6) {
+    left: 68%;
+    top: 30em;
+
+    .soft_team_top {
+        span {
+            background-image: url(src/wangli.jpg);
+        }
+    }
+}
+
+.soft_team_item.active {
+    .soft_team_middle {
+        height: 13em;
+        padding-top: 10em;
+        margin-top: 0;
+        color: #fff;
+        background-color: #08345a;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
     }
 
     .soft_team_top {
-        position: relative;
-        width: 100%;
-        height: 0;
-        top: 0;
-        left: 0;
-        padding-top: 1em;
-
         span {
-            display: block;
-            width: 8em;
-            height: 8em;
-            border-radius: 50%;
-            margin: auto;
-            background-image: url(src/team_logo1.png);
-            background-repeat: no-repeat;
-            border: 2px solid #fff;
-            background-size: contain;
-            margin-top: 2em;
-        }
-    }
-
-    .soft_team_item.active {
-        .soft_team_middle {
-            height: 13em;
-            padding-top: 10em;
-            margin-top: 0;
-            color: #fff;
-            background-color: #08345a;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-        }
-
-        .soft_team_top {
-            span {
-                width: 9em;
-                height: 9em;
-            }
-        }
-
-        .soft_team_bottom {
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+            width: 9em;
+            height: 9em;
         }
     }
 
     .soft_team_bottom {
-        width: 100%;
-        padding-top: 4em;
-        overflow: hidden;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-
-        span {
-            float: left;
-            width: 100%;
-            line-height: 2em;
-            text-align: center;
-        }
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
     }
 }
+
+
+
+.soft_team_bottom {
+    width: 100%;
+    padding-top: 4em;
+    overflow: hidden;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    span {
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        text-align: center;
+    }
+}
+
 
 // 行业内训区域
 .soft_largest_box8 {
@@ -1609,9 +1646,10 @@
         width: 8em;
         border-radius: 4px;
         line-height: 2em;
-        color: #08345a;
-        border: 1px solid #68839a;
+        color: #FFFFFF;
+        border: 1px solid #03203A;
         margin-left: calc(50% - 4em);
+        background-color: #03203A;
     }
 }
 
