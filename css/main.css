@@ -1009,7 +1009,7 @@ button {
 
 .soft_act_new {
   width: 100%;
-  padding: 0 0 0 6%;
+  padding: 6em 0 0 6%;
   position: relative;
   z-index: 1;
   height: initial; }
@@ -1711,20 +1711,7 @@ button {
   left: 68%;
   top: 30em; }
   .soft_team_item:nth-of-type(6) .soft_team_top span {
-    background-image: url(src/wangli.jpg); }
-
-.soft_team_item.active .soft_team_middle {
-  height: 13em;
-  padding-top: 10em;
-  margin-top: 0;
-  color: #fff;
-  background-color: #08345a;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
-.soft_team_item.active .soft_team_top span {
-  width: 9em;
-  height: 9em; }
-.soft_team_item.active .soft_team_bottom {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
+    background-image: url(src/huguangchao.jpg); }
 
 .soft_team_bottom {
   width: 100%;
@@ -1751,7 +1738,8 @@ button {
 
 .soft_trade_top {
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  padding-top: 6em; }
 
 .soft_server {
   padding-top: 4em; }
@@ -2063,11 +2051,6 @@ button {
 @media screen and (max-width: 768px) {
   .ad_after_bg {
     display: none; } }
-.ad_content_div1.active,
-.ad_content_div2.active,
-.ad_content_div3.active {
-  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6); }
-
 @media screen and (max-width: 768px) {
   .ad_content_div1,
   .ad_content_div2 {
