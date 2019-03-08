@@ -179,6 +179,7 @@ $(document).ready(function () {
                 },
                 success: function (even_code) {
                     if (even_code.error == 0) {
+
                         $("#success_info").html(even_code.msg);
                         var time1 = 60;
                         $(".soft_get_code").removeClass;
@@ -192,26 +193,25 @@ $(document).ready(function () {
                                     $(".soft_get_code").unbind("click", click_two);
                                 } else {
                                     $(".soft_get_code").bind("click", click_two);
-                                    $(".soft_get_code").text("重新获取");
+                                    $(".soft_get_code").text("获取验证码");
                                     clearInterval(setTime);
                                 }
                             }, 1000);
+
+
                         // 点击其他部分清楚定时器和验证码数字
-                        $('.modal').on('hide.bs.modal', function () {
-                            $(".soft_get_code").unbind("click", click_two);
-                            $(".soft_get_code").text("获取验证码");
-                            clearInterval(setTime);
+                        // $('.modal').on('hide.bs.modal', function () {
+                        //     ab();
+                        //     $(".soft_get_code").text("获取验证码");
+                        //     clearInterval(setTime);
 
 
-                        });
+                        // });
                         // 点击关闭按钮清楚定时器和验证码数字
-                        $("#close_btns").click(function () {
-                            $(".soft_get_code").unbind("click", click_two);
-                            $(".soft_get_code").text("获取验证码");
-                            clearInterval(setTime);
-                        });
+                        // $("#close_btns").click(function () {
+                        //     ab(false);
 
-
+                        // });
                     } else {
                         $("#error_alert").removeClass("soft_none");
                         $("#error_info").html(even_code.msg);
@@ -222,9 +222,10 @@ $(document).ready(function () {
                 }
             })
         }
-
-
     })
+
+
+
     // 点击报名按钮事件
 
     $("#soft_sumbit_btn").click(function () {
