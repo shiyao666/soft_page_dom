@@ -35,17 +35,6 @@
         padding: 0 0.5em;
     }
 
-    .soft_left {
-        float: left;
-        font-weight: bold;
-        width: 20%;
-    }
-
-    .soft_right {
-        width: 15em;
-        float: right;
-    }
-
     span {
         float: left;
         font-size: 2em;
@@ -55,6 +44,44 @@
             font-size: 1.5em;
         }
     }
+
+    .soft_left {
+        float: left;
+        font-weight: bold;
+        width: 20%;
+
+        span:first-child {
+            padding-right: 0.2em;
+            padding-top: 0.1em;
+
+            img {
+                display: block;
+                width: 1.2em;
+            }
+        }
+    }
+
+    .soft_right {
+        width: 16em;
+        float: right;
+
+        span {
+            font-size: 20px;
+        }
+
+        span:first-child {
+            padding-top: 0.1em;
+            padding-right: 1em;
+
+            img {
+                display: block;
+                width: 1.2em;
+                height: auto;
+            }
+        }
+    }
+
+
 }
 
 // tab栏切换区域
@@ -1355,6 +1382,14 @@
         font-size: 1.2em;
         display: block;
     }
+}
+
+// 警告文字区域
+
+.error_span {
+    font-size: 1.2em;
+    display: block;
+    line-height: 2em;
 }
 
 // 开班计划区域

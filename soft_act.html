@@ -15,6 +15,7 @@
     <script src="js/carousel.js"></script>
     <script src="js/jquery.mousewheel.min.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/alert.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -26,12 +27,12 @@
                     <div class="soft_max_box">
                         <div class="soft_title soft_floor">
                             <div class="soft_left">
-                                <span></span>
+                                <span><img src="css/src/zr_logo.png" alt=""></span>
                                 <span>中软培训</span>
                             </div>
                             <div class="soft_right">
-                                <span></span>
-                                <span>400-1234-8888</span>
+                                <span><img src="css/src/call1.png" alt=""></span>
+                                <span>400-6886-729</span>
                             </div>
                         </div>
                     </div>
@@ -1389,7 +1390,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="control-label">公司:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <input type="text" class="form-control" id="message-text" />
                         </div>
 
                         <div class="form-group">
@@ -1404,16 +1405,20 @@
 
 
                     </form>
+
                 </div>
-                <div class="
-                                    modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <div class="modal-footer">
+                    <button type="button" id="close_btns" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="button" class="btn btn-primary" id="soft_sumbit_btn">报名</button>
 
                 </div>
+
             </div>
         </div>
     </div>
+
+
+
 
 </body>
 

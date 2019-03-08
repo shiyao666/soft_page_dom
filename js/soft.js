@@ -40,7 +40,47 @@ $(document).ready(function () {
 
 
 })
+// 判断模态框是否显示
+
+//页面渲染函数
+function start_fuc() {
+    $.ajax({
+
+        type: "post",
+        dataType: "json",
+        async: true,
+        url: 'https://erp.csst.com.cn/activity/enroll/page',
+        data: {
+            "act_token": "afuxnsd524d"
+        },
+        success: function (event1) {
+            console.log(event1.data.length)
+            for (var i = 0; i < event1.data.length; i++) {
+                console.log(event1.data[i].activity_content);
+                console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
+                setCookie("page_token", event1)
+                $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
+                $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
+                $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
+                $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(1)").text(event1.data[i].activity_content.content2);
+                $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(0)").text(event1.data[i].activity_content.title3);
+                $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(1)").text(event1.data[i].activity_content.content3);
+                $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(0)").text(event1.data[i].activity_content.title4);
+                $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
+                $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
+                $(".soft_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
+                setCookie("page_token" + [i] + "", Array(event1.data[i].page_token));
+            }
+
+        },
+        error: function () {
+            return false;
+        }
+
+    })
+}
 $(document).ready(function () {
+    // 顶部tab 固定栏目切换
     $("#tabs ul li").hover(function () {
         $(this).addClass("active").siblings().removeClass("active");
         var index = $(this).index();
@@ -60,141 +100,212 @@ $(document).ready(function () {
 
     })
 })
+// 获取act_token所在索引定位
 var act_num = null;
-// 点击黑色幕布隐藏弹出框
-// $(function () {
-//     $("#open_four button").click(function (e) {
-//         e.stopPropagation(); //阻止事件向上冒泡
-//         $(".soft_alert_box").stop().addClass("active");
-//         $(".soft_alert_content").stop().addClass("active");
-//         $(document).one("click", function () { //对document绑定一个影藏Div方法
-
-//             $(".soft_alert_box").stop().removeClass("active");
-//             $(".soft_alert_content").stop().removeClass("active");
-//         });
-//         $(".soft_alert_content ").click(function (e) {
-//             e.stopPropagation();
-//         });
-//     });
-// });
-// 
 
 
 $(document).ready(function () {
+    // 模态框以外空白处点击事件
+    if ($('.modal').on('hide.bs.modal', function () {
+
+            $("div").remove("#error_alert");
+            $("div").remove("#success_alert");
+            $(".soft_get_code").html("获取验证码");
+            $(".soft_get_code").removeClass;
+
+        }));
+    // 点击期数报名区域
     $("#open_four .soft_join_btn").click(function () {
+        $(".soft_get_code").removeClass;
+        $(".soft_get_code").html("获取验证码");
+        $("#recipient-name").val('');
+        $("#recipient-phonenum").val('');
+        $('#message-text').val('');
+        $("#message-code").val('');
+        $(".soft_get_code").html("获取验证码");
+
         console.log('sd');
         var index = $(this).parent().parent().parent().index();
         console.log(index);
         act_num = index;
         console.log(act_num);
+        $(".modal-body").append('<div class="alert alert-danger error_btn alert-dismissible fade in soft_none" id="error_alert" role="alert" "><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><h4>警告</h4><p id="error_info"></p></div><div id="success_alert" class="alert success_btn alert-success soft_none"><a href="#" class="close" data-dismiss="alert">&times;</a><h4>提示</h4><p id="success_info"></p> </div>');
+
     })
     // 获取验证码
-
+    // 模态框关闭
+    $("#close_btns").click(function () {
+        console.log('sda');
+        $("div").remove("#error_alert");
+        $("div").remove("#success_alert");
+    })
 
 
 
 
     $("#soft_send_code").click(function click_two() {
+        // 判断是否含有成功失败模态框
+        if ($("#error_alert").length <= 0) {
+            $(".modal-body").append('<div class="alert alert-danger error_btn alert-dismissible fade in soft_none" id="error_alert" role="alert" "><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><h4>警告</h4><p id="error_info"></p></div>');
+        }
+        if ($("#success_alert").length <= 0) {
+            $(".modal-body").append('<div id="success_alert" class="alert success_btn alert-success soft_none"><a href="#" class="close" data-dismiss="alert">&times;</a><h4>提示</h4><p id="success_info"></p> </div>');
+        }
+        // 获取手机号输入框
+        var phone = $("#recipient-phonenum").val();
 
-        $.ajax({
-            type: 'post',
-            dataType: 'json',
-            async: 'ture',
-            url: 'https://erp.csst.com.cn/activity/enroll/commit',
-            data: {
-                number: $("#recipient-phonenum").val(),
-                act_token: getCookie("page_token" + act_num + "")
-            },
-            success: function (even_code) {
-                if (even_code.code == 5005) {
-                    var time1 = 60;
-                    $(".soft_get_code").removeClass;
-                    $(".soft_get_code").html("(" + time1 + "秒)");
-                    $("#soft_send_code").unbind();
-                    setTime = setInterval(
-                        function () {
-                            if (time1 > 0) {
-                                time1--;
-                                $(".soft_get_code").html("(" + time1 + "秒)");
-                                $(".soft_get_code").unbind("click", click_two);
-                            } else {
+        var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        if (phone == '') {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("手机号码不能为空！");
+        } else if (phone.length != 11) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("手机号长度错误");
+        } else if (!myreg.test(phone)) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("请输入有效的手机号码！");
+        } else {
+            $("#error_alert").addClass("soft_none");
+            $("#success_alert").removeClass("soft_none");
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                async: 'ture',
+                url: 'https://erp.csst.com.cn/activity/enroll/commit',
+                data: {
+
+                    number: $("#recipient-phonenum").val(),
+                    act_token: getCookie("page_token" + act_num + "")
+                },
+                success: function (even_code) {
+                    if (even_code.error == 0) {
+                        $("#success_info").html(even_code.msg);
+                        var time1 = 60;
+                        $(".soft_get_code").removeClass;
+                        $(".soft_get_code").html("(" + time1 + "秒)");
+                        $("#soft_send_code").unbind();
+                        setTime = setInterval(
+                            function () {
+                                if (time1 > 0) {
+                                    time1--;
+                                    $(".soft_get_code").html("(" + time1 + "秒)");
+                                    $(".soft_get_code").unbind("click", click_two);
+                                } else {
+                                    $(".soft_get_code").bind("click", click_two);
+                                    $(".soft_get_code").text("重新获取");
+                                    clearInterval(setTime);
+                                }
+                            }, 1000);
+                        // 点击其他部分清楚定时器和验证码数字
+                        if ($('.modal').on('hide.bs.modal', function () {
                                 $(".soft_get_code").bind("click", click_two);
-                                $(".soft_get_code").text("重新获取");
+                                $(".soft_get_code").text("获取验证码");
                                 clearInterval(setTime);
-                            }
-                        }, 1000);
 
-                } else {
-                    alert(even_code.msg);
+
+                            }));
+                        // 点击关闭按钮清楚定时器和验证码数字
+                        if ($("#close_btns").click(function () {
+                                $(".soft_get_code").bind("click", click_two);
+                                $(".soft_get_code").text("获取验证码");
+                                clearInterval(setTime);
+                            }));
+
+
+                    } else {
+                        $("#error_alert").removeClass("soft_none");
+                        $("#error_info").html(even_code.msg);
+                    }
+                },
+                error: function () {
+                    return false;
                 }
-
-            },
-            error: function () {
-                return false;
-            }
-        })
-    })
-    $("#soft_sumbit_btn").click(function () {
-        $.ajax({
-            type: 'post',
-            dataType: 'json',
-            async: 'ture',
-            url: 'https://erp.csst.com.cn/activity/enroll/send_data',
-            data: {
-                number: $("#recipient-phonenum").val(),
-                code: $("#message-code").val(),
-                name: $("#recipient-name").val(),
-                company_name: $("#message-text").val(),
-                act_token: getCookie("page_token" + act_num + "")
-            },
-            success: function (event2) {
-                alert(event2.msg);
-
-            },
-            error: function () {
-                return false;
-            }
-        })
-    })
-
-})
-
-$.ajax({
-
-    type: "post",
-    dataType: "json",
-    async: true,
-    url: 'https://erp.csst.com.cn/activity/enroll/page',
-    data: {
-        "act_token": "afuxnsd524d"
-    },
-    success: function (event1) {
-        console.log(event1.data.length)
-        for (var i = 0; i < event1.data.length; i++) {
-            console.log(event1.data[i].activity_content);
-            console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
-            setCookie("page_token", event1)
-            $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
-            $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
-            $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
-            $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(1)").text(event1.data[i].activity_content.content2);
-            $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(0)").text(event1.data[i].activity_content.title3);
-            $(".soft_open_qi").eq(i).find("li.soft_content3 span:eq(1)").text(event1.data[i].activity_content.content3);
-            $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(0)").text(event1.data[i].activity_content.title4);
-            $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
-            $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
-            $(".soft_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
-            setCookie("page_token" + [i] + "", Array(event1.data[i].page_token));
+            })
         }
 
-    },
-    error: function () {
-        return false;
-    }
+
+    })
+    // 点击报名按钮事件
+
+    $("#soft_sumbit_btn").click(function () {
+
+        $("#success_alert").addClass("soft_none");
+        var phone2 = $("#recipient-phonenum").val();
+        var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        if ($("#recipient-name").val().length == 0) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("姓名不能为空");
+        } else if (/[@#\$%\^&\*]+/gi.test($("#recipient-name").val())) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("姓名不合法");
+        } else if ($("#recipient-phonenum").val().length == 0) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("手机号不能为空");
+        } else if (phone2 == '') {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("手机号码不能为空！");
+        } else if (phone2.length != 11) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("手机号长度错误");
+        } else if (!myreg.test(phone2)) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("请输入有效的手机号码！");
+        } else if ($("#message-code").val().length == 0) {
+            $("#error_alert").removeClass("soft_none");
+            $("#error_info").html("验证码不能为空");
+        }
+        //  else if ($("#message-text").val().length == 0) {
+        //     alert("公司名称不能为空");
+        //  }
+        else {
+
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                async: 'ture',
+                url: 'https://erp.csst.com.cn/activity/enroll/send_data',
+                data: {
+                    number: $("#recipient-phonenum").val(),
+                    code: $("#message-code").val(),
+                    name: $("#recipient-name").val(),
+                    company_name: $("#message-text").val(),
+                    act_token: getCookie("page_token" + act_num + "")
+                },
+                success: function (event2) {
+                    $("#alert_error_box").alert(event2.msg);
+                    if (event2.error == 0 || event2.code == 5007) {
+                        $("#error_alert").addClass("soft_none");
+                        $("#success_alert").removeClass("soft_none");
+                        $("#success_info").html(event2.msg);
+                        setInterval(function () {
+                            $(".modal-backdrop").remove();
+                            $("#exampleModal").hide();
+                            location.reload();
+                        }, 3200);
+                        clearInterval();
+
+
+                    } else {
+                        $("#error_alert").removeClass("soft_none");
+                        $("#error_info").html(event2.msg);
+                    }
+
+                },
+                error: function () {
+                    return false;
+                }
+            })
+        }
+    })
 
 })
+
+// 初始化页面事件
+$(document).ready(start_fuc());
 // 六个栏目
 $(document).ready(function () {
+
+    $(".alert").hide();
     $("#soft_top_tab li").click(function () {
         $(this).addClass("active").siblings().removeClass("active");
     })
@@ -211,6 +322,8 @@ $(document).ready(function () {
     })
     // 模拟测试
 })
+// 
+// 查看答案区域
 $(document).ready(function () {
     $(".question_btn").click(function () {
         console.log("dianji")

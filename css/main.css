@@ -897,13 +897,6 @@ button {
   @media screen and (max-width: 768px) {
     .soft_title {
       padding: 0 0.5em; } }
-  .soft_title .soft_left {
-    float: left;
-    font-weight: bold;
-    width: 20%; }
-  .soft_title .soft_right {
-    width: 15em;
-    float: right; }
   .soft_title span {
     float: left;
     font-size: 2em;
@@ -911,6 +904,28 @@ button {
     @media screen and (max-width: 768px) {
       .soft_title span {
         font-size: 1.5em; } }
+  .soft_title .soft_left {
+    float: left;
+    font-weight: bold;
+    width: 20%; }
+    .soft_title .soft_left span:first-child {
+      padding-right: 0.2em;
+      padding-top: 0.1em; }
+      .soft_title .soft_left span:first-child img {
+        display: block;
+        width: 1.2em; }
+  .soft_title .soft_right {
+    width: 16em;
+    float: right; }
+    .soft_title .soft_right span {
+      font-size: 20px; }
+    .soft_title .soft_right span:first-child {
+      padding-top: 0.1em;
+      padding-right: 1em; }
+      .soft_title .soft_right span:first-child img {
+        display: block;
+        width: 1.2em;
+        height: auto; }
 
 .soft_top_tab {
   width: 100%;
@@ -1807,6 +1822,11 @@ button {
     width: 100%;
     font-size: 1.2em;
     display: block; }
+
+.error_span {
+  font-size: 1.2em;
+  display: block;
+  line-height: 2em; }
 
 .soft_open_part {
   padding-left: 3em;
