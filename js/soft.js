@@ -100,7 +100,7 @@ $(document).ready(function () {
             type: 'post',
             dataType: 'json',
             async: 'ture',
-            url: 'http://api.csst.com.cn/activity/enroll/commit',
+            url: 'https://erp.csst.com.cn/activity/enroll/commit',
             data: {
                 number: $("#recipient-phonenum").val(),
                 act_token: getCookie("page_token" + act_num + "")
@@ -139,7 +139,7 @@ $(document).ready(function () {
             type: 'post',
             dataType: 'json',
             async: 'ture',
-            url: 'http://api.csst.com.cn/activity/enroll/send_data',
+            url: 'https://erp.csst.com.cn/activity/enroll/send_data',
             data: {
                 number: $("#recipient-phonenum").val(),
                 code: $("#message-code").val(),
@@ -164,7 +164,7 @@ $.ajax({
     type: "post",
     dataType: "json",
     async: true,
-    url: 'http://api.csst.com.cn/activity/enroll/page',
+    url: 'https://erp.csst.com.cn/activity/enroll/page',
     data: {
         "act_token": "afuxnsd524d"
     },
@@ -336,7 +336,7 @@ window.onscroll = function () {
             localStorage.setItem("user_token", passwd)
         }
         //get请求,用于统计页面访问数
-        $.get("http://api.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
+        $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
             // alert("数据：" + data + "\n状态：" + status);
         });
     }
