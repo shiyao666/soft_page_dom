@@ -197,19 +197,19 @@ $(document).ready(function () {
                                 }
                             }, 1000);
                         // 点击其他部分清楚定时器和验证码数字
-                        if ($('.modal').on('hide.bs.modal', function () {
-                                $(".soft_get_code").bind("click", click_two);
-                                $(".soft_get_code").text("获取验证码");
-                                clearInterval(setTime);
+                        $('.modal').on('hide.bs.modal', function () {
+                            $(".soft_get_code").unbind("click", click_two);
+                            $(".soft_get_code").text("获取验证码");
+                            clearInterval(setTime);
 
 
-                            }));
+                        });
                         // 点击关闭按钮清楚定时器和验证码数字
-                        if ($("#close_btns").click(function () {
-                                $(".soft_get_code").bind("click", click_two);
-                                $(".soft_get_code").text("获取验证码");
-                                clearInterval(setTime);
-                            }));
+                        $("#close_btns").click(function () {
+                            $(".soft_get_code").unbind("click", click_two);
+                            $(".soft_get_code").text("获取验证码");
+                            clearInterval(setTime);
+                        });
 
 
                     } else {
