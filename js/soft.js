@@ -54,10 +54,10 @@ function start_fuc() {
             "act_token": "afuxnsd524d"
         },
         success: function (event1) {
-            console.log(event1.data.length)
+            // console.log(event1.data.length)
             for (var i = 0; i < event1.data.length; i++) {
-                console.log(event1.data[i].activity_content);
-                console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
+                // console.log(event1.data[i].activity_content);
+                // console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
                 setCookie("page_token", event1)
                 $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
                 $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
@@ -123,26 +123,19 @@ $(document).ready(function () {
         $('#message-text').val('');
         $("#message-code").val('');
         $(".soft_get_code").html("获取验证码");
-
-        console.log('sd');
         var index = $(this).parent().parent().parent().index();
-        console.log(index);
+        // console.log(index);
         act_num = index;
-        console.log(act_num);
+        // console.log(act_num);
         $(".modal-body").append('<div class="alert alert-danger error_btn alert-dismissible fade in soft_none" id="error_alert" role="alert" "><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><h4>警告</h4><p id="error_info"></p></div><div id="success_alert" class="alert success_btn alert-success soft_none"><a href="#" class="close" data-dismiss="alert">&times;</a><h4>提示</h4><p id="success_info"></p> </div>');
 
     })
     // 获取验证码
     // 模态框关闭
     $("#close_btns").click(function () {
-        console.log('sda');
         $("div").remove("#error_alert");
         $("div").remove("#success_alert");
     })
-
-
-
-
     $("#soft_send_code").click(function click_two() {
         // 判断是否含有成功失败模态框
         if ($("#error_alert").length <= 0) {
@@ -153,8 +146,9 @@ $(document).ready(function () {
         }
         // 获取手机号输入框
         var phone = $("#recipient-phonenum").val();
-
+        // 正则验证
         var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        // 手机号/验证码验证
         if (phone == '') {
             $("#error_alert").removeClass("soft_none");
             $("#error_info").html("手机号码不能为空！");
@@ -173,13 +167,11 @@ $(document).ready(function () {
                 async: 'ture',
                 url: 'https://erp.csst.com.cn/activity/enroll/commit',
                 data: {
-
                     number: $("#recipient-phonenum").val(),
                     act_token: getCookie("page_token" + act_num + "")
                 },
                 success: function (even_code) {
                     if (even_code.error == 0) {
-
                         $("#success_info").html(even_code.msg);
                         var time1 = 60;
                         $(".soft_get_code").removeClass;
@@ -197,20 +189,15 @@ $(document).ready(function () {
                                     clearInterval(setTime);
                                 }
                             }, 1000);
-
-
                         // 点击其他部分清楚定时器和验证码数字
                         // $('.modal').on('hide.bs.modal', function () {
                         //     ab();
                         //     $(".soft_get_code").text("获取验证码");
                         //     clearInterval(setTime);
-
-
                         // });
                         // 点击关闭按钮清楚定时器和验证码数字
                         // $("#close_btns").click(function () {
                         //     ab(false);
-
                         // });
                     } else {
                         $("#error_alert").removeClass("soft_none");
@@ -224,12 +211,8 @@ $(document).ready(function () {
         }
     })
 
-
-
     // 点击报名按钮事件
-
     $("#soft_sumbit_btn").click(function () {
-
         $("#success_alert").addClass("soft_none");
         var phone2 = $("#recipient-phonenum").val();
         var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
@@ -259,7 +242,6 @@ $(document).ready(function () {
         //     alert("公司名称不能为空");
         //  }
         else {
-
             $.ajax({
                 type: 'post',
                 dataType: 'json',
@@ -283,14 +265,12 @@ $(document).ready(function () {
                             $("#exampleModal").hide();
                             location.reload();
                         }, 3200);
+                        // 清除定时器
                         clearInterval();
-
-
                     } else {
                         $("#error_alert").removeClass("soft_none");
                         $("#error_info").html(event2.msg);
                     }
-
                 },
                 error: function () {
                     return false;
@@ -300,21 +280,17 @@ $(document).ready(function () {
     })
 
 })
-
 // 初始化页面事件
 $(document).ready(start_fuc());
 // 六个栏目
 $(document).ready(function () {
-
     $(".alert").hide();
     $("#soft_top_tab li").click(function () {
         $(this).addClass("active").siblings().removeClass("active");
     })
-
     $("#soft_act_area span").hover(function () {
         $(this).addClass("active").siblings().removeClass("active");
         var index = $(this).index();
-
         $(".soft_act_tab").eq(index).addClass("move-in").siblings().removeClass("move-in");
         setTimeout(function () {
             $(".soft_act_tab").eq(index).addClass("active").siblings().removeClass("active"), 300
@@ -327,15 +303,12 @@ $(document).ready(function () {
 // 查看答案区域
 $(document).ready(function () {
     $(".question_btn").click(function () {
-        console.log("dianji")
         $(this).parent().next().removeClass("soft_none")
     })
 })
 // 鼠标滚轮
 $(document).ready(function () {
-
     $(window).on('mousewheel', function (event) {
-
         //上下滚动时让鼠标垂直移动
         // var newTop = $(this).position().top - event.deltaY + "px";
         // $(this).css("top", newTop);
@@ -352,7 +325,6 @@ $(document).ready(function () {
     var ol = $("#soft_top_tab")[0];
     var olLiArr = ol.children;
     var floor = $(".soft_floor");
-
     var timer = null,
         leader = 0,
         target = 0;
@@ -360,7 +332,6 @@ $(document).ready(function () {
     for (var i = 0; i < floor.length; i++) {
         olLiArr[i].index = i;
         olLiArr[i].addEventListener("click", function () {
-
             target = floor[this.index].offsetTop - 50;
             clearInterval(timer);
             timer = setInterval(function () {
@@ -411,7 +382,6 @@ function getDocumentTop() {
  */
 //可视窗口高度
 function getWindowHeight() {
-
     var windowHeight = 0;
     if (document.compatMode == "CSS1Compat") {
         windowHeight = document.documentElement.clientHeight;
@@ -419,7 +389,6 @@ function getWindowHeight() {
         windowHeight = document.body.clientHeight;
     }
     return windowHeight;
-
 }
 /** 
  * @author xuesong
@@ -439,19 +408,46 @@ function getScrollHeight() {
     scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
     return scrollHeight;
 }
-window.onscroll = function () {
-    //监听事件内容
-    if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
-        //当滚动条到底时,这里是触发内容
-        if (!localStorage.user_token) {
-            var password = Date.parse(new Date()).toString() + Math.ceil(Math.random() * 10000).toString();
-            //加密成md5
-            var passwd = $.md5(password);
-            localStorage.setItem("user_token", passwd)
+// window.onscroll = function () {
+//     //监听事件内容
+//     if (getScrollHeight() == getWindowHeight() + getDocumentTop()) {
+//         //当滚动条到底时,这里是触发内容
+//         if (!localStorage.user_token) {
+//             var password = Date.parse(new Date()).toString() + Math.ceil(Math.random() * 10000).toString();
+//             //加密成md5
+//             var passwd = $.md5(password);
+//             localStorage.setItem("user_token", passwd);
+//         }
+//         //get请求,用于统计页面访问数
+//         $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
+//             // alert("数据：" + data + "\n状态：" + status);
+//         });
+//     }
+// }
+
+// 页面浏览次数监听
+$(document).ready(function () {
+    var password = Date.parse(new Date()).toString() + Math.ceil(Math.random() * 10000).toString();
+    //加密成md5
+    var passwd = $.md5(password);
+    localStorage.setItem("user_token", passwd)
+    $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
+        // alert("数据：" + data + "\n状态：" + status);
+    });
+    console.log($(window).scrollTop());
+    console.log($(".soft_floor").eq(3).height());
+    console.log($(window).height());
+});
+// 滚动到开班计划区域 刷新事件
+$(window).scroll(function () {
+    console.log($(window).scrollTop());
+    if ($(window).scrollTop() == 2585 || $(window).scrollTop() == 2600) {
+        if (location.search.indexOf("?") == -1) {
+            location.href += "?myurl";
+        } else {
+            if (location.search.indexOf("myurl") == -1) location.href += "&myurl";
         }
-        //get请求,用于统计页面访问数
-        $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
-            // alert("数据：" + data + "\n状态：" + status);
-        });
+
     }
-}
+
+});

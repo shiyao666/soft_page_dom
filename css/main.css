@@ -1182,7 +1182,8 @@ button {
       .soft_act_bottom span {
         width: 100%;
         margin-bottom: 1em; } }
-  .soft_act_bottom button {
+  .soft_act_bottom button,
+  .soft_act_bottom a.button {
     background-color: #347dbb;
     color: #FFFFFF;
     line-height: 2em;
@@ -1191,24 +1192,23 @@ button {
     float: left;
     padding-left: 2em;
     position: relative; }
-  .soft_act_bottom button::before {
+  .soft_act_bottom button::before,
+  .soft_act_bottom a.button::before {
     content: ' ';
     position: absolute;
-    left: 1.2em;
+    left: 0.3em;
     top: 0.3em;
     display: block;
-    width: 2em;
+    width: 1.5em;
     height: 1.5em;
     background-repeat: no-repeat;
     background-size: contain; }
-  .soft_act_bottom span:first-child button::before {
+  .soft_act_bottom span:first-child a.button::before {
     background-image: url(src/feiyong.png); }
-  .soft_act_bottom span:nth-of-type(2) button::before {
+  .soft_act_bottom span:nth-of-type(2) a.button::before {
     background-image: url(src/passnum.png); }
-  .soft_act_bottom span:nth-of-type(3) button::before {
+  .soft_act_bottom span:nth-of-type(3) a.button::before {
     background-image: url(src/enlist.png); }
-  .soft_act_bottom button:first-child::before {
-    background-image: url(src/button_logo.png); }
 
 .soft_act_content1 {
   overflow: hidden;
@@ -1842,6 +1842,46 @@ button {
     width: 98%;
     float: left;
     border-top: 3px solid #08345a; }
+  .soft_open_part .soft_open_describe .soft_content1 {
+    width: 100%;
+    background-color: #e2e2e2;
+    height: 6em;
+    overflow: hidden;
+    padding-top: 0.5em; }
+    .soft_open_part .soft_open_describe .soft_content1 span {
+      float: left;
+      width: 100%;
+      color: #821C21;
+      text-align: center;
+      line-height: 2; }
+    .soft_open_part .soft_open_describe .soft_content1 span:first-child {
+      font-size: 1.5em; }
+    .soft_open_part .soft_open_describe .soft_content1 span:nth-of-type(2) {
+      font-size: 1em; }
+  .soft_open_part .soft_open_info {
+    height: 4em;
+    padding: 1em 1em 0 1em; }
+    .soft_open_part .soft_open_info span {
+      display: block;
+      position: relative;
+      width: 100%;
+      text-align: left;
+      font-size: 1.2em;
+      font-weight: bold;
+      line-height: 3em;
+      padding-left: 2.2em;
+      border-bottom: 2px solid #d8d8d8; }
+    .soft_open_part .soft_open_info span:before {
+      content: ' ';
+      position: absolute;
+      background-image: url(src/open_icon1.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      width: 1.5em;
+      height: 1.5em;
+      left: 0em;
+      top: 0.8em; }
   .soft_open_part .soft_open_qi {
     float: left;
     margin-right: 2%;
@@ -1891,15 +1931,11 @@ button {
         background-size: contain;
         color: #821C21;
         background-repeat: no-repeat; }
-      .soft_open_part .soft_open_qi ul li.active::before {
-        color: #5C89CC; }
       .soft_open_part .soft_open_qi ul li:first-child::before {
-        background-image: url(src/open_icon1.png); }
-      .soft_open_part .soft_open_qi ul li:nth-of-type(2)::before {
         background-image: url(src/open_icon2.png); }
-      .soft_open_part .soft_open_qi ul li:nth-of-type(3)::before {
+      .soft_open_part .soft_open_qi ul li:nth-of-type(2)::before {
         background-image: url(src/open_icon3.png); }
-      .soft_open_part .soft_open_qi ul li:last-child::before {
+      .soft_open_part .soft_open_qi ul li:nth-of-type(3)::before {
         background-image: url(src/open_icon4.png); }
   .soft_open_part .soft_set {
     padding-top: 2em;
@@ -1940,13 +1976,15 @@ button {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6); }
     .soft_open_part .soft_open_qi.active dt {
       background-color: #347dbb; }
-    .soft_open_part .soft_open_qi.active ul li:first-child::before {
+    .soft_open_part .soft_open_qi.active .soft_content1 span {
+      color: #347dbb; }
+    .soft_open_part .soft_open_qi.active .soft_open_info span::before {
       background-image: url(src/open_icon5.png); }
-    .soft_open_part .soft_open_qi.active ul li:nth-of-type(2)::before {
+    .soft_open_part .soft_open_qi.active ul li:first-child::before {
       background-image: url(src/open_icon6.png); }
-    .soft_open_part .soft_open_qi.active ul li:nth-of-type(3)::before {
+    .soft_open_part .soft_open_qi.active ul li:nth-of-type(2)::before {
       background-image: url(src/open_icon7.png); }
-    .soft_open_part .soft_open_qi.active ul li:last-child::before {
+    .soft_open_part .soft_open_qi.active ul li:nth-of-type(3)::before {
       background-image: url(src/open_icon8.png); }
   .soft_open_part .soft_open_content::before {
     content: ' ';
@@ -2409,6 +2447,10 @@ button {
     color: #ffffff; }
   .soft_bottom_part ul li a:hover {
     text-decoration: none; }
+
+.soft_bottom_part a {
+  color: #fff;
+  line-height: 2; }
 
 .soft_bottom_left {
   overflow: hidden;

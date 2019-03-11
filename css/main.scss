@@ -440,7 +440,8 @@
         }
     }
 
-    button {
+    button,
+    a.button {
         background-color: #347dbb;
         color: $primary-color-text;
         line-height: 2em;
@@ -451,39 +452,31 @@
         position: relative;
     }
 
-    button::before {
+    button::before,
+    a.button::before {
         content: ' ';
         position: absolute;
-        left: 1.2em;
+        left: 0.3em;
         top: 0.3em;
         display: block;
-        width: 2em;
+        width: 1.5em;
         height: 1.5em;
         background-repeat: no-repeat;
         background-size: contain;
     }
 
-    span:first-child {
-        button::before {
-            background-image: url(src/feiyong.png);
-        }
+    span:first-child a.button::before {
+        background-image: url(src/feiyong.png);
     }
 
-    span:nth-of-type(2) {
-        button::before {
-            background-image: url(src/passnum.png);
-        }
+    span:nth-of-type(2) a.button::before {
+        background-image: url(src/passnum.png);
     }
 
-    span:nth-of-type(3) {
-        button::before {
-            background-image: url(src/enlist.png);
-        }
+    span:nth-of-type(3) a.button::before {
+        background-image: url(src/enlist.png);
     }
 
-    button:first-child::before {
-        background-image: url(src/button_logo.png);
-    }
 }
 
 .soft_act_content1 {
@@ -1417,6 +1410,63 @@
         border-top: 3px solid $open_border_color;
     }
 
+    .soft_open_describe {
+
+        .soft_content1 {
+            width: 100%;
+            background-color: #e2e2e2;
+            height: 6em;
+            overflow: hidden;
+            padding-top: 0.5em;
+
+            span {
+                float: left;
+                width: 100%;
+                color: #821C21;
+                text-align: center;
+                line-height: 2;
+            }
+
+            span:first-child {
+                font-size: 1.5em;
+            }
+
+            span:nth-of-type(2) {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .soft_open_info {
+        height: 4em;
+        padding: 1em 1em 0 1em;
+
+        span {
+            display: block;
+            position: relative;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 3em;
+            padding-left: 2.2em;
+            border-bottom: 2px solid #d8d8d8;
+        }
+
+        span:before {
+            content: ' ';
+            position: absolute;
+            background-image: url(src/open_icon1.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            left: 0em;
+            top: 0.8em;
+        }
+    }
+
     .soft_open_qi {
         float: left;
         margin-right: 2%;
@@ -1481,25 +1531,20 @@
                 background-repeat: no-repeat;
             }
 
-            li.active::before {
-                color: $primary-text-color;
-            }
 
             li:first-child::before {
-                background-image: url(src/open_icon1.png);
-            }
-
-            li:nth-of-type(2)::before {
                 background-image: url(src/open_icon2.png);
             }
 
-            li:nth-of-type(3)::before {
+            li:nth-of-type(2)::before {
                 background-image: url(src/open_icon3.png);
             }
 
-            li:last-child::before {
+            li:nth-of-type(3)::before {
                 background-image: url(src/open_icon4.png);
             }
+
+
         }
     }
 
@@ -1564,22 +1609,30 @@
             background-color: #347dbb;
         }
 
-        ul {
-            li:first-child::before {
+        .soft_content1 span {
+            color: #347dbb;
+        }
+
+        .soft_open_info {
+            span::before {
                 background-image: url(src/open_icon5.png);
             }
+        }
 
-            li:nth-of-type(2)::before {
+        ul {
+            li:first-child::before {
                 background-image: url(src/open_icon6.png);
             }
 
-            li:nth-of-type(3)::before {
+            li:nth-of-type(2)::before {
                 background-image: url(src/open_icon7.png);
             }
 
-            li:last-child::before {
+            li:nth-of-type(3)::before {
                 background-image: url(src/open_icon8.png);
             }
+
+
         }
     }
 
@@ -2177,6 +2230,7 @@
     padding: 2em 1em;
     color: #ffffff;
 
+
     dt {
         float: left;
         font-weight: normal;
@@ -2194,6 +2248,11 @@
             text-decoration: none;
         }
     }
+}
+
+.soft_bottom_part a {
+    color: #fff;
+    line-height: 2;
 }
 
 .soft_bottom_left {
