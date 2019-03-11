@@ -1414,7 +1414,7 @@
 
         .soft_content1 {
             width: 100%;
-            background-color: #eaeaea;
+            background-color: $background-color;
             height: 6em;
             overflow: hidden;
             padding-top: 0.5em;
@@ -1450,7 +1450,7 @@
             font-weight: bold;
             line-height: 3em;
             padding-left: 2.2em;
-            border-bottom: 2px solid #d8d8d8;
+            border-bottom: 2px solid $bgc-light;
         }
 
         span:before {

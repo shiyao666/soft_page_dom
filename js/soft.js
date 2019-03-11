@@ -306,6 +306,19 @@ $(document).ready(function () {
         $(this).parent().next().removeClass("soft_none")
     })
 })
+// 滚动条监听
+//判断滚动方向
+var scroll_way = 0;
+$(window).scroll(function () {
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop > scroll_way) {
+        $(".soft_top_tab ").addClass("hide1").removeClass("active default");
+    } else {
+        $(".soft_top_tab ").addClass("active").removeClass("hide1 default");
+    }
+    scroll_way = scrollTop;
+});
+
 // 鼠标滚轮
 $(document).ready(function () {
     $(window).on('mousewheel', function (event) {
@@ -322,6 +335,7 @@ $(document).ready(function () {
             $(".soft_top_tab ").addClass("active").removeClass("hide1 default");
         }
     });
+    scroll($(window).height());
     var ol = $("#soft_top_tab")[0];
     var olLiArr = ol.children;
     var floor = $(".soft_floor");
