@@ -455,12 +455,9 @@ $(document).ready(function () {
 // 滚动到开班计划区域 刷新事件
 $(window).scroll(function () {
     if ($(window).scrollTop() == 2585 || $(window).scrollTop() == 2600) {
-        if (location.search.indexOf("?") == -1) {
-            location.href += "?myurl";
-        } else {
-            if (location.search.indexOf("myurl") == -1) location.href += "&myurl";
+        if (location.href.indexOf("#reloaded") == -1) {
+            location.href = location.href + "#reloaded";
+            location.reload();
         }
-
     }
-
 });

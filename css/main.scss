@@ -180,12 +180,22 @@
         dt {
             width: 10em;
             font-weight: normal;
-            font-size: 1.5em;
+            font-size: 2em;
             display: block;
             margin: auto;
             text-align: center;
             color: #fff;
             letter-spacing: 2px;
+        }
+
+        span {
+            display: block;
+            width: 16em;
+            text-align: center;
+            margin: auto;
+            line-height: 1.5;
+            text-align: center;
+            color: #fff;
         }
 
         h3 {
@@ -1125,9 +1135,9 @@
 
 }
 
-.soft_titile_box {
+.soft_title_box {
     padding-top: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 3em;
 }
 
 .soft_team_content {
@@ -1148,7 +1158,6 @@
 .soft_team_item {
     position: absolute;
 }
-
 
 
 .soft_team_middle {
@@ -1399,6 +1408,10 @@
                 width: 8em;
             }
         }
+    }
+
+    .soft_open_topbox {
+        padding-bottom: 1em;
     }
 
     .soft_open_content {
