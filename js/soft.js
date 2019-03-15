@@ -49,6 +49,7 @@ function start_fuc() {
         type: "post",
         dataType: "json",
         async: true,
+        // https://erp.csst.com.cn
         url: 'https://erp.csst.com.cn/activity/enroll/page',
         data: {
             "act_token": "afuxnsd524d"
@@ -332,6 +333,10 @@ $(document).ready(function () {
             $(".soft_top_tab ").addClass("hide1").removeClass("active default");
         }
         if (event.deltaY == 1) {
+            $(".soft_top_tab ").addClass("active").removeClass("hide1 default");
+        }
+        if ($(".soft_top_tab").offset().top < 300) {
+            console.log('dsada');
             $(".soft_top_tab ").addClass("active").removeClass("hide1 default");
         }
     });
