@@ -896,29 +896,32 @@ button {
   overflow: hidden; }
   @media screen and (max-width: 768px) {
     .soft_title {
-      padding: 0 0.5em; } }
+      padding: 0; } }
   .soft_title span {
     float: left;
     font-size: 2em;
     color: #821C21; }
     @media screen and (max-width: 768px) {
       .soft_title span {
-        font-size: 1.5em; } }
+        font-size: 1.2em; } }
   .soft_title .soft_left {
     float: left;
-    font-weight: bold;
-    width: 20%; }
+    font-weight: bold; }
     .soft_title .soft_left span:first-child {
       padding-right: 0.2em;
       padding-top: 0.1em; }
+      @media screen and (max-width: 768px) {
+        .soft_title .soft_left span:first-child {
+          padding-top: 0.5em; } }
       .soft_title .soft_left span:first-child img {
         display: block;
         width: 1.2em; }
   .soft_title .soft_right {
-    width: 16em;
     float: right; }
     .soft_title .soft_right span {
       font-size: 20px; }
+    .soft_title .soft_right .soft_call_div {
+      float: right; }
     .soft_title .soft_right span:first-child {
       padding-top: 0.1em;
       padding-right: 1em; }
@@ -926,6 +929,9 @@ button {
         display: block;
         width: 1.2em;
         height: auto; }
+  .soft_title .soft_left,
+  .soft_title .soft_right {
+    padding: 0; }
 
 .soft_top_tab {
   width: 100%;
@@ -958,6 +964,9 @@ button {
 .soft_top_tab.active {
   height: 104px;
   top: 0; }
+  @media screen and (max-width: 768px) {
+    .soft_top_tab.active {
+      height: auto; } }
   .soft_top_tab.active ul {
     display: block; }
     .soft_top_tab.active ul li.acitve {
@@ -971,6 +980,9 @@ button {
     text-align: center;
     height: 2.9em;
     border-top: 3px solid #821C21; }
+    @media screen and (max-width: 768px) {
+      .soft_tab_ul li {
+        height: auto; } }
   .soft_tab_ul li.active {
     border-top-color: #a2a2a2;
     background-color: #ffffff19; }
@@ -1020,6 +1032,9 @@ button {
         float: left;
         padding-bottom: 2em;
         width: 33%; }
+        @media screen and (max-width: 768px) {
+          .soft_banner .soft_banner_img ul li {
+            width: 50%; } }
         .soft_banner .soft_banner_img ul li span {
           display: block;
           text-align: center;

@@ -32,7 +32,7 @@
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
-        padding: 0 0.5em;
+        padding: 0;
     }
 
     span {
@@ -41,18 +41,21 @@
         color: $primary-color;
 
         @media screen and (max-width: 768px) {
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
     }
 
     .soft_left {
         float: left;
         font-weight: bold;
-        width: 20%;
 
         span:first-child {
             padding-right: 0.2em;
             padding-top: 0.1em;
+
+            @media screen and (max-width: 768px) {
+                padding-top: 0.5em;
+            }
 
             img {
                 display: block;
@@ -62,11 +65,14 @@
     }
 
     .soft_right {
-        width: 16em;
         float: right;
 
         span {
             font-size: 20px;
+        }
+
+        .soft_call_div {
+            float: right;
         }
 
         span:first-child {
@@ -79,6 +85,11 @@
                 height: auto;
             }
         }
+    }
+
+    .soft_left,
+    .soft_right {
+        padding: 0;
     }
 
 
@@ -130,6 +141,10 @@
     height: 104px;
     top: 0;
 
+    @media screen and (max-width: 768px) {
+        height: auto;
+    }
+
     ul {
         display: block;
 
@@ -148,6 +163,9 @@
         text-align: center;
         height: 2.9em;
         border-top: 3px solid $primary-color;
+        @media screen and (max-width:768px) {
+            height: auto;
+        }
     }
 
     li.active {
@@ -213,7 +231,9 @@
                 float: left;
                 padding-bottom: 2em;
                 width: 33%;
-
+                @media screen and (max-width:768px) {
+                    width: 50%;
+                }
                 span {
                     display: block;
                     text-align: center;
