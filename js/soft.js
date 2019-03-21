@@ -90,16 +90,16 @@ $(document).ready(function () {
     $("#open_four .soft_open_qi").hover(function () {
         $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
     });
-    $("#soft_act1 li").click(function () {
-        $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
-        $("#soft_act2 li").removeClass("active animated pulse");
+    // $("#soft_act1 li").click(function () {
+    //     $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+    //     $("#soft_act2 li").removeClass("active animated pulse");
 
-    });
-    $("#soft_act2 li").click(function () {
-        $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
-        $("#soft_act1 li").removeClass("active animated pulse");
+    // });
+    // $("#soft_act2 li").click(function () {
+    //     $(this).addClass("active animated pulse").siblings().removeClass("active animated pulse");
+    //     $("#soft_act1 li").removeClass("active animated pulse");
 
-    })
+    // })
 })
 // 获取act_token所在索引定位
 var act_num = null;
