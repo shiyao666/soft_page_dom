@@ -497,7 +497,6 @@
     span {
         float: left;
         width: 33%;
-        padding-left: 10%;
         text-align: left;
         line-height: 2em;
 
@@ -904,9 +903,11 @@
     width: 100%;
     padding: 2em;
     overflow: hidden;
-    @media screen and (max-width:768px){
+
+    @media screen and (max-width: 768px) {
         padding: 0;
     }
+
     .soft_lesson_left,
     .soft_lesson_right {
         float: left;
@@ -1034,13 +1035,15 @@
         background-image: url(src/yun.png);
         background-repeat: no-repeat;
         background-size: contain;
-        @media screen and (max-width:768px){
+
+        @media screen and (max-width: 768px) {
             top: 0.5em;
         }
     }
+
     span:nth-child(2)::before,
-    span:nth-child(3)::before{
-        @media screen and (max-width:768px){
+    span:nth-child(3)::before {
+        @media screen and (max-width: 768px) {
             top: 2.5em;
         }
     }
@@ -1050,7 +1053,8 @@
         color: #08345a;
         margin-top: 2em;
         margin-bottom: 3em;
-        @media screen and (max-width:768px){
+
+        @media screen and (max-width: 768px) {
             margin-bottom: 1.5em;
         }
     }
@@ -1089,7 +1093,6 @@
 // 团队6栏
 .soft_team_part {
     padding-top: 7em;
-
     @media screen and (max-width: 768px) {
         padding-top: 3em;
     }
@@ -1220,16 +1223,8 @@
 
 // 软考项目管理专业学习难点区域
 .soft_project_title {
-    @media screen and (min-width: 768px) {
-        dt {
-            width: 14em;
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        dt {
-            width: 14em;
-        }
+    dt {
+        width: 13em;
     }
 }
 
@@ -1935,11 +1930,12 @@
             width: 7em;
             height: 7em;
             bottom: -3.5em;
-            left: calc(50% - 3.5em);
+            left: calc(50% - 2em);
             background-image: url(src/about_us4.png);
 
             @media screen and (max-width: 768px) {
                 bottom: 1.5em;
+                left: calc(50% - 3.5em);
             }
         }
 
@@ -2396,7 +2392,7 @@
     background-color: $test_bgcolor;
     position: absolute;
     bottom: -1em;
-    content: '';
+    content: ' ';
     left: calc(50% - 1em);
     display: block;
     width: 2em;
@@ -2445,9 +2441,10 @@
         float: left;
         color: $primary-color-text;
         line-height: 1.5em;
-
         @media screen and (max-width: 768px) {
             font-size: 1.5em;
+            width: 100%;
+            
         }
     }
 
