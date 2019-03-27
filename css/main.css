@@ -991,6 +991,12 @@ button {
     border-top-color: #a2a2a2;
     background-color: #ffffff19; }
 
+.top_container {
+  padding-top: 60px; }
+  @media screen and (max-width: 768px) {
+    .top_container {
+      padding-top: 100px; } }
+
 .soft_banner {
   display: block;
   width: 100%;
@@ -999,8 +1005,7 @@ button {
   background: url(src/max_bg.png);
   background-size: 1920px 550px;
   background-position: center 0;
-  background-repeat: no-repeat;
-  padding: 100px 0; }
+  background-repeat: no-repeat; }
   @media screen and (max-width: 768px) {
     .soft_banner {
       margin: 0; } }
@@ -1229,11 +1234,13 @@ button {
     float: left;
     width: 33%;
     text-align: left;
-    line-height: 2em; }
+    line-height: 2em;
+    padding-left: calc(16% - 5em); }
     @media screen and (max-width: 768px) {
       .soft_act_bottom span {
         width: 100%;
-        margin-bottom: 1em; } }
+        margin-bottom: 1em;
+        padding: 0; } }
   .soft_act_bottom button,
   .soft_act_bottom a.button {
     background-color: #347dbb;
@@ -1594,6 +1601,9 @@ button {
   height: 182px;
   padding: 0em 5%;
   overflow: hidden; }
+  @media screen and (max-width: 768px) {
+    .soft_lesson_top {
+      padding: 0; } }
   .soft_lesson_top span {
     float: left;
     font-size: 1.2em;

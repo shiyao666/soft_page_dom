@@ -177,6 +177,13 @@
     }
 }
 
+.top_container {
+    padding-top: 60px;
+    @media screen and (max-width:768px){
+        padding-top: 100px;
+    }
+}
+
 // 最上侧banner区域
 .soft_banner {
     display: block;
@@ -187,7 +194,6 @@
     background-size: 1920px 550px;
     background-position: center 0;
     background-repeat: no-repeat;
-    padding: 100px 0;
 
     @media screen and (max-width: 768px) {
         margin: 0;
@@ -499,10 +505,12 @@
         width: 33%;
         text-align: left;
         line-height: 2em;
+        padding-left: calc(16% - 5em);
 
         @media screen and (max-width: 768px) {
             width: 100%;
             margin-bottom: 1em;
+            padding: 0;
         }
     }
 
@@ -1015,6 +1023,10 @@
     padding: 0em 5%;
     overflow: hidden;
 
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+
     span {
         float: left;
         font-size: 1.2em;
@@ -1093,6 +1105,7 @@
 // 团队6栏
 .soft_team_part {
     padding-top: 7em;
+
     @media screen and (max-width: 768px) {
         padding-top: 3em;
     }
@@ -2441,10 +2454,11 @@
         float: left;
         color: $primary-color-text;
         line-height: 1.5em;
+
         @media screen and (max-width: 768px) {
             font-size: 1.5em;
             width: 100%;
-            
+
         }
     }
 
