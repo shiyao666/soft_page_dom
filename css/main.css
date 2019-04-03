@@ -929,6 +929,9 @@ button {
     .soft_title .soft_right span:first-child {
       padding-top: 0.1em;
       padding-right: 1em; }
+      @media screen and (max-width: 768px) {
+        .soft_title .soft_right span:first-child {
+          padding-right: 0; } }
       .soft_title .soft_right span:first-child img {
         display: block;
         width: 1.2em;
