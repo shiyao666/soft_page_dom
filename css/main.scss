@@ -179,7 +179,8 @@
 
 .top_container {
     padding-top: 60px;
-    @media screen and (max-width:768px){
+
+    @media screen and (max-width: 768px) {
         padding-top: 100px;
     }
 }
@@ -1497,6 +1498,7 @@
 
     @media screen and (max-width: 768px) {
         padding: 0;
+        padding-top: 1em;
     }
 
     img {
