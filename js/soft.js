@@ -59,7 +59,7 @@ function start_fuc() {
             for (var i = 0; i < event1.data.length; i++) {
                 // console.log(event1.data[i].activity_content);
                 // console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
-                setCookie("page_token", event1)
+                localStorage.setItem("page_token", event1)
                 $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
                 $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
                 $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
@@ -70,7 +70,7 @@ function start_fuc() {
                 $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
                 $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
                 $(".soft_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
-                setCookie("page_token" + [i] + "", Array(event1.data[i].page_token));
+                localStorage.setItem(("page_token" + [i] + "", Array(event1.data[i].page_token));
             }
 
         },
@@ -169,7 +169,7 @@ $(document).ready(function () {
                 url: 'https://erp.csst.com.cn/activity/enroll/commit',
                 data: {
                     number: $("#recipient-phonenum").val(),
-                    act_token: getCookie("page_token" + act_num + "")
+                    act_token: localStorage.getItem("page_token" + act_num + "")
                 },
                 success: function (even_code) {
                     if (even_code.error == 0) {
@@ -253,7 +253,7 @@ $(document).ready(function () {
                     code: $("#message-code").val(),
                     name: $("#recipient-name").val(),
                     company_name: $("#message-text").val(),
-                    act_token: getCookie("page_token" + act_num + "")
+                    act_token: localStorage.getItem("page_token" + act_num + "")
                 },
                 success: function (event2) {
                     $("#alert_error_box").alert(event2.msg);
