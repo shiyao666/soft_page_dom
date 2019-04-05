@@ -70,7 +70,7 @@ function start_fuc() {
                 $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
                 $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
                 $(".soft_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
-                localStorage.setItem(("page_token" + [i] + "", Array(event1.data[i].page_token));
+                localStorage.setItem("page_token" + [i] + "", Array(event1.data[i].page_token));
             }
 
         },
