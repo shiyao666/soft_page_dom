@@ -59,7 +59,7 @@ function start_fuc() {
             for (var i = 0; i < event1.data.length; i++) {
                 // console.log(event1.data[i].activity_content);
                 // console.log($(".soft_open_qi").eq(i).find("li.soft_name span:eq(2)"));
-                localStorage.setItem("page_token", event1)
+                setCookie("page_token", event1)
                 $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(0)").text(event1.data[i].activity_content.title1);
                 $(".soft_open_qi").eq(i).find("li.soft_content1 span:eq(1)").text(event1.data[i].activity_content.content1);
                 $(".soft_open_qi").eq(i).find("li.soft_content2 span:eq(0)").text(event1.data[i].activity_content.title2);
@@ -70,7 +70,7 @@ function start_fuc() {
                 $(".soft_open_qi").eq(i).find("li.soft_content4 span:eq(1)").text(event1.data[i].activity_content.content4);
                 $(".soft_open_qi").eq(i).find(".soft_set_info b").text(event1.data[i].max_number - event1.data[i].sign_up_number);
                 $(".soft_open_qi").eq(i).find(".soft_qi_num").text(event1.data[i].activity_content.head_name);
-                localStorage.setItem("page_token" + [i] + "", Array(event1.data[i].page_token));
+                getCookie("page_token" + [i] + "", Array(event1.data[i].page_token));
             }
 
         },
@@ -109,12 +109,12 @@ $(document).ready(function () {
     // 模态框以外空白处点击事件
     if ($('.modal').on('hide.bs.modal', function () {
 
-            $("div").remove("#error_alert");
-            $("div").remove("#success_alert");
-            $(".soft_get_code").html("获取验证码");
-            $(".soft_get_code").removeClass;
+        $("div").remove("#error_alert");
+        $("div").remove("#success_alert");
+        $(".soft_get_code").html("获取验证码");
+        $(".soft_get_code").removeClass;
 
-        }));
+    }));
     // 点击期数报名区域
     $("#open_four .soft_join_btn").click(function () {
         $(".soft_get_code").removeClass;
@@ -169,7 +169,7 @@ $(document).ready(function () {
                 url: 'https://erp.csst.com.cn/activity/enroll/commit',
                 data: {
                     number: $("#recipient-phonenum").val(),
-                    act_token: localStorage.getItem("page_token" + act_num + "")
+                    act_token: setCookie("page_token" + act_num + "")
                 },
                 success: function (even_code) {
                     if (even_code.error == 0) {
@@ -253,7 +253,7 @@ $(document).ready(function () {
                     code: $("#message-code").val(),
                     name: $("#recipient-name").val(),
                     company_name: $("#message-text").val(),
-                    act_token: localStorage.getItem("page_token" + act_num + "")
+                    act_token: getCookie("page_token" + act_num + "")
                 },
                 success: function (event2) {
                     $("#alert_error_box").alert(event2.msg);
@@ -449,10 +449,17 @@ $(document).ready(function () {
     var password = Date.parse(new Date()).toString() + Math.ceil(Math.random() * 10000).toString();
     //加密成md5
     var passwd = $.md5(password);
-    localStorage.setItem("user_token", passwd)
-    $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + localStorage.user_token + "&act_token=afuxnsd524d", function (data, status) {
-        // alert("数据：" + data + "\n状态：" + status);
-    });
+    if (getCookie("user_token")) {
+        $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + getCookie('user_token') + "&act_token=afuxnsd524d", function (data, status) {
+            // alert("数据：" + data + "\n状态：" + status);
+        });
+    } else {
+        setCookie("user_token", passwd);
+        $.get("https://erp.csst.com.cn/activity/enroll/browse&user_token=" + getCookie('user_token') + "&act_token=afuxnsd524d", function (data, status) {
+            // alert("数据：" + data + "\n状态：" + status);
+        });
+    }
+
     console.log($(window).scrollTop());
     console.log($(".soft_floor").eq(3).height());
     console.log($(window).height());
